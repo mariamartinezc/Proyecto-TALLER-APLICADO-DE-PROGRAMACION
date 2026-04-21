@@ -1,0 +1,147 @@
+[
+    {
+        "nombre_carrera": "Analista Programador",
+        "url": "https://www.duoc.cl/carreras/analista-programador-2",
+        "descripcion": "Desarrollar software seguro y de calidad, analizando el ciclo de\nvida de éste, según las características del proyecto, las mejores\nprácticas y estándares de la industria. Aplicar procesos de ingeniería de requisitos, a través del uso de\nmetodologías y estándares de la industria, para el desarrollo de\nsoluciones de software innovadoras y de calidad. Construir soluciones que permitan resolver los requerimientos de\ninformación en el contexto de las organizaciones, considerando\nbases de datos relacionales.",
+        "campo_laboral": "Competencias del Perfil de Egreso Competencias de la Carrera Desarrollar software seguro y de calidad, analizando el ciclo de\nvida de éste, según las características del proyecto, las mejores\nprácticas y estándares de la industria. Aplicar procesos de ingeniería de requisitos, a través del uso de\nmetodologías y estándares de la industria, para el desarrollo de\nsoluciones de software innovadoras y de calidad. Construir soluciones que permitan resolver los requerimientos de\ninformación en el contexto de las organizaciones, considerando\nbases de datos relacionales.",
+        "malla_pdf": "/mallas/malla_analista_programador.pdf",
+        "sedes": [
+            {
+                "sede": "MAIPÚ",
+                "matricula": "132000",
+                "arancel": "307000"
+            },
+            {
+                "sede": "PLAZA NORTE",
+                "matricula": "132000",
+                "arancel": "307000"
+            },
+            {
+                "sede": "PLAZA OESTE",
+                "matricula": "132000",
+                "arancel": "307000"
+            },
+            {
+                "sede": "SAN JOAQUÍN",
+                "matricula": "132000",
+                "arancel": "307000"
+            },
+            {
+                "sede": "VIÑA DEL MAR",
+                "matricula": "121000",
+                "arancel": "283000"
+            },
+            {
+                "sede": "ALONSO DE OVALLE",
+                "matricula": "132000",
+                "arancel": "299000"
+            },
+            {
+                "sede": "MELIPILLA",
+                "matricula": "132000",
+                "arancel": "299000"
+            },
+            {
+                "sede": "PUENTE ALTO",
+                "matricula": "132000",
+                "arancel": "307000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Ingeniería en Informática",
+        "url": "https://www.duoc.cl/carreras/ingenieria-en-informatica/",
+        "descripcion": "Diseñar y generar soluciones de software innovadoras y de calidad,\naplicando el ciclo de vida de éste, según las características del\nproyecto, las mejores prácticas de la industria y sus estándares\nde calidad. Diseñar y generar soluciones que permitan resolver los\nrequerimientos de información en el contexto de las\norganizaciones, considerando bases de datos relacionales y no\nrelacionales. Diseñar y adaptar los procesos de ingeniería de requisitos, a\ntravés del uso de metodologías de vanguardia y estándares de la\nindustria, para el desarrollo de soluciones TI complejas,\ninnovadoras y de calida",
+        "campo_laboral": "En su desempeño interactúa con equipos multidisciplinarios en diversas\nindustrias, startups o de forma independiente, realizando proyectos o\nasesorías de consultoría en el área de desarrollo de software.",
+        "malla_pdf": "/mallas/malla_ingeniería_en_informática.pdf",
+        "sedes": [
+            {
+                "sede": "MAIPÚ",
+                "matricula": "174000",
+                "arancel": "339000"
+            },
+            {
+                "sede": "PUENTE ALTO",
+                "matricula": "174000",
+                "arancel": "339000"
+            },
+            {
+                "sede": "PLAZA OESTE",
+                "matricula": "174000",
+                "arancel": "339000"
+            },
+            {
+                "sede": "SAN JOAQUÍN",
+                "matricula": "174000",
+                "arancel": "339000"
+            },
+            {
+                "sede": "PLAZA NORTE",
+                "matricula": "174000",
+                "arancel": "339000"
+            },
+            {
+                "sede": "ALONSO DE OVALLE",
+                "matricula": "174000",
+                "arancel": "339000"
+            },
+            {
+                "sede": "MELIPILLA",
+                "matricula": "174000",
+                "arancel": "327000"
+            },
+            {
+                "sede": "VIÑA DEL MAR",
+                "matricula": "174000",
+                "arancel": "346000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Ingeniería en Administración Mención Gestión de Personas",
+        "url": "https://www.duoc.cl/carreras/ingenieria-en-administracion-mencion-gestion-de-personas-2/",
+        "descripcion": "El Campo laboral del Ingeniero o Ingeniera en Administración\nmención Gestión de Personas está compuesto por organizaciones\npúblicas y privadas de distintos tamaños y de diversos sectores\neconómicos, en las áreas de administración y las que componen el\nsubsistema de gestión de personas, agregando valor a los procesos\na su cargo. Manejar técnicas de obtención, modelamiento y análisis de datos,\nhaciendo uso de herramientas tecnológicas, que permitan generar\nvalor a la toma de decisiones. Aplicar herramientas de diagnóstico estratégico y modelo de\nnegocios, considerando un desarrollo económico sos",
+        "campo_laboral": "El Campo laboral del Ingeniero o Ingeniera en Administración\nmención Gestión de Personas está compuesto por organizaciones\npúblicas y privadas de distintos tamaños y de diversos sectores\neconómicos, en las áreas de administración y las que componen el\nsubsistema de gestión de personas, agregando valor a los procesos\na su cargo. Manejar técnicas de obtención, modelamiento y análisis de datos,\nhaciendo uso de herramientas tecnológicas, que permitan generar\nvalor a la toma de decisiones. Aplicar herramientas de diagnóstico estratégico y modelo de\nnegocios, considerando un desarrollo económico sos",
+        "malla_pdf": "/mallas/malla_ingeniería_en_administración_mención_gestión_de_personas.pdf",
+        "sedes": [
+            {
+                "sede": "MAIPÚ",
+                "matricula": "174000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "MELIPILLA",
+                "matricula": "174000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "ALONSO DE OVALLE",
+                "matricula": "174000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "PLAZA NORTE",
+                "matricula": "174000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "PLAZA OESTE",
+                "matricula": "174000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "VIÑA DEL MAR",
+                "matricula": "148000",
+                "arancel": "325000"
+            },
+            {
+                "sede": "PUENTE ALTO",
+                "matricula": "174000",
+                "arancel": "326000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    }
+]
