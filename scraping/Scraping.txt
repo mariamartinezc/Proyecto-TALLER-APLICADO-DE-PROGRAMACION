@@ -1,0 +1,71 @@
+Módulo de Scraping
+Proyecto: Elige tu Futuro
+
+__________________________________________________________________________________________________________________________
+Este documento detalla los pasos exactos para configurar y ejecutar la herramienta de extracción de datos de Duoc UC.
+
+1. Preparación de la Carpeta
+Para mantener el orden del repositorio, el módulo de scraping debe estar aislado de la aplicación React.
+
+Ubicación: C:\...\Elige-tu-Futuro\scraping\
+
+--> Archivos mínimos necesarios: scraping.py.
+__________________________________________________________________________________________________________________________
+
+2. Creación del Entorno Virtual (venv)
+El entorno virtual evita conflictos entre versiones de librerías.
+
+Comando:
+
+python -m venv venv
+
+--> Nota: Esto crea una carpeta llamada venv que contiene una copia aislada de Python.
+__________________________________________________________________________________________________________________________
+
+3. Activación del Entorno
+Antes de instalar o ejecutar cualquier cosa, el entorno debe estar "encendido".
+
+Comando (Windows PowerShell):
+
+		.\venv\Scripts\activate
+
+--> Resultado: Deberías ver un (venv) al principio de tu línea de comandos en la terminal.
+__________________________________________________________________________________________________________________________
+
+4. Instalación de Requerimientos
+Usamos el archivo de "receta" para instalar todas las herramientas necesarias (Selenium, BeautifulSoup, etc.) de una sola vez.
+
+Comando:
+
+
+		pip install -r requirements.txt
+__________________________________________________________________________________________________________________________
+
+5. Ejecución del Scraping
+Una vez configurado, el script navegará de forma automatizada por el sitio de Duoc.
+
+Comando:
+
+		python scraping.py
+		
+Lo que sucede internamente:
+
+--> 1.Se inicia un navegador Edge en modo "Headless" (invisible).
+
+--> 2.El script verifica la ética del sitio (robots.txt).
+
+--> 3.Realiza un scroll automático para cargar aranceles ocultos.
+
+--> 4.Extrae títulos, descripciones, campos laborales y sedes.
+
+--> 5.Descarga los PDFs de las mallas a la carpeta de React.
+
+--> 6.Genera el archivo datos.json final.
+__________________________________________________________________________________________________________________________
+
+6. Actualización de Requerimientos (Opcional)
+Si instalas una librería nueva, debes actualizar la lista para el resto del equipo.
+
+Comando:
+
+		pip freeze > requirements.txt

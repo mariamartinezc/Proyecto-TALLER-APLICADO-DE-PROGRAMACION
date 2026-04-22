@@ -1,0 +1,279 @@
+[
+    {
+        "nombre_carrera": "Analista Programador",
+        "duracion": "5 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/analista-programador-2",
+        "descripcion": "Competencias de la Carrera",
+        "campo_laboral": "El campo laboral del Analista Programador considera organizaciones de\ntodo tipo, en donde la transformación digital esté presente. Puede\ndesempeñarse en las áreas de desarrollo de software, tanto de soluciones\nweb como móviles. Se vincula con las áreas de negocios de las\norganizaciones para construir soluciones de software que permitan\nresolver las necesidades detectadas. En su desempeño interactúa con\nequipos multidisciplinarios en diversas industrias, startups o de forma\nindependiente, realizando desarrollo de soluciones de software.",
+        "malla_pdf": "/mallas/malla_analista_programador.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "132000",
+                "arancel": "288000"
+            },
+            {
+                "sede": "MAIPÚ",
+                "matricula": "132000",
+                "arancel": "288000"
+            },
+            {
+                "sede": "PLAZA NORTE",
+                "matricula": "132000",
+                "arancel": "307000"
+            },
+            {
+                "sede": "PLAZA OESTE",
+                "matricula": "132000",
+                "arancel": "307000"
+            },
+            {
+                "sede": "SAN JOAQUÍN",
+                "matricula": "132000",
+                "arancel": "283000"
+            },
+            {
+                "sede": "SAN BERNARDO",
+                "matricula": "132000",
+                "arancel": "307000"
+            },
+            {
+                "sede": "VIÑA DEL MAR",
+                "matricula": "121000",
+                "arancel": "283000"
+            },
+            {
+                "sede": "ALONSO DE OVALLE",
+                "matricula": "132000",
+                "arancel": "307000"
+            },
+            {
+                "sede": "MELIPILLA",
+                "matricula": "132000",
+                "arancel": "299000"
+            },
+            {
+                "sede": "PUENTE ALTO",
+                "matricula": "132000",
+                "arancel": "288000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Ingeniería en Informática",
+        "duracion": "8 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/ingenieria-en-informatica/",
+        "descripcion": "Competencias de la Carrera",
+        "campo_laboral": "El campo laboral de Ingeniería en Informática mención en Desarrollo de\nSoftware, considera organizaciones de todo tipo, en donde la\ntransformación digital esté presente. Él o la profesional podrá\ndesenvolverse en áreas como la ingeniería de requisitos, calidad de\nsoftware, bases de datos, Desarrollo Front End, Desarrollo Back End,\nDesarrollo FullStack, Project Manager o Scrum Master.",
+        "malla_pdf": "/mallas/malla_ingeniería_en_informática.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "174000",
+                "arancel": "327000"
+            },
+            {
+                "sede": "MAIPÚ",
+                "matricula": "174000",
+                "arancel": "327000"
+            },
+            {
+                "sede": "PUENTE ALTO",
+                "matricula": "174000",
+                "arancel": "339000"
+            },
+            {
+                "sede": "PLAZA OESTE",
+                "matricula": "174000",
+                "arancel": "339000"
+            },
+            {
+                "sede": "SAN JOAQUÍN",
+                "matricula": "174000",
+                "arancel": "339000"
+            },
+            {
+                "sede": "PLAZA NORTE",
+                "matricula": "174000",
+                "arancel": "339000"
+            },
+            {
+                "sede": "ALONSO DE OVALLE",
+                "matricula": "174000",
+                "arancel": "339000"
+            },
+            {
+                "sede": "SAN BERNARDO",
+                "matricula": "174000",
+                "arancel": "339000"
+            },
+            {
+                "sede": "MELIPILLA",
+                "matricula": "174000",
+                "arancel": "327000"
+            },
+            {
+                "sede": "VIÑA DEL MAR",
+                "matricula": "174000",
+                "arancel": "327000"
+            },
+            {
+                "sede": "CONCEPCIÓN",
+                "matricula": "148000",
+                "arancel": "299000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Ingeniería en Administración Mención Gestión de Personas",
+        "duracion": "8 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/ingenieria-en-administracion-mencion-gestion-de-personas-2/",
+        "descripcion": "Competencias de la Carrera",
+        "campo_laboral": "El Campo laboral del Ingeniero o Ingeniera en Administración\nmención Gestión de Personas está compuesto por organizaciones\npúblicas y privadas de distintos tamaños y de diversos sectores\neconómicos, en las áreas de administración y las que componen el\nsubsistema de gestión de personas, agregando valor a los procesos\na su cargo.Manejar técnicas de obtención, modelamiento y análisis de datos,\nhaciendo uso de herramientas tecnológicas, que permitan generar\nvalor a la toma de decisiones.Aplicar herramientas de diagnóstico estratégico y modelo de\nnegocios, considerando un desarrollo económico soste",
+        "malla_pdf": "/mallas/malla_ingeniería_en_administración_mención_gestión_de_personas.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "174000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "MAIPÚ",
+                "matricula": "174000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "MELIPILLA",
+                "matricula": "174000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "ALONSO DE OVALLE",
+                "matricula": "174000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "PLAZA NORTE",
+                "matricula": "174000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "PLAZA OESTE",
+                "matricula": "174000",
+                "arancel": "297000"
+            },
+            {
+                "sede": "VIÑA DEL MAR",
+                "matricula": "148000",
+                "arancel": "325000"
+            },
+            {
+                "sede": "CONCEPCIÓN",
+                "matricula": "148000",
+                "arancel": "297000"
+            },
+            {
+                "sede": "PUENTE ALTO",
+                "matricula": "174000",
+                "arancel": "297000"
+            },
+            {
+                "sede": "SAN BERNARDO",
+                "matricula": "174000",
+                "arancel": "326000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Administración Pública",
+        "duracion": "20 Bimestres",
+        "url_fuente": "https://www.duoc.cl/carreras/administracion-publica-2/",
+        "descripcion": "Competencias de la Carrera",
+        "campo_laboral": "Descripción del Campo Ocupacional",
+        "malla_pdf": "/mallas/malla_administración_pública.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "174000",
+                "arancel": "276000"
+            },
+            {
+                "sede": "VIRTUAL",
+                "matricula": "174000",
+                "arancel": "276000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Ingeniería en Infraestructura Tecnológica",
+        "duracion": "8 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/ingenieria-en-infraestructura-tecnologica/",
+        "descripcion": "Competencias de la Carrera",
+        "campo_laboral": "El campo ocupacional del Ingeniero(a) en Infraestructura\nTecnológica considera cualquier tipo de organización pública o\nprivada, con o sin fines de lucro que requiera diseñar,\nimplementar y administrar soluciones tecnológicas innovadoras,\ntanto en instalaciones físicas o en la nube, velando por su\ncontinuidad operacional y la eficiencia en el uso de los recursos\ninvolucrados, siempre considerando la seguridad de los sistemas y\nprotección de la información, de acuerdo a normativas, estándares,\nmarcos de trabajo y mejores prácticas de la industriaDiseñar e implementar soluciones tecnológicas inn",
+        "malla_pdf": "/mallas/malla_ingeniería_en_infraestructura_tecnológica.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "174000",
+                "arancel": "339000"
+            },
+            {
+                "sede": "ONLINE",
+                "matricula": "174000",
+                "arancel": "339000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Administración de Empresas",
+        "duracion": "10 Bimestres",
+        "url_fuente": "https://www.duoc.cl/carreras/administracion-de-empresas/",
+        "descripcion": "Descripción del Perfil de Egreso",
+        "campo_laboral": "El campo ocupacional del Administrador(a) de Empresas es amplio y\ndiverso, pudiendo desempeñarse en diferentes organizaciones, tanto\npúblicas como privadas, como asistente, coordinador(a), supervisor(a),\nanalista o ejecutivo(a), realizando funciones administrativas de\nanálisis, control, operaciones y administración del negocio en general.",
+        "malla_pdf": "/mallas/malla_administración_de_empresas.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "132000",
+                "arancel": "237000"
+            },
+            {
+                "sede": "VIRTUAL",
+                "matricula": "132000",
+                "arancel": "237000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Administración en Turismo y Hospitalidad Mención Administración Hotelera",
+        "duracion": "8 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/administracion-en-turismo-y-hospitalidad-mencion-administracion-hotelera-2/",
+        "descripcion": "Competencias del Perfil de Egreso",
+        "campo_laboral": "Así mismo, podrá ejercer su profesión de manera autónoma, de acuerdo con\nel dinamismo propio del ámbito ocupacional de las áreas del turismo y la\nhotelería.",
+        "malla_pdf": "/mallas/malla_administración_en_turismo_y_hospitalidad_mención_administración_hotelera.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "174000",
+                "arancel": "443000"
+            },
+            {
+                "sede": "ALONSO DE OVALLE",
+                "matricula": "174000",
+                "arancel": "443000"
+            },
+            {
+                "sede": "SAN BERNARDO",
+                "matricula": "148000",
+                "arancel": "443000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    }
+]

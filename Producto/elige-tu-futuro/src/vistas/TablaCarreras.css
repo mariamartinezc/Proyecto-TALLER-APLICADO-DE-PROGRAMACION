@@ -1,0 +1,58 @@
+/* Contenedor con Scroll Lateral para que sea Responsive */
+.tabla-container {
+    border: 1.5px solid #84a584;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    background-color: white;
+    overflow-x: auto; 
+    display: block;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 2rem;
+}
+
+.table {
+    min-width: 900px; /* Evita que se amontone en celular */
+    margin-bottom: 0;
+}
+
+.tabla-header {
+    background-color: #e2ede3 !important;
+    color: #2c3e50 !important;
+    text-align: center;
+}
+
+/* RE-APLICANDO TUS COLORES A LOS BOTONES */
+
+.btn-tabla-ver {
+    background-color: transparent;
+    color: #333;
+    border: 1.5px solid #333;
+    border-radius: 8px;
+    padding: 5px 15px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-tabla-ver:hover {
+    background-color: #f4f7f4;
+}
+
+.btn-tabla-agregar {
+    background-color: #789c79; /* Tu verde institucional */
+    color: white;
+    border: 1.5px solid #333; /* Borde oscuro como el de buscar */
+    border-radius: 8px;
+    padding: 5px 15px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-tabla-agregar:hover {
+    background-color: #6a8a6b;
+}
+
+.col-nombre-carrera {
+    min-width: 280px;
+    padding: 15px !important;
+}
