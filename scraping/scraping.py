@@ -17,7 +17,6 @@ def verificar_permiso_etico(navegador, url_base):
         time.sleep(2)
         contenido_texto = navegador.find_element("tag name", "body").text.lower()
         
-        # Bloqueo si hay prohibición total o específica
         if "disallow: / " in contenido_texto or "disallow: /carreras/" in contenido_texto:
             print(f"Acceso denegado por ética en {url_base}")
             return False
@@ -30,18 +29,14 @@ def verificar_permiso_etico(navegador, url_base):
 
 # --- PARTE 2: UTILITARIOS (Descargas y Limpieza) ---
 def limpiar_monto_dinero(texto):
-    # Elimina cualquier cosa que no sea un número (puntos, signos $, espacios)
     return re.sub(r'\D', '', texto)
 
 def descargar_malla_pdf(enlace_pdf, nombre_carrera):
     try:
-        # Definición de ruta para el proyecto React
         carpeta_destino = os.path.join('..', 'Producto', 'elige-tu-futuro', 'public', 'mallas')
-        
         if not os.path.exists(carpeta_destino):
             os.makedirs(carpeta_destino)
         
-        # Limpiar el nombre para el archivo
         archivo_nombre = f"malla_{nombre_carrera.replace(' ', '_').lower()}.pdf"
         ruta_archivo_final = os.path.join(carpeta_destino, archivo_nombre)
         
@@ -51,7 +46,7 @@ def descargar_malla_pdf(enlace_pdf, nombre_carrera):
                 for bloque in respuesta.iter_content(chunk_size=1024):
                     if bloque: 
                         archivo.write(bloque)
-            return f"/mallas/{archivo_nombre}" # Ruta que usará Nayadett en React
+            return f"/mallas/{archivo_nombre}"
         return None
     except Exception as error:
         print(f"Error al descargar PDF: {error}")
@@ -62,33 +57,35 @@ def extraer_datos_carrera(navegador, url_especifica, url_base):
     print(f"\nExtrayendo datos de: {url_especifica}")
     try:
         navegador.get(url_especifica)
-        # Desplazamiento para cargar elementos dinámicos
-        navegador.execute_script("window.scrollTo(0, 500);")
-        time.sleep(8) 
+        navegador.execute_script("window.scrollTo(0, 600);")
+        time.sleep(6) 
         
         soup_html = BeautifulSoup(navegador.page_source, 'html.parser')
         
-        # Obtener Título
+        # 1. Obtener Título
         etiqueta_titulo = soup_html.find('h1')
         titulo_carrera = etiqueta_titulo.text.strip() if etiqueta_titulo else "Carrera sin título"
         
+        # 2. Obtener Duración (Nueva lógica agregada)
+        texto_completo = soup_html.get_text(" ", strip=True)
+        duracion_encontrada = "No especificada"
+        # Busca un número seguido de la palabra semestres
+        patron_duracion = re.search(r'(\d+)\s+semestres', texto_completo, re.IGNORECASE)
+        if patron_duracion:
+            duracion_encontrada = f"{patron_duracion.group(1)} Semestres"
+
         # --- DESCRIPCIÓN Y CAMPO LABORAL ---
         resumen_descripcion = "Descripción no disponible."
         texto_campo_laboral = "Campo laboral no disponible."
         
-        # Buscamos en encabezados y textos destacados
         elementos_clave = soup_html.find_all(['h2', 'h3', 'h4', 'strong', 'div'])
-        
         for elemento in elementos_clave:
             texto_encontrado = elemento.get_text(" ", strip=True).upper()
-            
-            # Lógica para Descripción
             if "LA CARRERA" in texto_encontrado or "PERFIL DE EGRESO" in texto_encontrado:
                 siguiente = elemento.find_next(['p', 'div'])
                 if siguiente: 
                     resumen_descripcion = siguiente.get_text(" ", strip=True)
             
-            # Lógica para Campo Laboral
             if "CAMPO LABORAL" in texto_encontrado or "CAMPO OCUPACIONAL" in texto_encontrado:
                 siguiente = elemento.find_next(['p', 'div', 'ul'])
                 if siguiente: 
@@ -101,7 +98,6 @@ def extraer_datos_carrera(navegador, url_especifica, url_base):
             enlace_completo_pdf = etiqueta_pdf['href']
             if not enlace_completo_pdf.startswith('http'):
                 enlace_completo_pdf = url_base.rstrip('/') + '/' + enlace_completo_pdf.lstrip('/')
-            
             ruta_pdf_para_react = descargar_malla_pdf(enlace_completo_pdf, titulo_carrera)
 
         # --- SEDES Y ARANCELES ---
@@ -110,13 +106,11 @@ def extraer_datos_carrera(navegador, url_especifica, url_base):
         
         for bloque_texto in soup_html.find_all(['tr', 'div', 'li', 'td']):
             linea_leida = bloque_texto.get_text(" ", strip=True).upper()
-            
             if "$" in linea_leida:
                 sede_encontrada = next((s for s in lista_sedes_validas if s in linea_leida), None)
                 if sede_encontrada:
                     precios_encontrados = re.findall(r'\$\s?[\d\.]+', linea_leida)
                     if len(precios_encontrados) >= 1:
-                        # Evitar duplicados de sedes
                         if not any(item['sede'] == sede_encontrada for item in informacion_sedes):
                             informacion_sedes.append({
                                 "sede": sede_encontrada,
@@ -124,9 +118,9 @@ def extraer_datos_carrera(navegador, url_especifica, url_base):
                                 "arancel": limpiar_monto_dinero(precios_encontrados[1]) if len(precios_encontrados) > 1 else "0"
                             })
 
-        # Retornamos el objeto final (Diccionario)
         return {
             "nombre_carrera": titulo_carrera,
+            "duracion": duracion_encontrada, # <--- Campo agregado
             "url_fuente": url_especifica,
             "descripcion": resumen_descripcion[:600],
             "campo_laboral": texto_campo_laboral[:600],
@@ -137,9 +131,8 @@ def extraer_datos_carrera(navegador, url_especifica, url_base):
         print(f"Error al procesar carrera: {e}")
         return None
 
-# --- PARTE 4: EL CRAWLER MAESTRO (Multinstitución) ---
+# --- PARTE 4: EL CRAWLER MAESTRO ---
 def iniciar_extraccion_total():
-    # LISTA DE INSTITUCIONES
     lista_instituciones = [
         {
             "nombre_u": "Duoc UC",
@@ -148,39 +141,30 @@ def iniciar_extraccion_total():
                 "https://www.duoc.cl/carreras/analista-programador-2",
                 "https://www.duoc.cl/carreras/ingenieria-en-informatica/",
                 "https://www.duoc.cl/carreras/ingenieria-en-administracion-mencion-gestion-de-personas-2/"
-              ]
-
+            ]
         }
-
-        #Aqui podemos agregar nuevas instituciones siguiendo el mismo formato
-
     ]
     
     opciones_navegador = Options()
-    opciones_navegador.add_argument("--headless") # Ejecución sin ventana
+    opciones_navegador.add_argument("--headless") 
     
     try:
         print("Arrancando el motor de búsqueda...")
         servicio_edge = Service()
         navegador = webdriver.Edge(service=servicio_edge, options=opciones_navegador)
-
         resultado_final_json = []
 
         for institucion in lista_instituciones:
             print(f"\nTRABAJANDO EN: {institucion['nombre_u']}")
-            
             if not verificar_permiso_etico(navegador, institucion['web_principal']):
                 continue
 
             for url in institucion['enlaces_a_scrapear']:
                 datos_extraidos = extraer_datos_carrera(navegador, url, institucion['web_principal'])
-                
                 if datos_extraidos:
-                    # Añadimos la marca de la institución
                     datos_extraidos['institucion'] = institucion['nombre_u']
                     resultado_final_json.append(datos_extraidos)
-                
-                time.sleep(2) # Pausa ética
+                time.sleep(2)
 
         # --- GUARDADO EN ARCHIVO JSON ---
         ruta_archivo_datos = os.path.join('..', 'Producto', 'elige-tu-futuro', 'src', 'datos.json')
@@ -190,10 +174,8 @@ def iniciar_extraccion_total():
             json.dump(resultado_final_json, archivo_json, ensure_ascii=False, indent=4)
             
         print(f"\nPROCESO FINALIZADO CON ÉXITO")
-        print(f"Se han guardado {len(resultado_final_json)} carreras.")
-        print(f"JSON: {ruta_archivo_datos}")
+        print(f"Se han guardado {len(resultado_final_json)} carreras en: {ruta_archivo_datos}")
 
-        print(f"Mallas: ../Producto/elige-tu-futuro/public/mallas")
     except Exception as error_critico:
         print(f"Error crítico en el sistema: {error_critico}")
     finally:
