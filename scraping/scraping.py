@@ -10,15 +10,15 @@ from selenium.webdriver.edge.options import Options
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
 
 # --- PARTE 1: COMPROBACIÓN ÉTICA (ROBOTS.TXT) ---
-def verificar_permiso_etico(driver, url_base):
+def verificar_permiso_etico(navegador, url_base):
     print(f"Consultando robots.txt en {url_base}...")
     try:
-        driver.get(url_base + "/robots.txt")
+        navegador.get(url_base + "/robots.txt")
         time.sleep(2)
-        contenido = driver.find_element("tag name", "body").text.lower()
+        contenido_texto = navegador.find_element("tag name", "body").text.lower()
         
         # Bloqueo si hay prohibición total o específica
-        if "disallow: / " in contenido or "disallow: /carreras/" in contenido:
+        if "disallow: / " in contenido_texto or "disallow: /carreras/" in contenido_texto:
             print(f"Acceso denegado por ética en {url_base}")
             return False
             
@@ -29,149 +29,176 @@ def verificar_permiso_etico(driver, url_base):
         return True
 
 # --- PARTE 2: UTILITARIOS (Descargas y Limpieza) ---
-def limpiar_monto(texto):
+def limpiar_monto_dinero(texto):
+    # Elimina cualquier cosa que no sea un número (puntos, signos $, espacios)
     return re.sub(r'\D', '', texto)
 
-def descargar_pdf(url_pdf, nombre_carrera):
+def descargar_malla_pdf(enlace_pdf, nombre_carrera):
     try:
-        # RUTA MAESTRA: Sube a raíz, entra a Producto -> elige-tu-futuro -> public -> mallas
-        folder = os.path.join('..', 'Producto', 'elige-tu-futuro', 'public', 'mallas')
+        # Definición de ruta para el proyecto React
+        carpeta_destino = os.path.join('..', 'Producto', 'elige-tu-futuro', 'public', 'mallas')
         
-        if not os.path.exists(folder):
-            os.makedirs(folder)
+        if not os.path.exists(carpeta_destino):
+            os.makedirs(carpeta_destino)
         
-        nombre_archivo = f"malla_{nombre_carrera.replace(' ', '_').lower()}.pdf"
-        ruta_final = os.path.join(folder, nombre_archivo)
+        # Limpiar el nombre para el archivo
+        archivo_nombre = f"malla_{nombre_carrera.replace(' ', '_').lower()}.pdf"
+        ruta_archivo_final = os.path.join(carpeta_destino, archivo_nombre)
         
-        response = requests.get(url_pdf, stream=True, timeout=15)
-        if response.status_code == 200:
-            with open(ruta_final, 'wb') as f:
-                for chunk in response.iter_content(chunk_size=1024):
-                    if chunk: f.write(chunk)
-            return f"/mallas/{nombre_archivo}" # Ruta relativa para React
+        respuesta = requests.get(enlace_pdf, stream=True, timeout=15)
+        if respuesta.status_code == 200:
+            with open(ruta_archivo_final, 'wb') as archivo:
+                for bloque in respuesta.iter_content(chunk_size=1024):
+                    if bloque: 
+                        archivo.write(bloque)
+            return f"/mallas/{archivo_nombre}" # Ruta que usará Nayadett en React
         return None
-    except Exception as e:
-        print(f"Error descarga PDF: {e}")
+    except Exception as error:
+        print(f"Error al descargar PDF: {error}")
         return None
 
 # --- PARTE 3: EXTRACCIÓN DETALLADA ---
-def scrapear_carrera(driver, url, url_base):
-    print(f"\nExtrayendo: {url}")
+def extraer_datos_carrera(navegador, url_especifica, url_base):
+    print(f"\nExtrayendo datos de: {url_especifica}")
     try:
-        driver.get(url)
-        driver.execute_script("window.scrollTo(0, 500);")
-        time.sleep(8) # Tiempo para que carguen los precios dinámicos
+        navegador.get(url_especifica)
+        # Desplazamiento para cargar elementos dinámicos
+        navegador.execute_script("window.scrollTo(0, 500);")
+        time.sleep(8) 
         
-        soup = BeautifulSoup(driver.page_source, 'html.parser')
-        titulo = soup.find('h1').text.strip() if soup.find('h1') else "Carrera"
+        soup_html = BeautifulSoup(navegador.page_source, 'html.parser')
+        
+        # Obtener Título
+        etiqueta_titulo = soup_html.find('h1')
+        titulo_carrera = etiqueta_titulo.text.strip() if etiqueta_titulo else "Carrera sin título"
         
         # --- DESCRIPCIÓN Y CAMPO LABORAL ---
-        descripcion = "Descripción no disponible."
-        campo_laboral = "Campo laboral no disponible."
-        encabezados = soup.find_all(['h2', 'h3', 'h4', 'strong', 'div'])
+        resumen_descripcion = "Descripción no disponible."
+        texto_campo_laboral = "Campo laboral no disponible."
         
-        for enc in encabezados:
-            texto_enc = enc.get_text(" ", strip=True).upper()
-            if "LA CARRERA" in texto_enc or "PERFIL DE EGRESO" in texto_enc:
-                sig = enc.find_next(['p', 'div'])
-                if sig: descripcion = sig.get_text(" ", strip=True)
-            if "CAMPO LABORAL" in texto_enc or "CAMPO OCUPACIONAL" in texto_enc:
-                sig = enc.find_next(['p', 'div', 'ul'])
-                if sig: campo_laboral = sig.get_text(" ", strip=True)
+        # Buscamos en encabezados y textos destacados
+        elementos_clave = soup_html.find_all(['h2', 'h3', 'h4', 'strong', 'div'])
+        
+        for elemento in elementos_clave:
+            texto_encontrado = elemento.get_text(" ", strip=True).upper()
+            
+            # Lógica para Descripción
+            if "LA CARRERA" in texto_encontrado or "PERFIL DE EGRESO" in texto_encontrado:
+                siguiente = elemento.find_next(['p', 'div'])
+                if siguiente: 
+                    resumen_descripcion = siguiente.get_text(" ", strip=True)
+            
+            # Lógica para Campo Laboral
+            if "CAMPO LABORAL" in texto_encontrado or "CAMPO OCUPACIONAL" in texto_encontrado:
+                siguiente = elemento.find_next(['p', 'div', 'ul'])
+                if siguiente: 
+                    texto_campo_laboral = siguiente.get_text(" ", strip=True)
 
         # --- BUSCADOR DE MALLA PDF ---
-        link_malla_tag = soup.find('a', href=re.compile(r'.*\.pdf'))
-        ruta_pdf_react = None
-        if link_malla_tag:
-            url_pdf_real = link_malla_tag['href']
-            if not url_pdf_real.startswith('http'):
-                url_pdf_real = url_base.rstrip('/') + '/' + url_pdf_real.lstrip('/')
-            ruta_pdf_react = descargar_pdf(url_pdf_real, titulo)
+        etiqueta_pdf = soup_html.find('a', href=re.compile(r'.*\.pdf'))
+        ruta_pdf_para_react = None
+        if etiqueta_pdf:
+            enlace_completo_pdf = etiqueta_pdf['href']
+            if not enlace_completo_pdf.startswith('http'):
+                enlace_completo_pdf = url_base.rstrip('/') + '/' + enlace_completo_pdf.lstrip('/')
+            
+            ruta_pdf_para_react = descargar_malla_pdf(enlace_completo_pdf, titulo_carrera)
 
         # --- SEDES Y ARANCELES ---
-        sedes_validas = ["MAIPÚ", "PLAZA OESTE", "SAN JOAQUÍN", "VIÑA DEL MAR", "PUENTE ALTO", "ALONSO DE OVALLE", "PLAZA NORTE", "MELIPILLA"]
-        sedes_info = []
-        for item in soup.find_all(['tr', 'div', 'li', 'td']):
-            linea = item.get_text(" ", strip=True).upper()
-            if "$" in linea:
-                sede_f = next((s for s in sedes_validas if s in linea), None)
-                if sede_f:
-                    precios = re.findall(r'\$\s?[\d\.]+', linea)
-                    if len(precios) >= 1:
-                        if not any(s['sede'] == sede_f for s in sedes_info):
-                            sedes_info.append({
-                                "sede": sede_f,
-                                "matricula": limpiar_monto(precios[0]),
-                                "arancel": limpiar_monto(precios[1]) if len(precios) > 1 else "0"
+        lista_sedes_validas = ["MAIPÚ", "PLAZA OESTE", "SAN JOAQUÍN", "VIÑA DEL MAR", "PUENTE ALTO", "ALONSO DE OVALLE", "PLAZA NORTE", "MELIPILLA"]
+        informacion_sedes = []
+        
+        for bloque_texto in soup_html.find_all(['tr', 'div', 'li', 'td']):
+            linea_leida = bloque_texto.get_text(" ", strip=True).upper()
+            
+            if "$" in linea_leida:
+                sede_encontrada = next((s for s in lista_sedes_validas if s in linea_leida), None)
+                if sede_encontrada:
+                    precios_encontrados = re.findall(r'\$\s?[\d\.]+', linea_leida)
+                    if len(precios_encontrados) >= 1:
+                        # Evitar duplicados de sedes
+                        if not any(item['sede'] == sede_encontrada for item in informacion_sedes):
+                            informacion_sedes.append({
+                                "sede": sede_encontrada,
+                                "matricula": limpiar_monto_dinero(precios_encontrados[0]),
+                                "arancel": limpiar_monto_dinero(precios_encontrados[1]) if len(precios_encontrados) > 1 else "0"
                             })
 
+        # Retornamos el objeto final (Diccionario)
         return {
-            "nombre_carrera": titulo,
-            "url": url,
-            "descripcion": descripcion[:600],
-            "campo_laboral": campo_laboral[:600],
-            "malla_pdf": ruta_pdf_react,
-            "sedes": sedes_info
+            "nombre_carrera": titulo_carrera,
+            "url_fuente": url_especifica,
+            "descripcion": resumen_descripcion[:600],
+            "campo_laboral": texto_campo_laboral[:600],
+            "malla_pdf": ruta_pdf_para_react,
+            "sedes": informacion_sedes
         }
     except Exception as e:
-        print(f"❌ Error en carrera {url}: {e}")
+        print(f"Error al procesar carrera: {e}")
         return None
 
 # --- PARTE 4: EL CRAWLER MAESTRO (Multinstitución) ---
-def iniciar_crawler_maestro():
-    # LISTA DE INSTITUTOS (Escalable)
-    institutos = [
+def iniciar_extraccion_total():
+    # LISTA DE INSTITUCIONES
+    lista_instituciones = [
         {
-            "nombre": "Duoc UC",
-            "url_base": "https://www.duoc.cl",
-            "urls_objetivo": [
+            "nombre_u": "Duoc UC",
+            "web_principal": "https://www.duoc.cl",
+            "enlaces_a_scrapear": [
                 "https://www.duoc.cl/carreras/analista-programador-2",
                 "https://www.duoc.cl/carreras/ingenieria-en-informatica/",
                 "https://www.duoc.cl/carreras/ingenieria-en-administracion-mencion-gestion-de-personas-2/"
-            ]
+              ]
+
         }
-        # Puedes agregar INACAP aquí siguiendo el mismo formato
+
+        #Aqui podemos agregar nuevas instituciones siguiendo el mismo formato
+
     ]
     
-    edge_options = Options()
-    edge_options.add_argument("--headless") # Sin ventana para ir más rápido
+    opciones_navegador = Options()
+    opciones_navegador.add_argument("--headless") # Ejecución sin ventana
     
     try:
-        print("Iniciando Motor de Extracción...")
-        service = Service()
-        driver = webdriver.Edge(service=service, options=edge_options)
+        print("Arrancando el motor de búsqueda...")
+        servicio_edge = Service()
+        navegador = webdriver.Edge(service=servicio_edge, options=opciones_navegador)
 
-        catalogo_final = []
+        resultado_final_json = []
 
-        for inst in institutos:
-            print(f"\nTRABAJANDO EN: {inst['nombre']}")
+        for institucion in lista_instituciones:
+            print(f"\nTRABAJANDO EN: {institucion['nombre_u']}")
             
-            if not verificar_permiso_etico(driver, inst['url_base']):
+            if not verificar_permiso_etico(navegador, institucion['web_principal']):
                 continue
 
-            for url in inst['urls_objetivo']:
-                datos = scrapear_carrera(driver, url, inst['url_base'])
-                if datos:
-                    datos['institucion'] = inst['nombre'] # Etiqueta para el filtro de React
-                    catalogo_final.append(datos)
-                time.sleep(2) # Pausa de cortesía
+            for url in institucion['enlaces_a_scrapear']:
+                datos_extraidos = extraer_datos_carrera(navegador, url, institucion['web_principal'])
+                
+                if datos_extraidos:
+                    # Añadimos la marca de la institución
+                    datos_extraidos['institucion'] = institucion['nombre_u']
+                    resultado_final_json.append(datos_extraidos)
+                
+                time.sleep(2) # Pausa ética
 
-        # --- GUARDADO FINAL ---
-        ruta_react = os.path.join('..', 'Producto', 'elige-tu-futuro', 'src', 'datos.json')
-        os.makedirs(os.path.dirname(ruta_react), exist_ok=True)
+        # --- GUARDADO EN ARCHIVO JSON ---
+        ruta_archivo_datos = os.path.join('..', 'Producto', 'elige-tu-futuro', 'src', 'datos.json')
+        os.makedirs(os.path.dirname(ruta_archivo_datos), exist_ok=True)
         
-        with open(ruta_react, 'w', encoding='utf-8') as f:
-            json.dump(catalogo_final, f, ensure_ascii=False, indent=4)
+        with open(ruta_archivo_datos, 'w', encoding='utf-8') as archivo_json:
+            json.dump(resultado_final_json, archivo_json, ensure_ascii=False, indent=4)
             
-        print(f"\nPROCESO TERMINADO ✨")
-        print(f"JSON: {ruta_react}")
-        print(f"Mallas: ../Producto/elige-tu-futuro/public/mallas")
+        print(f"\nPROCESO FINALIZADO CON ÉXITO")
+        print(f"Se han guardado {len(resultado_final_json)} carreras.")
+        print(f"JSON: {ruta_archivo_datos}")
 
-    except Exception as e:
-        print(f"Error crítico: {e}")
+        print(f"Mallas: ../Producto/elige-tu-futuro/public/mallas")
+    except Exception as error_critico:
+        print(f"Error crítico en el sistema: {error_critico}")
     finally:
-        if 'driver' in locals():
-            driver.quit()
+        if 'navegador' in locals():
+            navegador.quit()
 
 if __name__ == "__main__":
-    iniciar_crawler_maestro()
+    iniciar_extraccion_total()
