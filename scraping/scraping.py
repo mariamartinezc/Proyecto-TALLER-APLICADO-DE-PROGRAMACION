@@ -85,8 +85,12 @@ def extraer_datos_carrera(navegador, url_especifica, url_base):
         # 4. Sedes y Aranceles (Lógica reforzada para Online y Presencial)
         sedes_validas = ["MAIPÚ", "PLAZA OESTE", "SAN JOAQUÍN", "VIÑA DEL MAR", "PUENTE ALTO", 
                         "ALONSO DE OVALLE", "PLAZA NORTE", "MELIPILLA", "SANTIAGO CENTRO", 
-                        "SAN BERNARDO", "CONCEPCIÓN", "VIRTUAL", "ONLINE"]
-        info_sedes = []
+                        "SAN BERNARDO", "CONCEPCIÓN", "ONLINE", "ANTONIO VARAS", "PADRE ALONSO DE OVALLE",
+                        "PLAZA VESPUCIO", "SAN BERNARDO", "ALAMEDA", "PUERTO MONTT","CAMPUS NACIMIENTO",
+                        "ANTONIO VARAS", "SAN CARLOS DE APOQUINDO", "SAN ANDRÉS DE CONCEPCIÓN"
+
+                        ]
+        info_sedes = [] 
         
         # CASO A: Buscar si es Modalidad Online/Virtual
         if "ONLINE" in texto_full.upper() or "VIRTUAL" in texto_full.upper():
@@ -149,7 +153,28 @@ def iniciar_extraccion_total():
             "https://www.duoc.cl/carreras/administracion-publica-2/",
             "https://www.duoc.cl/carreras/ingenieria-en-infraestructura-tecnologica/",
             "https://www.duoc.cl/carreras/administracion-de-empresas/",
-            "https://www.duoc.cl/carreras/administracion-en-turismo-y-hospitalidad-mencion-administracion-hotelera-2/"
+            "https://www.duoc.cl/carreras/administracion-en-turismo-y-hospitalidad-mencion-administracion-hotelera-2/",
+            "https://www.duoc.cl/carreras/administracion-en-turismo-y-hospitalidad-mencion-ecoturismo/",
+            "https://www.duoc.cl/carreras/administracion-en-turismo-y-hospitalidad-mencion-gestion-de-destinos-turisticos/",
+            "https://www.duoc.cl/carreras/administracion-en-turismo-y-hospitalidad-mencion-hospitality-management-2/",
+            "https://www.duoc.cl/carreras/administracion-publica-2/",
+            "https://www.duoc.cl/carreras/analista-programador-computacional/",
+            "https://www.duoc.cl/carreras/animacion-digital-2/",
+            "https://www.duoc.cl/carreras/audit-nuevatest/",
+            "https://www.duoc.cl/carreras/auditoria-2/",
+            "https://www.duoc.cl/carreras/auditoria-y-analisis-de-negocios/",
+            "https://www.duoc.cl/carreras/comercio-exterior-2/",
+            "https://www.duoc.cl/carreras/comunicacion-audiovisual-2/",
+            "https://www.duoc.cl/carreras/contabilidad-general-mencion-legislacion-tributaria/",
+            "https://www.duoc.cl/carreras/contabilidad-tributaria-5/",
+            "https://www.duoc.cl/carreras/desarrollo-de-aplicaciones-5/",
+            "https://www.duoc.cl/carreras/desarrollo-y-diseno-web/",
+            "https://www.duoc.cl/carreras/dibujo-y-modelamiento-arquitectonico-y-estructural/",
+            "https://www.duoc.cl/carreras/diseno-de-ambientes/",
+            "https://www.duoc.cl/carreras/diseno-de-vestuario-2/",
+            "https://www.duoc.cl/carreras/diseno-grafico-3/",
+            "https://www.duoc.cl/carreras/diseno-industrial-3/",
+            "https://www.duoc.cl/carreras/gastronomia-2/"
         ]
     }
     
