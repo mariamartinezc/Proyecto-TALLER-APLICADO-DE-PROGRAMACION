@@ -27,7 +27,7 @@ Antes de instalar o ejecutar cualquier cosa, el entorno debe estar "encendido".
 
 Comando (Windows PowerShell):
 
-		.\venv\Scripts\activate
+		.\venv\Scripts\Activate.ps1
 
 --> Resultado: Deberías ver un (venv) al principio de tu línea de comandos en la terminal.
 __________________________________________________________________________________________________________________________

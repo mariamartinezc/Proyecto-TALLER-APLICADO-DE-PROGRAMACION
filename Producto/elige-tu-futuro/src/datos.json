@@ -1,5 +1,176 @@
 [
     {
+        "nombre_carrera": "Administración de Empresas",
+        "duracion": "10 Bimestres",
+        "url_fuente": "https://www.duoc.cl/carreras/administracion-de-empresas",
+        "descripcion": "Descripción del Perfil de Egreso",
+        "campo_laboral": "El campo ocupacional del Administrador(a) de Empresas es amplio y\ndiverso, pudiendo desempeñarse en diferentes organizaciones, tanto\npúblicas como privadas, como asistente, coordinador(a), supervisor(a),\nanalista o ejecutivo(a), realizando funciones administrativas de\nanálisis, control, operaciones y administración del negocio en general.",
+        "malla_pdf": "/mallas/malla_administración_de_empresas.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "132000",
+                "arancel": "237000"
+            },
+            {
+                "sede": "ONLINE",
+                "matricula": "132000",
+                "arancel": "237000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Administración en Turismo y Hospitalidad Mención Administración Hotelera",
+        "duracion": "8 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/administracion-en-turismo-y-hospitalidad-mencion-administracion-hotelera-2",
+        "descripcion": "Competencias del Perfil de Egreso",
+        "campo_laboral": "Así mismo, podrá ejercer su profesión de manera autónoma, de acuerdo con\nel dinamismo propio del ámbito ocupacional de las áreas del turismo y la\nhotelería.",
+        "malla_pdf": "/mallas/malla_administración_en_turismo_y_hospitalidad_mención_administración_hotelera.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "174000",
+                "arancel": "443000"
+            },
+            {
+                "sede": "ALONSO DE OVALLE",
+                "matricula": "174000",
+                "arancel": "443000"
+            },
+            {
+                "sede": "ANTONIO VARAS",
+                "matricula": "174000",
+                "arancel": "443000"
+            },
+            {
+                "sede": "SAN BERNARDO",
+                "matricula": "148000",
+                "arancel": "443000"
+            },
+            {
+                "sede": "PUERTO MONTT",
+                "matricula": "148000",
+                "arancel": "383000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Administración en Turismo y Hospitalidad Mención Gestión para el Ecoturismo",
+        "duracion": "8 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/administracion-en-turismo-y-hospitalidad-mencion-ecoturismo",
+        "descripcion": "Competencias del Perfil de Egreso",
+        "campo_laboral": "Así mismo, podrá ejercer su profesión de manera autónoma, de acuerdo con\nel dinamismo propio del ámbito ocupacional de las áreas del turismo y la\nhotelería.",
+        "malla_pdf": "/mallas/malla_administración_en_turismo_y_hospitalidad_mención_gestión_para_el_ecoturismo.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "174000",
+                "arancel": "390000"
+            },
+            {
+                "sede": "SAN BERNARDO",
+                "matricula": "174000",
+                "arancel": "390000"
+            },
+            {
+                "sede": "CONCEPCIÓN",
+                "matricula": "174000",
+                "arancel": "383000"
+            },
+            {
+                "sede": "ANTONIO VARAS",
+                "matricula": "174000",
+                "arancel": "443000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Administración en Turismo y Hospitalidad Mención Gestión de Destinos Turísticos",
+        "duracion": "8 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/administracion-en-turismo-y-hospitalidad-mencion-gestion-de-destinos-turisticos",
+        "descripcion": "Competencias del Perfil de Egreso",
+        "campo_laboral": "Así mismo, podrá ejercer su profesión de manera autónoma, de acuerdo con\nel dinamismo propio del ámbito ocupacional de las áreas del turismo y la\nhotelería.",
+        "malla_pdf": "/mallas/malla_administración_en_turismo_y_hospitalidad_mención_gestión_de_destinos_turísticos.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "174000",
+                "arancel": "390000"
+            },
+            {
+                "sede": "ALONSO DE OVALLE",
+                "matricula": "174000",
+                "arancel": "390000"
+            },
+            {
+                "sede": "ANTONIO VARAS",
+                "matricula": "174000",
+                "arancel": "443000"
+            },
+            {
+                "sede": "CONCEPCIÓN",
+                "matricula": "148000",
+                "arancel": "383000"
+            },
+            {
+                "sede": "SAN BERNARDO",
+                "matricula": "174000",
+                "arancel": "390000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Administración en Turismo y Hospitalidad Mención Hospitality Management",
+        "duracion": "4 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/administracion-en-turismo-y-hospitalidad-mencion-hospitality-management-2",
+        "descripcion": "Competencias del Perfil de Egreso",
+        "campo_laboral": "Así mismo, podrá ejercer su profesión de manera autónoma, de acuerdo con\nel dinamismo propio del ámbito ocupacional de las áreas del turismo y la\nhotelería.",
+        "malla_pdf": "/mallas/malla_administración_en_turismo_y_hospitalidad_mención_hospitality_management.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "174000",
+                "arancel": "443000"
+            },
+            {
+                "sede": "ONLINE",
+                "matricula": "174000",
+                "arancel": "443000"
+            },
+            {
+                "sede": "ANTONIO VARAS",
+                "matricula": "174000",
+                "arancel": "443000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Administración Pública",
+        "duracion": "20 Bimestres",
+        "url_fuente": "https://www.duoc.cl/carreras/administracion-publica-2",
+        "descripcion": "Competencias de la Carrera",
+        "campo_laboral": "Descripción del Campo Ocupacional",
+        "malla_pdf": "/mallas/malla_administración_pública.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "174000",
+                "arancel": "276000"
+            },
+            {
+                "sede": "ONLINE",
+                "matricula": "174000",
+                "arancel": "276000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
         "nombre_carrera": "Analista Programador",
         "duracion": "5 Semestres",
         "url_fuente": "https://www.duoc.cl/carreras/analista-programador-2",
@@ -71,9 +242,1312 @@
         "institucion": "Duoc UC"
     },
     {
+        "nombre_carrera": "Analista Programador Computacional",
+        "duracion": "10 Bimestres",
+        "url_fuente": "https://www.duoc.cl/carreras/analista-programador-computacional",
+        "descripcion": "Competencias de la Carrera",
+        "campo_laboral": "El campo laboral de la carrera de Analista Programador Computacional se\nvincula a las áreas de las tecnologías de la información, en\norganizaciones y empresas de diversas áreas productivas, y que requieran\ntanto de análisis de sistemas como de desarrollo de soluciones de\nsoftware, además de integrar y adaptar sistemas existentes, velando por\nsu correcto funcionamiento y de las aplicaciones. Así mismo, puede\nejercer de manera autónoma, como asesor y/o consultor en el desarrollo\nde soluciones de software, de acuerdo con su ámbito de desempeño como\ntécnico del área",
+        "malla_pdf": "/mallas/malla_analista_programador_computacional.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "132000",
+                "arancel": "306000"
+            },
+            {
+                "sede": "ONLINE",
+                "matricula": "132000",
+                "arancel": "306000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Animación Digital",
+        "duracion": "8 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/animacion-digital-2",
+        "descripcion": "Competencias del perfil de egreso",
+        "campo_laboral": "El campo laboral del Animador Digital está constituido por empresas de\ndesarrollo de contenido audiovisual, productoras, agencias de\nPublicidad, Canales de TV que se dedican a preproducción, producción,\npostproducción y efectos de piezas animadas, videojuegos, cortometrajes\n2D y 3D, efectos visuales y publicidad animada a nivel nacional e\ninternacional. Puede desempeñarse dentro del área de Animación, proceso\nde preproducción, producción y postproducción 2D y 3D, prestar servicios\ne integrarse a equipos de trabajo audiovisual y también en el ejercicio\nlibre de la profesión.",
+        "malla_pdf": "/mallas/malla_animación_digital.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "174000",
+                "arancel": "398000"
+            },
+            {
+                "sede": "MAIPÚ",
+                "matricula": "174000",
+                "arancel": "398000"
+            },
+            {
+                "sede": "VIÑA DEL MAR",
+                "matricula": "174000",
+                "arancel": "354000"
+            },
+            {
+                "sede": "SAN CARLOS DE APOQUINDO",
+                "matricula": "174000",
+                "arancel": "409000"
+            },
+            {
+                "sede": "CONCEPCIÓN",
+                "matricula": "148000",
+                "arancel": "354000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Audit-NuevaTest",
+        "duracion": "8 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/audit-nuevatest",
+        "descripcion": "Competencias de la Carrera",
+        "campo_laboral": "El Campo Laboral del o la Contador(a) Auditor(a) está compuesto por\norganizaciones públicas y privadas de distintos tamaños y de diversos\nsectores económicos agregando valor a los procesos a su cargo. También\nse puede desarrollar en el libre ejercicio de su profesión para diversas\nentidades y contribuyentes, a través del asesoramiento o asistencia\ntécnica en las áreas de contabilidad, finanzas, tributación y laboral,\ncomo también en áreas de auditoría interna, auditoría tributaria,\nauditoría de estados financieros, auditoría forense y auditoría de\nsistemas de información.",
+        "malla_pdf": null,
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "174000",
+                "arancel": "301000"
+            },
+            {
+                "sede": "PLAZA OESTE",
+                "matricula": "174000",
+                "arancel": "301000"
+            },
+            {
+                "sede": "MELIPILLA",
+                "matricula": "174000",
+                "arancel": "301000"
+            },
+            {
+                "sede": "ANTONIO VARAS",
+                "matricula": "174000",
+                "arancel": "301000"
+            },
+            {
+                "sede": "ALONSO DE OVALLE",
+                "matricula": "174000",
+                "arancel": "301000"
+            },
+            {
+                "sede": "PLAZA NORTE",
+                "matricula": "174000",
+                "arancel": "301000"
+            },
+            {
+                "sede": "VIÑA DEL MAR",
+                "matricula": "174000",
+                "arancel": "290000"
+            },
+            {
+                "sede": "PLAZA VESPUCIO",
+                "matricula": "174000",
+                "arancel": "301000"
+            },
+            {
+                "sede": "SAN BERNARDO",
+                "matricula": "174000",
+                "arancel": "301000"
+            },
+            {
+                "sede": "PUENTE ALTO",
+                "matricula": "174000",
+                "arancel": "301000"
+            },
+            {
+                "sede": "ALAMEDA",
+                "matricula": "174000",
+                "arancel": "301000"
+            },
+            {
+                "sede": "PUERTO MONTT",
+                "matricula": "148000",
+                "arancel": "291000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Auditoría",
+        "duracion": "8 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/auditoria-2",
+        "descripcion": "Competencias de la Carrera",
+        "campo_laboral": "El Campo Laboral del o la Contador(a) Auditor(a) está compuesto por\norganizaciones públicas y privadas de distintos tamaños y de diversos\nsectores económicos agregando valor a los procesos a su cargo. También\nse puede desarrollar en el libre ejercicio de su profesión para diversas\nentidades y contribuyentes, a través del asesoramiento o asistencia\ntécnica en las áreas de contabilidad, finanzas, tributación y laboral,\ncomo también en áreas de auditoría interna, auditoría tributaria,\nauditoría de estados financieros, auditoría forense y auditoría de\nsistemas de información.",
+        "malla_pdf": "/mallas/malla_auditoría.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "174000",
+                "arancel": "301000"
+            },
+            {
+                "sede": "PLAZA OESTE",
+                "matricula": "174000",
+                "arancel": "301000"
+            },
+            {
+                "sede": "MELIPILLA",
+                "matricula": "174000",
+                "arancel": "301000"
+            },
+            {
+                "sede": "ANTONIO VARAS",
+                "matricula": "174000",
+                "arancel": "301000"
+            },
+            {
+                "sede": "ALONSO DE OVALLE",
+                "matricula": "174000",
+                "arancel": "301000"
+            },
+            {
+                "sede": "PLAZA NORTE",
+                "matricula": "174000",
+                "arancel": "301000"
+            },
+            {
+                "sede": "VIÑA DEL MAR",
+                "matricula": "174000",
+                "arancel": "290000"
+            },
+            {
+                "sede": "PLAZA VESPUCIO",
+                "matricula": "174000",
+                "arancel": "301000"
+            },
+            {
+                "sede": "SAN BERNARDO",
+                "matricula": "174000",
+                "arancel": "301000"
+            },
+            {
+                "sede": "PUENTE ALTO",
+                "matricula": "174000",
+                "arancel": "301000"
+            },
+            {
+                "sede": "ALAMEDA",
+                "matricula": "174000",
+                "arancel": "301000"
+            },
+            {
+                "sede": "PUERTO MONTT",
+                "matricula": "148000",
+                "arancel": "291000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Auditoría y Análisis de Negocios",
+        "duracion": "18 Bimestres",
+        "url_fuente": "https://www.duoc.cl/carreras/auditoria-y-analisis-de-negocios",
+        "descripcion": "Competencias de la Carrera",
+        "campo_laboral": "Descripción del Campo Ocupacional",
+        "malla_pdf": "/mallas/malla_auditoría_y_análisis_de_negocios.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "174000",
+                "arancel": "254000"
+            },
+            {
+                "sede": "ONLINE",
+                "matricula": "174000",
+                "arancel": "254000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Comercio Exterior",
+        "duracion": "5 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/comercio-exterior-2",
+        "descripcion": "Competencias de la Carrera",
+        "campo_laboral": "Descripción del Campo Ocupacional",
+        "malla_pdf": "/mallas/malla_comercio_exterior.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "132000",
+                "arancel": "280000"
+            },
+            {
+                "sede": "VIÑA DEL MAR",
+                "matricula": "132000",
+                "arancel": "280000"
+            },
+            {
+                "sede": "PLAZA VESPUCIO",
+                "matricula": "132000",
+                "arancel": "280000"
+            },
+            {
+                "sede": "ALONSO DE OVALLE",
+                "matricula": "132000",
+                "arancel": "280000"
+            },
+            {
+                "sede": "SAN BERNARDO",
+                "matricula": "132000",
+                "arancel": "280000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Comunicación Audiovisual",
+        "duracion": "8 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/comunicacion-audiovisual-2",
+        "descripcion": "Competencias de la Carrera",
+        "campo_laboral": "El campo laboral del Comunicador Audiovisual comprende canales de\ntelevisión, productoras de cine, video y multimedia, centros de\npostproducción audiovisual, departamentos audiovisuales de empresas,\nservicios técnicos y creativos de la realización audiovisual (cámara,\niluminación, producción, postproducción), radio, estudios de grabación,\nempresas multimedia e internet y el ejercicio independiente de\ncualquiera de estas áreas.",
+        "malla_pdf": "/mallas/malla_comunicación_audiovisual.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "174000",
+                "arancel": "353000"
+            },
+            {
+                "sede": "VIÑA DEL MAR",
+                "matricula": "174000",
+                "arancel": "353000"
+            },
+            {
+                "sede": "SAN CARLOS DE APOQUINDO",
+                "matricula": "174000",
+                "arancel": "438000"
+            },
+            {
+                "sede": "CONCEPCIÓN",
+                "matricula": "148000",
+                "arancel": "353000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Contabilidad General Mención Legislación Tributaria",
+        "duracion": "5 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/contabilidad-general-mencion-legislacion-tributaria",
+        "descripcion": "Competencias de la Carrera",
+        "campo_laboral": "El Campo Laboral del o la Contador(a) General mención Legislación\nTributaria está compuesto por organizaciones públicas y privadas de\ndistintos tamaños y de diversos sectores económicos agregando valor a\nlos procesos a su cargo. También se puede desarrollar en el libre\nejercicio de su profesión para diversas entidades y contribuyentes, a\ntravés del asesoramiento o asistencia técnica en las áreas de\ncontabilidad, finanzas, tributación y laboral.",
+        "malla_pdf": "/mallas/malla_contabilidad_general_mención_legislación_tributaria.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "132000",
+                "arancel": "263000"
+            },
+            {
+                "sede": "MAIPÚ",
+                "matricula": "132000",
+                "arancel": "263000"
+            },
+            {
+                "sede": "PLAZA NORTE",
+                "matricula": "132000",
+                "arancel": "276000"
+            },
+            {
+                "sede": "PLAZA VESPUCIO",
+                "matricula": "132000",
+                "arancel": "276000"
+            },
+            {
+                "sede": "VIÑA DEL MAR",
+                "matricula": "132000",
+                "arancel": "263000"
+            },
+            {
+                "sede": "SAN BERNARDO",
+                "matricula": "132000",
+                "arancel": "276000"
+            },
+            {
+                "sede": "ALONSO DE OVALLE",
+                "matricula": "132000",
+                "arancel": "276000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Contabilidad Tributaria",
+        "duracion": "10 Bimestres",
+        "url_fuente": "https://www.duoc.cl/carreras/contabilidad-tributaria-5",
+        "descripcion": "Competencias de la Carrera",
+        "campo_laboral": "El Campo Laboral del o la Contador(a) Tributario(a) está compuesto por\norganizaciones públicas y privadas de distintos tamaños y de diversos\nsectores económicos. También se puede desarrollar en el libre ejercicio\nde su profesión para diversas entidades y contribuyentes, a través del\nasesoramiento o asistencia técnica en las áreas de contabilidad,\nfinanzas, tributación y laboral.",
+        "malla_pdf": "/mallas/malla_contabilidad_tributaria.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "132000",
+                "arancel": "233000"
+            },
+            {
+                "sede": "ONLINE",
+                "matricula": "132000",
+                "arancel": "233000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Desarrollo de Aplicaciones",
+        "duracion": "10 Bimestres",
+        "url_fuente": "https://www.duoc.cl/carreras/desarrollo-de-aplicaciones-5",
+        "descripcion": "Competencias de la Carrera",
+        "campo_laboral": "CAMPO LABORAL",
+        "malla_pdf": "/mallas/malla_desarrollo_de_aplicaciones.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "132000",
+                "arancel": "260000"
+            },
+            {
+                "sede": "ONLINE",
+                "matricula": "132000",
+                "arancel": "260000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Desarrollo y Diseño Web",
+        "duracion": "9 Bimestres",
+        "url_fuente": "https://www.duoc.cl/carreras/desarrollo-y-diseno-web",
+        "descripcion": "Competencias de la Carrera",
+        "campo_laboral": "El campo laboral del especialista en Desarrollo y Diseño Web, contempla desarrollarse tanto en el ejercicio libre de la profesión de manera\nindependiente, prestando servicios de desarrollo web para distintos tipos de cliente agencias y/o empresas, como integrando equipos de trabajo\nmultidisciplinarios dentro de oficinas de diseño y publicidad especializadas en el desarrollo de soluciones digitales. Además, podrá desarrollarse\ndentro de instituciones de servicios públicas o privadas trabajando en departamento de Comunicaciones, Marketing y Diseño principalmente.",
+        "malla_pdf": "/mallas/malla_desarrollo_y_diseño_web.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "132000",
+                "arancel": "290000"
+            },
+            {
+                "sede": "ONLINE",
+                "matricula": "132000",
+                "arancel": "290000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Dibujo y Modelamiento Arquitectónico y Estructural",
+        "duracion": "5 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/dibujo-y-modelamiento-arquitectonico-y-estructural",
+        "descripcion": "MALLA DE LA CARRERAMALLA:DIBUJO Y MODELAMIENTO ARQUITECTÓNICO Y ESTRUCTURALDESCARGA AQUÍ",
+        "campo_laboral": "CAMPO LABORAL",
+        "malla_pdf": "/mallas/malla_dibujo_y_modelamiento_arquitectónico_y_estructural.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "132000",
+                "arancel": "263000"
+            },
+            {
+                "sede": "MAIPÚ",
+                "matricula": "132000",
+                "arancel": "263000"
+            },
+            {
+                "sede": "ALAMEDA",
+                "matricula": "132000",
+                "arancel": "268000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Diseño de Ambientes",
+        "duracion": "8 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/diseno-de-ambientes",
+        "descripcion": "Las y los estudiantes de la carrera de Diseño de Ambientes podrán postular a alguna de las siguientes especializaciones ofrecidas durante el cuarto semestre:",
+        "campo_laboral": "Descripción del Campo Laboral",
+        "malla_pdf": "/mallas/malla_diseño_de_ambientes.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "174000",
+                "arancel": "334000"
+            },
+            {
+                "sede": "PLAZA OESTE",
+                "matricula": "174000",
+                "arancel": "334000"
+            },
+            {
+                "sede": "VIÑA DEL MAR",
+                "matricula": "174000",
+                "arancel": "310000"
+            },
+            {
+                "sede": "SAN CARLOS DE APOQUINDO",
+                "matricula": "174000",
+                "arancel": "329000"
+            },
+            {
+                "sede": "ALONSO DE OVALLE",
+                "matricula": "174000",
+                "arancel": "334000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Diseño de Vestuario",
+        "duracion": "8 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/diseno-de-vestuario-2",
+        "descripcion": "Las y los estudiantes de la carrera de Diseño de Vestuario podrán postular a alguna de las siguientes especializaciones ofrecidas durante el cuarto semestre:",
+        "campo_laboral": "La persona titulada de Diseño de Vestuario de Duoc UC podrá desarrollarse en diversas áreas del diseño tales como: ropa, accesorios, vestuario para audiovisuales, espacios y vitrinas, y vestuario para eventos específicos. Además, en el desarrollo de productos, supervisión y coordinación de vestuario, investigación histórica y cultural, estilismo para sesiones fotográficas y publicidad, innovación textil y tecnológica.\n\nEn su rol, tendrá la capacidad de crear y desarrollar indumentaria para una variedad de contextos, desde la moda y el entretenimiento hasta el diseño funcional para industrias e",
+        "malla_pdf": "/mallas/malla_diseño_de_vestuario.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "174000",
+                "arancel": "311000"
+            },
+            {
+                "sede": "VIÑA DEL MAR",
+                "matricula": "174000",
+                "arancel": "311000"
+            },
+            {
+                "sede": "SAN CARLOS DE APOQUINDO",
+                "matricula": "174000",
+                "arancel": "351000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Diseño Gráfico",
+        "duracion": "8 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/diseno-grafico-3",
+        "descripcion": "Las y los estudiantes de la carrera de Diseño Gráfico podrán postular a alguna de las siguientes menciones ofrecidas durante el cuarto semestre:",
+        "campo_laboral": "Descripción del Perfil de Egreso y campo laboral",
+        "malla_pdf": "/mallas/malla_diseño_gráfico.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "174000",
+                "arancel": "311000"
+            },
+            {
+                "sede": "PLAZA OESTE",
+                "matricula": "174000",
+                "arancel": "311000"
+            },
+            {
+                "sede": "PLAZA VESPUCIO",
+                "matricula": "174000",
+                "arancel": "344000"
+            },
+            {
+                "sede": "SAN CARLOS DE APOQUINDO",
+                "matricula": "174000",
+                "arancel": "361000"
+            },
+            {
+                "sede": "VIÑA DEL MAR",
+                "matricula": "174000",
+                "arancel": "311000"
+            },
+            {
+                "sede": "ALONSO DE OVALLE",
+                "matricula": "174000",
+                "arancel": "344000"
+            },
+            {
+                "sede": "CONCEPCIÓN",
+                "matricula": "148000",
+                "arancel": "311000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Diseño Industrial e Innovación en Productos",
+        "duracion": "8 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/diseno-industrial-3",
+        "descripcion": "Las y los estudiantes de la carrera de Diseño de Productos podrán postular a alguna de las siguientes especializaciones ofrecidas durante el cuarto semestre:",
+        "campo_laboral": "La persona titulada de Diseño Industrial e Innovación en Productos de Duoc UC podrá desarrollarse en diversas áreas del diseño de: productos de consumo masivo, productos eléctricos y tecnológicos, equipamiento industrial, muebles y accesorios, equipamiento para espacios públicos y urbanos, y productos sostenibles.\n\nEn su rol tendrá la capacidad de diseñar objetos físicos, considerando su funcionalidad, ergonomía, estética, sostenibilidad y viabilidad económica, para ello debe integrar creatividad, habilidades técnicas, conocimientos de materiales y procesos de producción, así como una comprens",
+        "malla_pdf": "/mallas/malla_diseño_industrial_e_innovación_en_productos.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "174000",
+                "arancel": "307000"
+            },
+            {
+                "sede": "PLAZA OESTE",
+                "matricula": "174000",
+                "arancel": "307000"
+            },
+            {
+                "sede": "SAN CARLOS DE APOQUINDO",
+                "matricula": "174000",
+                "arancel": "332000"
+            },
+            {
+                "sede": "ALONSO DE OVALLE",
+                "matricula": "174000",
+                "arancel": "332000"
+            },
+            {
+                "sede": "VIÑA DEL MAR",
+                "matricula": "148000",
+                "arancel": "307000"
+            },
+            {
+                "sede": "CONCEPCIÓN",
+                "matricula": "148000",
+                "arancel": "307000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Gastronomía",
+        "duracion": "5 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/gastronomia-2",
+        "descripcion": "Competencias de la Carrera",
+        "campo_laboral": "Descripción del Campo Ocupacional",
+        "malla_pdf": "/mallas/malla_gastronomía.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "132000",
+                "arancel": "318000"
+            },
+            {
+                "sede": "ALONSO DE OVALLE",
+                "matricula": "132000",
+                "arancel": "318000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Gastronomía Internacional",
+        "duracion": "8 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/gastronomia-internacional-2",
+        "descripcion": "Competencias de la Carrera",
+        "campo_laboral": "Descripción del Campo Ocupacional",
+        "malla_pdf": "/mallas/malla_gastronomía_internacional.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "174000",
+                "arancel": "351000"
+            },
+            {
+                "sede": "CONCEPCIÓN",
+                "matricula": "174000",
+                "arancel": "351000"
+            },
+            {
+                "sede": "ANTONIO VARAS",
+                "matricula": "174000",
+                "arancel": "431000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Ilustración para Contextos Globales",
+        "duracion": "8 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/ilustracion-para-contextos-globales",
+        "descripcion": "Las y los estudiantes de la carrera de Ilustración para Mercados Globales podrán postular a alguna de las siguientes especializaciones ofrecidas durante el cuarto semestre:",
+        "campo_laboral": "Descripción del Campo Laboral",
+        "malla_pdf": "/mallas/malla_ilustración_para_contextos_globales.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "174000",
+                "arancel": "336000"
+            },
+            {
+                "sede": "VIÑA DEL MAR",
+                "matricula": "174000",
+                "arancel": "336000"
+            },
+            {
+                "sede": "SAN CARLOS DE APOQUINDO",
+                "matricula": "174000",
+                "arancel": "354000"
+            },
+            {
+                "sede": "CONCEPCIÓN",
+                "matricula": "148000",
+                "arancel": "305000"
+            },
+            {
+                "sede": "PLAZA VESPUCIO",
+                "matricula": "174000",
+                "arancel": "336000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Informática Biomédica",
+        "duracion": "8 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/informatica-biomedica-2",
+        "descripcion": "Competencias del Perfil de Egreso",
+        "campo_laboral": "Descripción del Campo Laboral",
+        "malla_pdf": "/mallas/malla_informática_biomédica.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "174000",
+                "arancel": "329000"
+            },
+            {
+                "sede": "MAIPÚ",
+                "matricula": "174000",
+                "arancel": "329000"
+            },
+            {
+                "sede": "SAN JOAQUÍN",
+                "matricula": "174000",
+                "arancel": "303000"
+            },
+            {
+                "sede": "CONCEPCIÓN",
+                "matricula": "148000",
+                "arancel": "301000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Ingeniería Agrícola",
+        "duracion": "8 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/ingenieria-agricola-4",
+        "descripcion": "Competencias de la Carrera",
+        "campo_laboral": "En el ámbito ocupacional, las y los egresados están preparados para\nocupar roles estratégicos y especializados en diferentes áreas de la\nagricultura. Su versatilidad les permite abordar desde la gestión\nintegral de cultivos hasta la operación y aplicación de tecnologías de\nvanguardia.",
+        "malla_pdf": "/mallas/malla_ingeniería_agrícola.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "174000",
+                "arancel": "337000"
+            },
+            {
+                "sede": "PUENTE ALTO",
+                "matricula": "174000",
+                "arancel": "337000"
+            },
+            {
+                "sede": "SAN BERNARDO",
+                "matricula": "174000",
+                "arancel": "337000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Ingeniería en Administración Mención Finanzas",
+        "duracion": "8 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/ingenieria-en-administracion-mencion-finanzas-2",
+        "descripcion": "Competencias de la Carrera",
+        "campo_laboral": "El campo laboral del Ingeniero o Ingeniera en Administración con mención\nen Finanzas es muy amplio y diverso, y puede incluir una variedad de\norganizaciones públicas y privadas de diferentes tamaños y sectores\neconómicos. En general, el rol de estos profesionales se enfoca en las\náreas de administración y finanzas, con el objetivo de agregar valor a\nlos procesos a su cargo.",
+        "malla_pdf": "/mallas/malla_ingeniería_en_administración_mención_finanzas.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "174000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "MAIPÚ",
+                "matricula": "174000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "ANTONIO VARAS",
+                "matricula": "174000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "MELIPILLA",
+                "matricula": "174000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "PLAZA OESTE",
+                "matricula": "174000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "ALONSO DE OVALLE",
+                "matricula": "174000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "PLAZA NORTE",
+                "matricula": "174000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "SAN BERNARDO",
+                "matricula": "174000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "SAN CARLOS DE APOQUINDO",
+                "matricula": "174000",
+                "arancel": "319000"
+            },
+            {
+                "sede": "ALAMEDA",
+                "matricula": "174000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "VIÑA DEL MAR",
+                "matricula": "148000",
+                "arancel": "297000"
+            },
+            {
+                "sede": "PUERTO MONTT",
+                "matricula": "148000",
+                "arancel": "297000"
+            },
+            {
+                "sede": "CONCEPCIÓN",
+                "matricula": "148000",
+                "arancel": "297000"
+            },
+            {
+                "sede": "PUENTE ALTO",
+                "matricula": "174000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "PLAZA VESPUCIO",
+                "matricula": "174000",
+                "arancel": "326000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Ingeniería en Administración Mención Gestión de Personas",
+        "duracion": "8 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/ingenieria-en-administracion-mencion-gestion-de-personas-2",
+        "descripcion": "Competencias de la Carrera",
+        "campo_laboral": "El Campo laboral del Ingeniero o Ingeniera en Administración\nmención Gestión de Personas está compuesto por organizaciones\npúblicas y privadas de distintos tamaños y de diversos sectores\neconómicos, en las áreas de administración y las que componen el\nsubsistema de gestión de personas, agregando valor a los procesos\na su cargo.Manejar técnicas de obtención, modelamiento y análisis de datos,\nhaciendo uso de herramientas tecnológicas, que permitan generar\nvalor a la toma de decisiones.Aplicar herramientas de diagnóstico estratégico y modelo de\nnegocios, considerando un desarrollo económico soste",
+        "malla_pdf": "/mallas/malla_ingeniería_en_administración_mención_gestión_de_personas.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "174000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "MAIPÚ",
+                "matricula": "174000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "ANTONIO VARAS",
+                "matricula": "174000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "MELIPILLA",
+                "matricula": "174000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "ALONSO DE OVALLE",
+                "matricula": "174000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "PLAZA NORTE",
+                "matricula": "174000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "PLAZA VESPUCIO",
+                "matricula": "174000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "PLAZA OESTE",
+                "matricula": "174000",
+                "arancel": "297000"
+            },
+            {
+                "sede": "VIÑA DEL MAR",
+                "matricula": "148000",
+                "arancel": "325000"
+            },
+            {
+                "sede": "CONCEPCIÓN",
+                "matricula": "148000",
+                "arancel": "297000"
+            },
+            {
+                "sede": "PUENTE ALTO",
+                "matricula": "174000",
+                "arancel": "297000"
+            },
+            {
+                "sede": "ALAMEDA",
+                "matricula": "174000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "PUERTO MONTT",
+                "matricula": "148000",
+                "arancel": "297000"
+            },
+            {
+                "sede": "SAN BERNARDO",
+                "matricula": "174000",
+                "arancel": "326000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Ingeniería en Administración Mención Innovación y Emprendimiento",
+        "duracion": "8 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/ingenieria-en-administracion-mencion-innovacion-y-emprendimiento-3",
+        "descripcion": "Competencias de la Carrera",
+        "campo_laboral": "El campo laboral del Ingeniero o Ingeniera en Administración con mención en Innovación y Emprendimiento abarca una amplia variedad de organizaciones, tanto públicas como privadas, de diferentes tamaños y sectores económicos. Las áreas de trabajo pueden incluir la administración y apoyo en múltiples instituciones relacionadas con la creación de emprendimientos e innovación, así como también la generación de ideas innovadoras y la creación de emprendimientos propios. Además, estas habilidades lo capacitan para trabajar de manera independiente, ya sea administrando su propio emprendimiento o desa",
+        "malla_pdf": "/mallas/malla_ingeniería_en_administración_mención_innovación_y_emprendimiento.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "174000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "MAIPÚ",
+                "matricula": "174000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "ANTONIO VARAS",
+                "matricula": "174000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "PLAZA NORTE",
+                "matricula": "174000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "VIÑA DEL MAR",
+                "matricula": "174000",
+                "arancel": "325000"
+            },
+            {
+                "sede": "PLAZA VESPUCIO",
+                "matricula": "174000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "PUERTO MONTT",
+                "matricula": "148000",
+                "arancel": "297000"
+            },
+            {
+                "sede": "PUENTE ALTO",
+                "matricula": "174000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "SAN CARLOS DE APOQUINDO",
+                "matricula": "174000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "SAN BERNARDO",
+                "matricula": "174000",
+                "arancel": "326000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Ingeniería en Automatización y Control Industrial",
+        "duracion": "18 Bimestres",
+        "url_fuente": "https://www.duoc.cl/carreras/ingenieria-en-automatizacion-y-control-industrial",
+        "descripcion": "Competencias de la Carrera",
+        "campo_laboral": "Su campo ocupacional abarca áreas como la automatización y control de\nprocesos, integración de tecnologías industriales, diagnóstico técnico\ndesde el control, gestión de proyectos tecnológicos e innovación digital\nen entornos industrializados.",
+        "malla_pdf": "/mallas/malla_ingeniería_en_automatización_y_control_industrial.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "174000",
+                "arancel": "279000"
+            },
+            {
+                "sede": "ONLINE",
+                "matricula": "174000",
+                "arancel": "279000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Ingeniería en Ciberseguridad",
+        "duracion": "8 Bimestres",
+        "url_fuente": "https://www.duoc.cl/carreras/ingenieria-en-ciberseguridad",
+        "descripcion": "Competencias de la Carrera",
+        "campo_laboral": "El Campo ocupacional de la carrera de Ingeniería en Ciberseguridad\nconsidera organizaciones públicas y privadas de cualquier sector en\ndonde la transformación digital requiera protección de información y\nresguardo de sistemas. Su campo laboral abarca cargos como analista SOC,\ningeniero de seguridad, especialista en forense digital, respuesta a\nincidentes, analista de inteligencia de amenazas, pentester, consultor\nde cumplimiento y riesgos, auditor de seguridad, arquitecto de\nsoluciones seguras, líder de proyectos de ciberseguridad, entre otros\nequivalentes. Participa en equipos multidisciplina",
+        "malla_pdf": "/mallas/malla_ingeniería_en_ciberseguridad.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "174000",
+                "arancel": "287000"
+            },
+            {
+                "sede": "ONLINE",
+                "matricula": "174000",
+                "arancel": "287000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Ingeniería en Ciencia de Datos",
+        "duracion": "8 Bimestres",
+        "url_fuente": "https://www.duoc.cl/carreras/ingenieria-en-ciencia-de-datos",
+        "descripcion": "El campo ocupacional de la carrera de Ingeniería en Ciencia de Datos está compuesto por organizaciones públicas y privadas, nacionales e internacionales, de distintos tamaños y de los más diversos sectores económicos, como administración, entretenimiento, finanzas, marketing, gobierno, salud, retail, comunicaciones, entre otros, agregando valor a los procesos a su cargo.",
+        "campo_laboral": "El campo ocupacional de la carrera de Ingeniería en Ciencia de Datos está compuesto por organizaciones públicas y privadas, nacionales e internacionales, de distintos tamaños y de los más diversos sectores económicos, como administración, entretenimiento, finanzas, marketing, gobierno, salud, retail, comunicaciones, entre otros, agregando valor a los procesos a su cargo.",
+        "malla_pdf": "/mallas/malla_ingeniería_en_ciencia_de_datos.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "174000",
+                "arancel": "287000"
+            },
+            {
+                "sede": "ONLINE",
+                "matricula": "174000",
+                "arancel": "287000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Ingeniería en Comercio Exterior",
+        "duracion": "8 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/ingenieria-en-comercio-exterior",
+        "descripcion": "Competencias de la Carrera",
+        "campo_laboral": "Descripción del Campo Ocupacional",
+        "malla_pdf": "/mallas/malla_ingeniería_en_comercio_exterior.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "174000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "MAIPÚ",
+                "matricula": "174000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "ALONSO DE OVALLE",
+                "matricula": "174000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "ANTONIO VARAS",
+                "matricula": "174000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "PLAZA NORTE",
+                "matricula": "174000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "VIÑA DEL MAR",
+                "matricula": "174000",
+                "arancel": "297000"
+            },
+            {
+                "sede": "SAN CARLOS DE APOQUINDO",
+                "matricula": "174000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "CONCEPCIÓN",
+                "matricula": "148000",
+                "arancel": "297000"
+            },
+            {
+                "sede": "ALAMEDA",
+                "matricula": "174000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "PUENTE ALTO",
+                "matricula": "174000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "PLAZA VESPUCIO",
+                "matricula": "174000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "SAN BERNARDO",
+                "matricula": "174000",
+                "arancel": "326000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Ingeniería en Construcción",
+        "duracion": "8 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/ingenieria-en-construccion-2",
+        "descripcion": "Competencias de la Carrera",
+        "campo_laboral": "En el ámbito ocupacional, el/la Ingeniero(a) en Construcción se desempeña en áreas como: edificación, obras viales, infraestructura civil e industrial, rehabilitación, mantenimiento y urbanización, así como en instalaciones especiales y proyectos energéticos convencionales y renovables. Interviene en obra y en oficinas técnicas, gestionando los recursos humanos, materiales y financieros en todas las fases del ciclo constructivo.",
+        "malla_pdf": "/mallas/malla_ingeniería_en_construcción.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "174000",
+                "arancel": "293000"
+            },
+            {
+                "sede": "MAIPÚ",
+                "matricula": "174000",
+                "arancel": "293000"
+            },
+            {
+                "sede": "ALAMEDA",
+                "matricula": "174000",
+                "arancel": "346000"
+            },
+            {
+                "sede": "PUENTE ALTO",
+                "matricula": "174000",
+                "arancel": "346000"
+            },
+            {
+                "sede": "SAN BERNARDO",
+                "matricula": "174000",
+                "arancel": "293000"
+            },
+            {
+                "sede": "CONCEPCIÓN",
+                "matricula": "148000",
+                "arancel": "293000"
+            },
+            {
+                "sede": "MELIPILLA",
+                "matricula": "174000",
+                "arancel": "293000"
+            },
+            {
+                "sede": "PUERTO MONTT",
+                "matricula": "148000",
+                "arancel": "293000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Ingeniería en Desarrollo de Software",
+        "duracion": "7 Bimestres",
+        "url_fuente": "https://www.duoc.cl/carreras/ingenieria-en-desarrollo-de-software-2",
+        "descripcion": "Competencias de la Carrera",
+        "campo_laboral": "El campo laboral del Ingeniero(a) en Desarrollo de Software, considera\norganizaciones de todo tipo, en donde la transformación digital esté\npresente. Él o la profesional podrá desenvolverse en áreas como la\ningeniería de requisitos, calidad de software, bases de datos,\ndesarrollo front end, desarrollo back end, desarrollo full Stack,\nproject manager o scrum master.",
+        "malla_pdf": "/mallas/malla_ingeniería_en_desarrollo_de_software.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "174000",
+                "arancel": "286000"
+            },
+            {
+                "sede": "ONLINE",
+                "matricula": "174000",
+                "arancel": "286000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Ingeniería en Electricidad y Automatización Industrial",
+        "duracion": "8 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/ingenieria-en-electricidad-y-automatizacion-industrial",
+        "descripcion": "Competencias del Perfil de Egreso",
+        "campo_laboral": "Desarrollar proyectos eléctricos de baja, media y alta tensión, a partir de las etapas de diseño, implementación, gestión y evaluación, bajo una perspectiva innovadora en el abordaje de desafíos relevantes en el área, considerando requerimientos, especificaciones técnicas y normativas vigentes, con la finalidad de aportar a la efectividad, eficiencia y optimización de las organizaciones en las que se integra.Implementar, de manera integral, proyectos de automatización de procesos industriales en empresas y organizaciones productivas, a partir de la integración de elementos de instrumentación i",
+        "malla_pdf": "/mallas/malla_ingeniería_en_electricidad_y_automatización_industrial.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "174000",
+                "arancel": "306000"
+            },
+            {
+                "sede": "MAIPÚ",
+                "matricula": "174000",
+                "arancel": "306000"
+            },
+            {
+                "sede": "PLAZA NORTE",
+                "matricula": "174000",
+                "arancel": "330000"
+            },
+            {
+                "sede": "PUENTE ALTO",
+                "matricula": "174000",
+                "arancel": "330000"
+            },
+            {
+                "sede": "SAN JOAQUÍN",
+                "matricula": "174000",
+                "arancel": "319000"
+            },
+            {
+                "sede": "SAN BERNARDO",
+                "matricula": "174000",
+                "arancel": "330000"
+            },
+            {
+                "sede": "MELIPILLA",
+                "matricula": "148000",
+                "arancel": "306000"
+            },
+            {
+                "sede": "CONCEPCIÓN",
+                "matricula": "148000",
+                "arancel": "306000"
+            },
+            {
+                "sede": "PUERTO MONTT",
+                "matricula": "148000",
+                "arancel": "306000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Ingeniería en Gestión de Personas",
+        "duracion": "18 Bimestres",
+        "url_fuente": "https://www.duoc.cl/carreras/ingenieria-en-gestion-de-personas",
+        "descripcion": "Competencias de la Carrera",
+        "campo_laboral": "El Campo laboral del Ingeniero(a) en Gestión de Personas está compuesto\npor organizaciones públicas y privadas de distintos tamaños y de\ndiversos sectores económicos, en las áreas de administración y las que\ncomponen el subsistema de gestión de personas, agregando valor a los\nprocesos a su cargo.",
+        "malla_pdf": "/mallas/malla_ingeniería_en_gestión_de_personas.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "174000",
+                "arancel": "276000"
+            },
+            {
+                "sede": "ONLINE",
+                "matricula": "174000",
+                "arancel": "276000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Ingeniería en Gestión Logística",
+        "duracion": "8 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/ingenieria-en-gestion-logistica-2",
+        "descripcion": "Competencias de la Carrera",
+        "campo_laboral": "El Campo ocupacional del Técnico en Gestión Logística contempla tanto\norganizaciones públicas como privadas, dentro de las distintas áreas de\nla cadena de suministros en las que destacan compras y abastecimiento,\nalmacenamiento, inventario, transporte, distribución y operaciones\nlogísticas.",
+        "malla_pdf": "/mallas/malla_ingeniería_en_gestión_logística.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "174000",
+                "arancel": "297000"
+            },
+            {
+                "sede": "MAIPÚ",
+                "matricula": "174000",
+                "arancel": "297000"
+            },
+            {
+                "sede": "ALONSO DE OVALLE",
+                "matricula": "174000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "ANTONIO VARAS",
+                "matricula": "174000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "MELIPILLA",
+                "matricula": "174000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "PLAZA OESTE",
+                "matricula": "174000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "PLAZA NORTE",
+                "matricula": "174000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "PLAZA VESPUCIO",
+                "matricula": "174000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "PUENTE ALTO",
+                "matricula": "174000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "SAN BERNARDO",
+                "matricula": "174000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "VIÑA DEL MAR",
+                "matricula": "148000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "ALAMEDA",
+                "matricula": "174000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "CONCEPCIÓN",
+                "matricula": "148000",
+                "arancel": "297000"
+            },
+            {
+                "sede": "PUERTO MONTT",
+                "matricula": "148000",
+                "arancel": "297000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
         "nombre_carrera": "Ingeniería en Informática",
         "duracion": "8 Semestres",
-        "url_fuente": "https://www.duoc.cl/carreras/ingenieria-en-informatica/",
+        "url_fuente": "https://www.duoc.cl/carreras/ingenieria-en-informatica",
         "descripcion": "Competencias de la Carrera",
         "campo_laboral": "El campo laboral de Ingeniería en Informática mención en Desarrollo de\nSoftware, considera organizaciones de todo tipo, en donde la\ntransformación digital esté presente. Él o la profesional podrá\ndesenvolverse en áreas como la ingeniería de requisitos, calidad de\nsoftware, bases de datos, Desarrollo Front End, Desarrollo Back End,\nDesarrollo FullStack, Project Manager o Scrum Master.",
         "malla_pdf": "/mallas/malla_ingeniería_en_informática.pdf",
@@ -162,111 +1636,9 @@
         "institucion": "Duoc UC"
     },
     {
-        "nombre_carrera": "Ingeniería en Administración Mención Gestión de Personas",
-        "duracion": "8 Semestres",
-        "url_fuente": "https://www.duoc.cl/carreras/ingenieria-en-administracion-mencion-gestion-de-personas-2/",
-        "descripcion": "Competencias de la Carrera",
-        "campo_laboral": "El Campo laboral del Ingeniero o Ingeniera en Administración\nmención Gestión de Personas está compuesto por organizaciones\npúblicas y privadas de distintos tamaños y de diversos sectores\neconómicos, en las áreas de administración y las que componen el\nsubsistema de gestión de personas, agregando valor a los procesos\na su cargo.Manejar técnicas de obtención, modelamiento y análisis de datos,\nhaciendo uso de herramientas tecnológicas, que permitan generar\nvalor a la toma de decisiones.Aplicar herramientas de diagnóstico estratégico y modelo de\nnegocios, considerando un desarrollo económico soste",
-        "malla_pdf": "/mallas/malla_ingeniería_en_administración_mención_gestión_de_personas.pdf",
-        "sedes": [
-            {
-                "sede": "MODALIDAD ONLINE",
-                "matricula": "174000",
-                "arancel": "326000"
-            },
-            {
-                "sede": "MAIPÚ",
-                "matricula": "174000",
-                "arancel": "326000"
-            },
-            {
-                "sede": "ANTONIO VARAS",
-                "matricula": "174000",
-                "arancel": "326000"
-            },
-            {
-                "sede": "MELIPILLA",
-                "matricula": "174000",
-                "arancel": "326000"
-            },
-            {
-                "sede": "ALONSO DE OVALLE",
-                "matricula": "174000",
-                "arancel": "326000"
-            },
-            {
-                "sede": "PLAZA NORTE",
-                "matricula": "174000",
-                "arancel": "326000"
-            },
-            {
-                "sede": "PLAZA VESPUCIO",
-                "matricula": "174000",
-                "arancel": "326000"
-            },
-            {
-                "sede": "PLAZA OESTE",
-                "matricula": "174000",
-                "arancel": "297000"
-            },
-            {
-                "sede": "VIÑA DEL MAR",
-                "matricula": "148000",
-                "arancel": "325000"
-            },
-            {
-                "sede": "CONCEPCIÓN",
-                "matricula": "148000",
-                "arancel": "297000"
-            },
-            {
-                "sede": "PUENTE ALTO",
-                "matricula": "174000",
-                "arancel": "297000"
-            },
-            {
-                "sede": "ALAMEDA",
-                "matricula": "174000",
-                "arancel": "326000"
-            },
-            {
-                "sede": "PUERTO MONTT",
-                "matricula": "148000",
-                "arancel": "297000"
-            },
-            {
-                "sede": "SAN BERNARDO",
-                "matricula": "174000",
-                "arancel": "326000"
-            }
-        ],
-        "institucion": "Duoc UC"
-    },
-    {
-        "nombre_carrera": "Administración Pública",
-        "duracion": "20 Bimestres",
-        "url_fuente": "https://www.duoc.cl/carreras/administracion-publica-2/",
-        "descripcion": "Competencias de la Carrera",
-        "campo_laboral": "Descripción del Campo Ocupacional",
-        "malla_pdf": "/mallas/malla_administración_pública.pdf",
-        "sedes": [
-            {
-                "sede": "MODALIDAD ONLINE",
-                "matricula": "174000",
-                "arancel": "276000"
-            },
-            {
-                "sede": "ONLINE",
-                "matricula": "174000",
-                "arancel": "276000"
-            }
-        ],
-        "institucion": "Duoc UC"
-    },
-    {
         "nombre_carrera": "Ingeniería en Infraestructura Tecnológica",
         "duracion": "8 Semestres",
-        "url_fuente": "https://www.duoc.cl/carreras/ingenieria-en-infraestructura-tecnologica/",
+        "url_fuente": "https://www.duoc.cl/carreras/ingenieria-en-infraestructura-tecnologica",
         "descripcion": "Competencias de la Carrera",
         "campo_laboral": "El campo ocupacional del Ingeniero(a) en Infraestructura\nTecnológica considera cualquier tipo de organización pública o\nprivada, con o sin fines de lucro que requiera diseñar,\nimplementar y administrar soluciones tecnológicas innovadoras,\ntanto en instalaciones físicas o en la nube, velando por su\ncontinuidad operacional y la eficiencia en el uso de los recursos\ninvolucrados, siempre considerando la seguridad de los sistemas y\nprotección de la información, de acuerdo a normativas, estándares,\nmarcos de trabajo y mejores prácticas de la industriaDiseñar e implementar soluciones tecnológicas inn",
         "malla_pdf": "/mallas/malla_ingeniería_en_infraestructura_tecnológica.pdf",
@@ -290,421 +1662,449 @@
         "institucion": "Duoc UC"
     },
     {
-        "nombre_carrera": "Administración de Empresas",
-        "duracion": "10 Bimestres",
-        "url_fuente": "https://www.duoc.cl/carreras/administracion-de-empresas/",
-        "descripcion": "Descripción del Perfil de Egreso",
-        "campo_laboral": "El campo ocupacional del Administrador(a) de Empresas es amplio y\ndiverso, pudiendo desempeñarse en diferentes organizaciones, tanto\npúblicas como privadas, como asistente, coordinador(a), supervisor(a),\nanalista o ejecutivo(a), realizando funciones administrativas de\nanálisis, control, operaciones y administración del negocio en general.",
-        "malla_pdf": "/mallas/malla_administración_de_empresas.pdf",
-        "sedes": [
-            {
-                "sede": "MODALIDAD ONLINE",
-                "matricula": "132000",
-                "arancel": "237000"
-            },
-            {
-                "sede": "ONLINE",
-                "matricula": "132000",
-                "arancel": "237000"
-            }
-        ],
-        "institucion": "Duoc UC"
-    },
-    {
-        "nombre_carrera": "Administración en Turismo y Hospitalidad Mención Administración Hotelera",
+        "nombre_carrera": "Ingeniería en Mantenimiento Industrial",
         "duracion": "8 Semestres",
-        "url_fuente": "https://www.duoc.cl/carreras/administracion-en-turismo-y-hospitalidad-mencion-administracion-hotelera-2/",
-        "descripcion": "Competencias del Perfil de Egreso",
-        "campo_laboral": "Así mismo, podrá ejercer su profesión de manera autónoma, de acuerdo con\nel dinamismo propio del ámbito ocupacional de las áreas del turismo y la\nhotelería.",
-        "malla_pdf": "/mallas/malla_administración_en_turismo_y_hospitalidad_mención_administración_hotelera.pdf",
+        "url_fuente": "https://www.duoc.cl/carreras/ingenieria-en-mantenimiento-industrial-2",
+        "descripcion": "Competencias de la Carrera",
+        "campo_laboral": "Descripción del Campo Ocupacional",
+        "malla_pdf": "/mallas/malla_ingeniería_en_mantenimiento_industrial.pdf",
         "sedes": [
             {
                 "sede": "MODALIDAD ONLINE",
-                "matricula": "174000",
-                "arancel": "443000"
-            },
-            {
-                "sede": "ALONSO DE OVALLE",
-                "matricula": "174000",
-                "arancel": "443000"
-            },
-            {
-                "sede": "ANTONIO VARAS",
-                "matricula": "174000",
-                "arancel": "443000"
-            },
-            {
-                "sede": "SAN BERNARDO",
                 "matricula": "148000",
-                "arancel": "443000"
+                "arancel": "319000"
+            },
+            {
+                "sede": "MAIPÚ",
+                "matricula": "148000",
+                "arancel": "319000"
+            },
+            {
+                "sede": "CONCEPCIÓN",
+                "matricula": "148000",
+                "arancel": "306000"
             },
             {
                 "sede": "PUERTO MONTT",
                 "matricula": "148000",
-                "arancel": "383000"
-            }
-        ],
-        "institucion": "Duoc UC"
-    },
-    {
-        "nombre_carrera": "Administración en Turismo y Hospitalidad Mención Gestión para el Ecoturismo",
-        "duracion": "8 Semestres",
-        "url_fuente": "https://www.duoc.cl/carreras/administracion-en-turismo-y-hospitalidad-mencion-ecoturismo/",
-        "descripcion": "Competencias del Perfil de Egreso",
-        "campo_laboral": "Así mismo, podrá ejercer su profesión de manera autónoma, de acuerdo con\nel dinamismo propio del ámbito ocupacional de las áreas del turismo y la\nhotelería.",
-        "malla_pdf": "/mallas/malla_administración_en_turismo_y_hospitalidad_mención_gestión_para_el_ecoturismo.pdf",
-        "sedes": [
-            {
-                "sede": "MODALIDAD ONLINE",
-                "matricula": "174000",
-                "arancel": "390000"
-            },
-            {
-                "sede": "SAN BERNARDO",
-                "matricula": "174000",
-                "arancel": "390000"
-            },
-            {
-                "sede": "CONCEPCIÓN",
-                "matricula": "174000",
-                "arancel": "383000"
-            },
-            {
-                "sede": "ANTONIO VARAS",
-                "matricula": "174000",
-                "arancel": "443000"
-            }
-        ],
-        "institucion": "Duoc UC"
-    },
-    {
-        "nombre_carrera": "Administración en Turismo y Hospitalidad Mención Gestión de Destinos Turísticos",
-        "duracion": "8 Semestres",
-        "url_fuente": "https://www.duoc.cl/carreras/administracion-en-turismo-y-hospitalidad-mencion-gestion-de-destinos-turisticos/",
-        "descripcion": "Competencias del Perfil de Egreso",
-        "campo_laboral": "Así mismo, podrá ejercer su profesión de manera autónoma, de acuerdo con\nel dinamismo propio del ámbito ocupacional de las áreas del turismo y la\nhotelería.",
-        "malla_pdf": "/mallas/malla_administración_en_turismo_y_hospitalidad_mención_gestión_de_destinos_turísticos.pdf",
-        "sedes": [
-            {
-                "sede": "MODALIDAD ONLINE",
-                "matricula": "174000",
-                "arancel": "390000"
-            },
-            {
-                "sede": "ALONSO DE OVALLE",
-                "matricula": "174000",
-                "arancel": "390000"
-            },
-            {
-                "sede": "ANTONIO VARAS",
-                "matricula": "174000",
-                "arancel": "443000"
-            },
-            {
-                "sede": "CONCEPCIÓN",
-                "matricula": "148000",
-                "arancel": "383000"
-            },
-            {
-                "sede": "SAN BERNARDO",
-                "matricula": "174000",
-                "arancel": "390000"
-            }
-        ],
-        "institucion": "Duoc UC"
-    },
-    {
-        "nombre_carrera": "Administración en Turismo y Hospitalidad Mención Hospitality Management",
-        "duracion": "4 Semestres",
-        "url_fuente": "https://www.duoc.cl/carreras/administracion-en-turismo-y-hospitalidad-mencion-hospitality-management-2/",
-        "descripcion": "Competencias del Perfil de Egreso",
-        "campo_laboral": "Así mismo, podrá ejercer su profesión de manera autónoma, de acuerdo con\nel dinamismo propio del ámbito ocupacional de las áreas del turismo y la\nhotelería.",
-        "malla_pdf": "/mallas/malla_administración_en_turismo_y_hospitalidad_mención_hospitality_management.pdf",
-        "sedes": [
-            {
-                "sede": "MODALIDAD ONLINE",
-                "matricula": "174000",
-                "arancel": "443000"
-            },
-            {
-                "sede": "ONLINE",
-                "matricula": "174000",
-                "arancel": "443000"
-            },
-            {
-                "sede": "ANTONIO VARAS",
-                "matricula": "174000",
-                "arancel": "443000"
-            }
-        ],
-        "institucion": "Duoc UC"
-    },
-    {
-        "nombre_carrera": "Administración Pública",
-        "duracion": "20 Bimestres",
-        "url_fuente": "https://www.duoc.cl/carreras/administracion-publica-2/",
-        "descripcion": "Competencias de la Carrera",
-        "campo_laboral": "Descripción del Campo Ocupacional",
-        "malla_pdf": "/mallas/malla_administración_pública.pdf",
-        "sedes": [
-            {
-                "sede": "MODALIDAD ONLINE",
-                "matricula": "174000",
-                "arancel": "276000"
-            },
-            {
-                "sede": "ONLINE",
-                "matricula": "174000",
-                "arancel": "276000"
-            }
-        ],
-        "institucion": "Duoc UC"
-    },
-    {
-        "nombre_carrera": "Analista Programador Computacional",
-        "duracion": "10 Bimestres",
-        "url_fuente": "https://www.duoc.cl/carreras/analista-programador-computacional/",
-        "descripcion": "Competencias de la Carrera",
-        "campo_laboral": "El campo laboral de la carrera de Analista Programador Computacional se\nvincula a las áreas de las tecnologías de la información, en\norganizaciones y empresas de diversas áreas productivas, y que requieran\ntanto de análisis de sistemas como de desarrollo de soluciones de\nsoftware, además de integrar y adaptar sistemas existentes, velando por\nsu correcto funcionamiento y de las aplicaciones. Así mismo, puede\nejercer de manera autónoma, como asesor y/o consultor en el desarrollo\nde soluciones de software, de acuerdo con su ámbito de desempeño como\ntécnico del área",
-        "malla_pdf": "/mallas/malla_analista_programador_computacional.pdf",
-        "sedes": [
-            {
-                "sede": "MODALIDAD ONLINE",
-                "matricula": "132000",
                 "arancel": "306000"
             },
             {
-                "sede": "ONLINE",
-                "matricula": "132000",
-                "arancel": "306000"
+                "sede": "SAN JOAQUÍN",
+                "matricula": "174000",
+                "arancel": "319000"
             }
         ],
         "institucion": "Duoc UC"
     },
     {
-        "nombre_carrera": "Animación Digital",
+        "nombre_carrera": "Ingeniería en Maquinaria y Vehículos Pesados",
         "duracion": "8 Semestres",
-        "url_fuente": "https://www.duoc.cl/carreras/animacion-digital-2/",
-        "descripcion": "Competencias del perfil de egreso",
-        "campo_laboral": "El campo laboral del Animador Digital está constituido por empresas de\ndesarrollo de contenido audiovisual, productoras, agencias de\nPublicidad, Canales de TV que se dedican a preproducción, producción,\npostproducción y efectos de piezas animadas, videojuegos, cortometrajes\n2D y 3D, efectos visuales y publicidad animada a nivel nacional e\ninternacional. Puede desempeñarse dentro del área de Animación, proceso\nde preproducción, producción y postproducción 2D y 3D, prestar servicios\ne integrarse a equipos de trabajo audiovisual y también en el ejercicio\nlibre de la profesión.",
-        "malla_pdf": "/mallas/malla_animación_digital.pdf",
+        "url_fuente": "https://www.duoc.cl/carreras/ingenieria-en-maquinaria-y-vehiculos-pesados",
+        "descripcion": "Competencias de la Carrera",
+        "campo_laboral": "El campo laboral del/la Ingeniero(a) en Maquinaria y Vehículos Pesados\ncontempla distintos sectores industriales, entre los que se cuenta\nminería, agricultura, construcción, forestal, transporte terrestre y\nmarítimo, entre otros. El /la profesional podrá desempeñarse como\ninspector(a) técnico, jefe(a) de servicio, ingeniero(a) de aplicación,\nanalista de garantía,etc. Estando facultado(a) para desempeñar funciones\nde gestión del mantenimiento, líder de calidad, asistencia técnica,\nentre otras afines a sus competencias, con un enfoque en la mejora\ncontinua y liderando equipos de trabajo",
+        "malla_pdf": "/mallas/malla_ingeniería_en_maquinaria_y_vehículos_pesados.pdf",
         "sedes": [
             {
                 "sede": "MODALIDAD ONLINE",
                 "matricula": "174000",
-                "arancel": "398000"
+                "arancel": "303000"
             },
             {
                 "sede": "MAIPÚ",
                 "matricula": "174000",
-                "arancel": "398000"
+                "arancel": "303000"
             },
             {
-                "sede": "VIÑA DEL MAR",
+                "sede": "SAN JOAQUÍN",
                 "matricula": "174000",
-                "arancel": "354000"
+                "arancel": "336000"
             },
             {
-                "sede": "SAN CARLOS DE APOQUINDO",
+                "sede": "PUERTO MONTT",
+                "matricula": "148000",
+                "arancel": "303000"
+            },
+            {
+                "sede": "SAN BERNARDO",
                 "matricula": "174000",
-                "arancel": "409000"
+                "arancel": "303000"
             },
             {
                 "sede": "CONCEPCIÓN",
                 "matricula": "148000",
-                "arancel": "354000"
+                "arancel": "303000"
             }
         ],
         "institucion": "Duoc UC"
     },
     {
-        "nombre_carrera": "Audit-NuevaTest",
+        "nombre_carrera": "Ingeniería en Marketing Digital",
         "duracion": "8 Semestres",
-        "url_fuente": "https://www.duoc.cl/carreras/audit-nuevatest/",
+        "url_fuente": "https://www.duoc.cl/carreras/ingenieria-en-marketing-digital-2",
         "descripcion": "Competencias de la Carrera",
-        "campo_laboral": "El Campo Laboral del o la Contador(a) Auditor(a) está compuesto por\norganizaciones públicas y privadas de distintos tamaños y de diversos\nsectores económicos agregando valor a los procesos a su cargo. También\nse puede desarrollar en el libre ejercicio de su profesión para diversas\nentidades y contribuyentes, a través del asesoramiento o asistencia\ntécnica en las áreas de contabilidad, finanzas, tributación y laboral,\ncomo también en áreas de auditoría interna, auditoría tributaria,\nauditoría de estados financieros, auditoría forense y auditoría de\nsistemas de información.",
-        "malla_pdf": null,
+        "campo_laboral": "CAMPO LABORAL",
+        "malla_pdf": "/mallas/malla_ingeniería_en_marketing_digital.pdf",
         "sedes": [
             {
                 "sede": "MODALIDAD ONLINE",
                 "matricula": "174000",
-                "arancel": "301000"
+                "arancel": "326000"
             },
             {
-                "sede": "PLAZA OESTE",
+                "sede": "MAIPÚ",
                 "matricula": "174000",
-                "arancel": "301000"
-            },
-            {
-                "sede": "MELIPILLA",
-                "matricula": "174000",
-                "arancel": "301000"
+                "arancel": "326000"
             },
             {
                 "sede": "ANTONIO VARAS",
                 "matricula": "174000",
-                "arancel": "301000"
+                "arancel": "326000"
             },
             {
-                "sede": "ALONSO DE OVALLE",
+                "sede": "MELIPILLA",
                 "matricula": "174000",
-                "arancel": "301000"
+                "arancel": "326000"
+            },
+            {
+                "sede": "PLAZA OESTE",
+                "matricula": "174000",
+                "arancel": "326000"
             },
             {
                 "sede": "PLAZA NORTE",
                 "matricula": "174000",
-                "arancel": "301000"
-            },
-            {
-                "sede": "VIÑA DEL MAR",
-                "matricula": "174000",
-                "arancel": "290000"
+                "arancel": "326000"
             },
             {
                 "sede": "PLAZA VESPUCIO",
                 "matricula": "174000",
-                "arancel": "301000"
-            },
-            {
-                "sede": "SAN BERNARDO",
-                "matricula": "174000",
-                "arancel": "301000"
+                "arancel": "326000"
             },
             {
                 "sede": "PUENTE ALTO",
                 "matricula": "174000",
-                "arancel": "301000"
+                "arancel": "324000"
             },
             {
-                "sede": "ALAMEDA",
+                "sede": "SAN CARLOS DE APOQUINDO",
                 "matricula": "174000",
-                "arancel": "301000"
+                "arancel": "326000"
             },
             {
                 "sede": "PUERTO MONTT",
                 "matricula": "148000",
-                "arancel": "291000"
+                "arancel": "324000"
+            },
+            {
+                "sede": "CONCEPCIÓN",
+                "matricula": "148000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "ALAMEDA",
+                "matricula": "174000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "VIÑA DEL MAR",
+                "matricula": "174000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "ONLINE",
+                "matricula": "174000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "SAN BERNARDO",
+                "matricula": "174000",
+                "arancel": "326000"
+            },
+            {
+                "sede": "ALONSO DE OVALLE",
+                "matricula": "174000",
+                "arancel": "326000"
             }
         ],
         "institucion": "Duoc UC"
     },
     {
-        "nombre_carrera": "Auditoría",
+        "nombre_carrera": "Ingeniería en Mecánica Automotriz y Autotrónica",
         "duracion": "8 Semestres",
-        "url_fuente": "https://www.duoc.cl/carreras/auditoria-2/",
+        "url_fuente": "https://www.duoc.cl/carreras/ingenieria-en-mecanica-automotriz-y-autotronica",
         "descripcion": "Competencias de la Carrera",
-        "campo_laboral": "El Campo Laboral del o la Contador(a) Auditor(a) está compuesto por\norganizaciones públicas y privadas de distintos tamaños y de diversos\nsectores económicos agregando valor a los procesos a su cargo. También\nse puede desarrollar en el libre ejercicio de su profesión para diversas\nentidades y contribuyentes, a través del asesoramiento o asistencia\ntécnica en las áreas de contabilidad, finanzas, tributación y laboral,\ncomo también en áreas de auditoría interna, auditoría tributaria,\nauditoría de estados financieros, auditoría forense y auditoría de\nsistemas de información.",
-        "malla_pdf": "/mallas/malla_auditoría.pdf",
+        "campo_laboral": "El campo ocupacional de la carrera de Ingeniería en Mecánica Automotriz\ny Autotrónica considera diferentes empresas del rubro, en donde se\nconjugan conocimientos y competencias avanzadas en mecánica, sistemas\neléctricos, electrónicos y multiplexados, como también con la gestión,\ntales como concesionarios oficiales, talleres multimarca, serviteca,\nlubricentros, talleres de desabolladura y pintura y plantas de revisión\ntécnica, además de desarrollar su propio emprendimiento en el área.",
+        "malla_pdf": "/mallas/malla_ingeniería_en_mecánica_automotriz_y_autotrónica.pdf",
         "sedes": [
             {
                 "sede": "MODALIDAD ONLINE",
                 "matricula": "174000",
-                "arancel": "301000"
+                "arancel": "303000"
             },
             {
-                "sede": "PLAZA OESTE",
+                "sede": "MAIPÚ",
                 "matricula": "174000",
-                "arancel": "301000"
-            },
-            {
-                "sede": "MELIPILLA",
-                "matricula": "174000",
-                "arancel": "301000"
-            },
-            {
-                "sede": "ANTONIO VARAS",
-                "matricula": "174000",
-                "arancel": "301000"
-            },
-            {
-                "sede": "ALONSO DE OVALLE",
-                "matricula": "174000",
-                "arancel": "301000"
+                "arancel": "303000"
             },
             {
                 "sede": "PLAZA NORTE",
                 "matricula": "174000",
-                "arancel": "301000"
-            },
-            {
-                "sede": "VIÑA DEL MAR",
-                "matricula": "174000",
-                "arancel": "290000"
-            },
-            {
-                "sede": "PLAZA VESPUCIO",
-                "matricula": "174000",
-                "arancel": "301000"
-            },
-            {
-                "sede": "SAN BERNARDO",
-                "matricula": "174000",
-                "arancel": "301000"
+                "arancel": "329000"
             },
             {
                 "sede": "PUENTE ALTO",
                 "matricula": "174000",
-                "arancel": "301000"
+                "arancel": "329000"
             },
             {
-                "sede": "ALAMEDA",
+                "sede": "SAN JOAQUÍN",
                 "matricula": "174000",
-                "arancel": "301000"
+                "arancel": "318000"
+            },
+            {
+                "sede": "SAN BERNARDO",
+                "matricula": "174000",
+                "arancel": "329000"
+            },
+            {
+                "sede": "MELIPILLA",
+                "matricula": "148000",
+                "arancel": "303000"
+            },
+            {
+                "sede": "CONCEPCIÓN",
+                "matricula": "148000",
+                "arancel": "303000"
             },
             {
                 "sede": "PUERTO MONTT",
                 "matricula": "148000",
-                "arancel": "291000"
+                "arancel": "303000"
             }
         ],
         "institucion": "Duoc UC"
     },
     {
-        "nombre_carrera": "Auditoría y Análisis de Negocios",
+        "nombre_carrera": "Ingeniería en Medio Ambiente",
+        "duracion": "8 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/ingenieria-en-medio-ambiente-3",
+        "descripcion": "Competencias de la Carrera",
+        "campo_laboral": "El campo laboral del Ingeniero en Medio Ambiente está constituido por\nlas unidades ambientales en organizaciones productivas y de servicios,\ntanto del ámbito privado como de instituciones públicas, consultoras del\nárea ambiental y de servicios de ingeniería, y centros de fiscalización\nambiental, entre otros. Este ingeniero está preparado para insertarse en\nla industria como analista de gestión de medioambiente, ingeniero\nadministrador de centro de residuos, ingeniero ambiental, encargado de\nproyectos, o especialista en gestión ambiental, en una amplia gama de\nsectores industriales del país com",
+        "malla_pdf": "/mallas/malla_ingeniería_en_medio_ambiente.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "174000",
+                "arancel": "355000"
+            },
+            {
+                "sede": "MAIPÚ",
+                "matricula": "174000",
+                "arancel": "355000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Ingeniería en Prevención de Riesgos",
+        "duracion": "8 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/ingenieria-en-prevencion-de-riesgos",
+        "descripcion": "Competencias de la Carrera",
+        "campo_laboral": "Gestionar la identificación de peligros y la evaluación de riesgos en ambientes laborales conforme la normativa legal y técnica aplicable, integrando herramientas digitales avanzadas, participando en la adaptación y aplicación de metodologías especializadas, liderando la implementación de protocolos de higiene, seguridad y salud ocupacional, con el objetivo de optimizar el desempeño organizacional y promover un entorno de trabajo seguro, saludable y eficiente.Elaborar planes de gestión ante desastres para la protección y el bienestar de las personas, integrando soluciones tecnológicas en la ev",
+        "malla_pdf": "/mallas/malla_ingeniería_en_prevención_de_riesgos.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "174000",
+                "arancel": "271000"
+            },
+            {
+                "sede": "MAIPÚ",
+                "matricula": "174000",
+                "arancel": "271000"
+            },
+            {
+                "sede": "ALAMEDA",
+                "matricula": "174000",
+                "arancel": "320000"
+            },
+            {
+                "sede": "SAN BERNARDO",
+                "matricula": "174000",
+                "arancel": "320000"
+            },
+            {
+                "sede": "PUENTE ALTO",
+                "matricula": "148000",
+                "arancel": "320000"
+            },
+            {
+                "sede": "CONCEPCIÓN",
+                "matricula": "148000",
+                "arancel": "283000"
+            },
+            {
+                "sede": "MELIPILLA",
+                "matricula": "174000",
+                "arancel": "271000"
+            },
+            {
+                "sede": "ONLINE",
+                "matricula": "174000",
+                "arancel": "271000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Ingeniería en Redes y Telecomunicaciones",
+        "duracion": "8 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/ingenieria-en-redes-y-telecomunicaciones",
+        "descripcion": "Competencias de la Carrera",
+        "campo_laboral": "El campo ocupacional de este profesional abarca empresas de distintos\nrubros, del ámbito privado como público, productivas y/o de servicios,\nque cuenten con una red de datos convergente de mediano o gran tamaño.\nEste ingeniero(a) puede desempeñarse en áreas de servicios básicos de\ntelecomunicaciones, tecnologías emergentes, internet de las cosas (IoT),\ninfraestructura de redes, y comunicaciones unificadas de la empresa.",
+        "malla_pdf": "/mallas/malla_ingeniería_en_redes_y_telecomunicaciones.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "174000",
+                "arancel": "339000"
+            },
+            {
+                "sede": "MAIPÚ",
+                "matricula": "174000",
+                "arancel": "339000"
+            },
+            {
+                "sede": "PLAZA OESTE",
+                "matricula": "174000",
+                "arancel": "339000"
+            },
+            {
+                "sede": "ANTONIO VARAS",
+                "matricula": "174000",
+                "arancel": "339000"
+            },
+            {
+                "sede": "PUENTE ALTO",
+                "matricula": "174000",
+                "arancel": "339000"
+            },
+            {
+                "sede": "PLAZA NORTE",
+                "matricula": "174000",
+                "arancel": "339000"
+            },
+            {
+                "sede": "MELIPILLA",
+                "matricula": "174000",
+                "arancel": "325000"
+            },
+            {
+                "sede": "PLAZA VESPUCIO",
+                "matricula": "174000",
+                "arancel": "339000"
+            },
+            {
+                "sede": "VIÑA DEL MAR",
+                "matricula": "174000",
+                "arancel": "298000"
+            },
+            {
+                "sede": "SAN BERNARDO",
+                "matricula": "174000",
+                "arancel": "339000"
+            },
+            {
+                "sede": "CONCEPCIÓN",
+                "matricula": "148000",
+                "arancel": "298000"
+            },
+            {
+                "sede": "ALONSO DE OVALLE",
+                "matricula": "174000",
+                "arancel": "339000"
+            },
+            {
+                "sede": "SAN JOAQUÍN",
+                "matricula": "174000",
+                "arancel": "339000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Ingeniería en Sonido",
+        "duracion": "8 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/ingenieria-en-sonido",
+        "descripcion": "Competencias de la Carrera",
+        "campo_laboral": "Descripción del Campo Laboral",
+        "malla_pdf": "/mallas/malla_ingeniería_en_sonido.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "174000",
+                "arancel": "387000"
+            },
+            {
+                "sede": "VIÑA DEL MAR",
+                "matricula": "174000",
+                "arancel": "387000"
+            },
+            {
+                "sede": "SAN CARLOS DE APOQUINDO",
+                "matricula": "174000",
+                "arancel": "433000"
+            },
+            {
+                "sede": "CONCEPCIÓN",
+                "matricula": "148000",
+                "arancel": "387000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Ingeniería Industrial",
         "duracion": "18 Bimestres",
-        "url_fuente": "https://www.duoc.cl/carreras/auditoria-y-analisis-de-negocios/",
+        "url_fuente": "https://www.duoc.cl/carreras/ingenieria-industrial",
         "descripcion": "Competencias de la Carrera",
-        "campo_laboral": "Descripción del Campo Ocupacional",
-        "malla_pdf": "/mallas/malla_auditoría_y_análisis_de_negocios.pdf",
+        "campo_laboral": "Aplicar conocimientos de ciencias básicas, mediante el uso de\nherramientas y métodos analíticos y cuantitativos validados, con\nla finalidad de resolver problemas vinculados a la gestión y\noperación de procesos industriales.Gestionar procesos productivos y de soporte operativo, empleando\nherramientas de analítica de datos e indicadores de eficacia y\neficiencia operacional, en organizaciones industriales y de\nservicios bajo la legislación vigente, con la finalidad de\ncontribuir a la optimización, mantenimiento y mejora continua del\ndesempeño organizacional.Planificar y ejecutar procesos industri",
+        "malla_pdf": "/mallas/malla_ingeniería_industrial.pdf",
         "sedes": [
             {
                 "sede": "MODALIDAD ONLINE",
                 "matricula": "174000",
-                "arancel": "254000"
+                "arancel": "279000"
             },
             {
                 "sede": "ONLINE",
                 "matricula": "174000",
-                "arancel": "254000"
+                "arancel": "279000"
             }
         ],
         "institucion": "Duoc UC"
     },
     {
-        "nombre_carrera": "Comercio Exterior",
+        "nombre_carrera": "Preparador Físico",
         "duracion": "5 Semestres",
-        "url_fuente": "https://www.duoc.cl/carreras/comercio-exterior-2/",
+        "url_fuente": "https://www.duoc.cl/carreras/preparador-fisico-2",
         "descripcion": "Competencias de la Carrera",
         "campo_laboral": "Descripción del Campo Ocupacional",
-        "malla_pdf": "/mallas/malla_comercio_exterior.pdf",
+        "malla_pdf": "/mallas/malla_preparador_físico.pdf",
         "sedes": [
             {
                 "sede": "MODALIDAD ONLINE",
                 "matricula": "132000",
-                "arancel": "280000"
+                "arancel": "276000"
             },
             {
-                "sede": "VIÑA DEL MAR",
+                "sede": "MAIPÚ",
                 "matricula": "132000",
-                "arancel": "280000"
+                "arancel": "276000"
             },
             {
-                "sede": "PLAZA VESPUCIO",
-                "matricula": "132000",
-                "arancel": "280000"
-            },
-            {
-                "sede": "ALONSO DE OVALLE",
+                "sede": "PUENTE ALTO",
                 "matricula": "132000",
                 "arancel": "280000"
             },
@@ -712,167 +2112,124 @@
                 "sede": "SAN BERNARDO",
                 "matricula": "132000",
                 "arancel": "280000"
+            },
+            {
+                "sede": "VIÑA DEL MAR",
+                "matricula": "121000",
+                "arancel": "276000"
             }
         ],
         "institucion": "Duoc UC"
     },
     {
-        "nombre_carrera": "Comunicación Audiovisual",
+        "nombre_carrera": "Publicidad",
         "duracion": "8 Semestres",
-        "url_fuente": "https://www.duoc.cl/carreras/comunicacion-audiovisual-2/",
-        "descripcion": "Competencias de la Carrera",
-        "campo_laboral": "El campo laboral del Comunicador Audiovisual comprende canales de\ntelevisión, productoras de cine, video y multimedia, centros de\npostproducción audiovisual, departamentos audiovisuales de empresas,\nservicios técnicos y creativos de la realización audiovisual (cámara,\niluminación, producción, postproducción), radio, estudios de grabación,\nempresas multimedia e internet y el ejercicio independiente de\ncualquiera de estas áreas.",
-        "malla_pdf": "/mallas/malla_comunicación_audiovisual.pdf",
+        "url_fuente": "https://www.duoc.cl/carreras/publicidad-2",
+        "descripcion": "Perfil de Egreso y Campo laboral",
+        "campo_laboral": "El campo laboral de Publicidad con mención en Creatividad y Desarrollo\nde Contenidos abarca diversas áreas de la industria de la Comunicación y\nla Publicidad. Él o la profesional destaca por su capacidad para generar\nideas innovadoras, desarrollar contenido atractivo y adaptarse a las\ntendencias del mercado. En su desempeño participa en la\nconceptualización y desarrollo creativo de campañas en agencias\npublicitarias y en equipos de marketing interno. También participa en la\nelaboración de estrategias de contenido para medios de comunicación\ntradicionales y digitales, colaborando en la producci",
+        "malla_pdf": "/mallas/malla_publicidad.pdf",
         "sedes": [
             {
                 "sede": "MODALIDAD ONLINE",
                 "matricula": "174000",
-                "arancel": "353000"
+                "arancel": "363000"
             },
             {
-                "sede": "VIÑA DEL MAR",
+                "sede": "MAIPÚ",
                 "matricula": "174000",
-                "arancel": "353000"
+                "arancel": "363000"
+            },
+            {
+                "sede": "CONCEPCIÓN",
+                "matricula": "174000",
+                "arancel": "309000"
             },
             {
                 "sede": "SAN CARLOS DE APOQUINDO",
                 "matricula": "174000",
-                "arancel": "438000"
+                "arancel": "377000"
+            },
+            {
+                "sede": "PLAZA VESPUCIO",
+                "matricula": "174000",
+                "arancel": "363000"
+            },
+            {
+                "sede": "VIÑA DEL MAR",
+                "matricula": "148000",
+                "arancel": "351000"
+            },
+            {
+                "sede": "PUENTE ALTO",
+                "matricula": "174000",
+                "arancel": "363000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Relaciones Públicas y Comunicación Organizacional",
+        "duracion": "8 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/relaciones-publicas-y-comunicacion-organizacional",
+        "descripcion": "MALLA DE LA CARRERAMALLA:RELACIONES PÚBLICAS Y COMUNICACIÓN ORGANIZACIONALDESCARGA AQUÍMALLA:RELACIONES PÚBLICAS Y COMUNICACIÓN ORGANIZACIONAL MENCIÓN MARKETING E IDENTIDAD CORPORATIVADESCARGA AQUÍMALLA:RELACIONES PÚBLICAS Y COMUNICACIÓN ORGANIZACIONAL MENCIÓN GESTIÓN ESTRATÉGICA DE EVENTOSDESCARGA AQUÍMALLA:RELACIONADOR(A) PÚBLICO(A) - CARRERA ONLINEDESCARGA AQUÍ",
+        "campo_laboral": "CAMPO LABORAL",
+        "malla_pdf": "/mallas/malla_relaciones_públicas_y_comunicación_organizacional.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "174000",
+                "arancel": "304000"
+            },
+            {
+                "sede": "MAIPÚ",
+                "matricula": "174000",
+                "arancel": "304000"
+            },
+            {
+                "sede": "VIÑA DEL MAR",
+                "matricula": "174000",
+                "arancel": "309000"
+            },
+            {
+                "sede": "SAN CARLOS DE APOQUINDO",
+                "matricula": "174000",
+                "arancel": "387000"
             },
             {
                 "sede": "CONCEPCIÓN",
                 "matricula": "148000",
-                "arancel": "353000"
+                "arancel": "309000"
+            },
+            {
+                "sede": "PUENTE ALTO",
+                "matricula": "174000",
+                "arancel": "359000"
+            },
+            {
+                "sede": "ONLINE",
+                "matricula": "174000",
+                "arancel": "304000"
             }
         ],
         "institucion": "Duoc UC"
     },
     {
-        "nombre_carrera": "Contabilidad General Mención Legislación Tributaria",
+        "nombre_carrera": "Restauración de Bienes Patrimoniales",
         "duracion": "5 Semestres",
-        "url_fuente": "https://www.duoc.cl/carreras/contabilidad-general-mencion-legislacion-tributaria/",
-        "descripcion": "Competencias de la Carrera",
-        "campo_laboral": "El Campo Laboral del o la Contador(a) General mención Legislación\nTributaria está compuesto por organizaciones públicas y privadas de\ndistintos tamaños y de diversos sectores económicos agregando valor a\nlos procesos a su cargo. También se puede desarrollar en el libre\nejercicio de su profesión para diversas entidades y contribuyentes, a\ntravés del asesoramiento o asistencia técnica en las áreas de\ncontabilidad, finanzas, tributación y laboral.",
-        "malla_pdf": "/mallas/malla_contabilidad_general_mención_legislación_tributaria.pdf",
-        "sedes": [
-            {
-                "sede": "MODALIDAD ONLINE",
-                "matricula": "132000",
-                "arancel": "263000"
-            },
-            {
-                "sede": "MAIPÚ",
-                "matricula": "132000",
-                "arancel": "263000"
-            },
-            {
-                "sede": "PLAZA NORTE",
-                "matricula": "132000",
-                "arancel": "276000"
-            },
-            {
-                "sede": "PLAZA VESPUCIO",
-                "matricula": "132000",
-                "arancel": "276000"
-            },
-            {
-                "sede": "VIÑA DEL MAR",
-                "matricula": "132000",
-                "arancel": "263000"
-            },
-            {
-                "sede": "SAN BERNARDO",
-                "matricula": "132000",
-                "arancel": "276000"
-            },
-            {
-                "sede": "ALONSO DE OVALLE",
-                "matricula": "132000",
-                "arancel": "276000"
-            }
-        ],
-        "institucion": "Duoc UC"
-    },
-    {
-        "nombre_carrera": "Contabilidad Tributaria",
-        "duracion": "10 Bimestres",
-        "url_fuente": "https://www.duoc.cl/carreras/contabilidad-tributaria-5/",
-        "descripcion": "Competencias de la Carrera",
-        "campo_laboral": "El Campo Laboral del o la Contador(a) Tributario(a) está compuesto por\norganizaciones públicas y privadas de distintos tamaños y de diversos\nsectores económicos. También se puede desarrollar en el libre ejercicio\nde su profesión para diversas entidades y contribuyentes, a través del\nasesoramiento o asistencia técnica en las áreas de contabilidad,\nfinanzas, tributación y laboral.",
-        "malla_pdf": "/mallas/malla_contabilidad_tributaria.pdf",
-        "sedes": [
-            {
-                "sede": "MODALIDAD ONLINE",
-                "matricula": "132000",
-                "arancel": "233000"
-            },
-            {
-                "sede": "ONLINE",
-                "matricula": "132000",
-                "arancel": "233000"
-            }
-        ],
-        "institucion": "Duoc UC"
-    },
-    {
-        "nombre_carrera": "Desarrollo de Aplicaciones",
-        "duracion": "10 Bimestres",
-        "url_fuente": "https://www.duoc.cl/carreras/desarrollo-de-aplicaciones-5/",
-        "descripcion": "Competencias de la Carrera",
+        "url_fuente": "https://www.duoc.cl/carreras/restauracion-de-bienes-patrimoniales",
+        "descripcion": "MALLA DE LA CARRERAMALLA:RESTAURACIÓN DE BIENES PATRIMONIALESDESCARGA AQUÍ",
         "campo_laboral": "CAMPO LABORAL",
-        "malla_pdf": "/mallas/malla_desarrollo_de_aplicaciones.pdf",
+        "malla_pdf": "/mallas/malla_restauración_de_bienes_patrimoniales.pdf",
         "sedes": [
             {
                 "sede": "MODALIDAD ONLINE",
                 "matricula": "132000",
-                "arancel": "260000"
+                "arancel": "268000"
             },
             {
                 "sede": "ONLINE",
                 "matricula": "132000",
-                "arancel": "260000"
-            }
-        ],
-        "institucion": "Duoc UC"
-    },
-    {
-        "nombre_carrera": "Desarrollo y Diseño Web",
-        "duracion": "9 Bimestres",
-        "url_fuente": "https://www.duoc.cl/carreras/desarrollo-y-diseno-web/",
-        "descripcion": "Competencias de la Carrera",
-        "campo_laboral": "El campo laboral del especialista en Desarrollo y Diseño Web, contempla desarrollarse tanto en el ejercicio libre de la profesión de manera\nindependiente, prestando servicios de desarrollo web para distintos tipos de cliente agencias y/o empresas, como integrando equipos de trabajo\nmultidisciplinarios dentro de oficinas de diseño y publicidad especializadas en el desarrollo de soluciones digitales. Además, podrá desarrollarse\ndentro de instituciones de servicios públicas o privadas trabajando en departamento de Comunicaciones, Marketing y Diseño principalmente.",
-        "malla_pdf": "/mallas/malla_desarrollo_y_diseño_web.pdf",
-        "sedes": [
-            {
-                "sede": "MODALIDAD ONLINE",
-                "matricula": "132000",
-                "arancel": "290000"
-            },
-            {
-                "sede": "ONLINE",
-                "matricula": "132000",
-                "arancel": "290000"
-            }
-        ],
-        "institucion": "Duoc UC"
-    },
-    {
-        "nombre_carrera": "Dibujo y Modelamiento Arquitectónico y Estructural",
-        "duracion": "5 Semestres",
-        "url_fuente": "https://www.duoc.cl/carreras/dibujo-y-modelamiento-arquitectonico-y-estructural/",
-        "descripcion": "MALLA DE LA CARRERAMALLA:DIBUJO Y MODELAMIENTO ARQUITECTÓNICO Y ESTRUCTURALDESCARGA AQUÍ",
-        "campo_laboral": "CAMPO LABORAL",
-        "malla_pdf": "/mallas/malla_dibujo_y_modelamiento_arquitectónico_y_estructural.pdf",
-        "sedes": [
-            {
-                "sede": "MODALIDAD ONLINE",
-                "matricula": "132000",
-                "arancel": "263000"
-            },
-            {
-                "sede": "MAIPÚ",
-                "matricula": "132000",
-                "arancel": "263000"
+                "arancel": "268000"
             },
             {
                 "sede": "ALAMEDA",
@@ -883,171 +2240,898 @@
         "institucion": "Duoc UC"
     },
     {
-        "nombre_carrera": "Diseño de Ambientes",
-        "duracion": "8 Semestres",
-        "url_fuente": "https://www.duoc.cl/carreras/diseno-de-ambientes/",
-        "descripcion": "Las y los estudiantes de la carrera de Diseño de Ambientes podrán postular a alguna de las siguientes especializaciones ofrecidas durante el cuarto semestre:",
-        "campo_laboral": "Descripción del Campo Laboral",
-        "malla_pdf": "/mallas/malla_diseño_de_ambientes.pdf",
+        "nombre_carrera": "Técnico Agrícola",
+        "duracion": "5 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/tecnico-agricola-4",
+        "descripcion": "Competencias de la Carrera",
+        "campo_laboral": "En el ámbito ocupacional, la persona egresada está preparada para desempeñar roles claves en diferentes áreas de la agricultura. Su versatilidad le permite abordar desde la gestión de cultivos hasta la operación de maquinaria agrícola. Puede ocupar posiciones estratégicas en la administración de recursos naturales, implementando técnicas de manejo y conservación de suelos, gestión eficiente del agua y otros recursos, así como la aplicación de principios de economía circular.",
+        "malla_pdf": "/mallas/malla_técnico_agrícola.pdf",
         "sedes": [
             {
                 "sede": "MODALIDAD ONLINE",
-                "matricula": "174000",
-                "arancel": "334000"
+                "matricula": "132000",
+                "arancel": "299000"
             },
             {
-                "sede": "PLAZA OESTE",
-                "matricula": "174000",
-                "arancel": "334000"
+                "sede": "SAN BERNARDO",
+                "matricula": "132000",
+                "arancel": "299000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Técnico Audiovisual",
+        "duracion": "5 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/tecnico-audiovisual-2",
+        "descripcion": "Competencias de la Carrera",
+        "campo_laboral": "Descripción del Campo Laboral",
+        "malla_pdf": "/mallas/malla_técnico_audiovisual.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "132000",
+                "arancel": "364000"
             },
             {
-                "sede": "VIÑA DEL MAR",
-                "matricula": "174000",
-                "arancel": "310000"
+                "sede": "ONLINE",
+                "matricula": "132000",
+                "arancel": "364000"
             },
             {
                 "sede": "SAN CARLOS DE APOQUINDO",
-                "matricula": "174000",
-                "arancel": "329000"
+                "matricula": "132000",
+                "arancel": "364000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Técnico en Laboratorio Clínico y Banco de Sangre",
+        "duracion": "4 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/tecnico-de-laboratorio-clinico-y-banco-de-sangre",
+        "descripcion": "Duración en semestres: 5Información extraída del sitio web Mi Futuro (SIES), correspondiente al promedio de las duraciones reales de los titulados del año 2023 de la carrera.www.mifuturo.cl",
+        "campo_laboral": "El campo laboral del Técnico Superior de Laboratorio Clínico y Banco de Sangre está compuesto por los consultorios y hospitales pertenecientes al sistema de salud pública, así como las clínicas, mutuales, centros médicos, laboratorios clínicos, laboratorios de investigación y laboratorios de citodiagnóstico del sistema privado de salud.",
+        "malla_pdf": "/mallas/malla_técnico_en_laboratorio_clínico_y_banco_de_sangre.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "132000",
+                "arancel": "278000"
+            },
+            {
+                "sede": "MAIPÚ",
+                "matricula": "132000",
+                "arancel": "278000"
+            },
+            {
+                "sede": "PUENTE ALTO",
+                "matricula": "132000",
+                "arancel": "282000"
+            },
+            {
+                "sede": "SAN BERNARDO",
+                "matricula": "132000",
+                "arancel": "282000"
+            },
+            {
+                "sede": "SAN JOAQUÍN",
+                "matricula": "132000",
+                "arancel": "278000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Técnico en Radiodiagnóstico y Radioterapia",
+        "duracion": "4 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/tecnico-de-radiodiagnostico-y-radioterapia",
+        "descripcion": "Competencias del Perfil de EgresoAl concluir el Plan de Estudios de Técnico de Radiodiagnóstico y Radioterapia,\nel egresado será capaz de demostrar las siguientes competencias",
+        "campo_laboral": "El Técnico Superior de Radiodiagnóstico y Radioterapia colabora en la ejecución de\nexámenes, procedimientos y tratamientos en el área de diagnóstico por imágenes y de asistencia a\npacientes oncológicos, bajo la supervisión de un profesional del rubro, y realiza actividades técnicas\nadministrativas específicas. Su campo laboral está constituido por clínicas, centros médicos, centros\nradiológicos, hospitales, mutuales y hospitales de las Fuerzas Armadas y Carabineros, pertenecientes a\nlos sistemas de salud público y privado.",
+        "malla_pdf": "/mallas/malla_técnico_en_radiodiagnóstico_y_radioterapia.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "132000",
+                "arancel": "278000"
+            },
+            {
+                "sede": "SAN JOAQUÍN",
+                "matricula": "132000",
+                "arancel": "278000"
+            },
+            {
+                "sede": "PUENTE ALTO",
+                "matricula": "132000",
+                "arancel": "282000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Técnico en Administración",
+        "duracion": "4 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/tecnico-en-administracion",
+        "descripcion": "Competencias de la Carrera",
+        "campo_laboral": "El campo ocupacional del Técnico(a) en Administración es amplio y diverso, pudiendo desempeñarse en diferentes áreas y organizaciones, tanto del sector público como privado; como asistente, coordinador(a), supervisor(a), analista o ejecutivo(a), realizando diversas tareas administrativas, de análisis, control, operaciones y gestión del negocio en general.",
+        "malla_pdf": "/mallas/malla_técnico_en_administración.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "121000",
+                "arancel": "280000"
+            },
+            {
+                "sede": "MAIPÚ",
+                "matricula": "121000",
+                "arancel": "280000"
+            },
+            {
+                "sede": "PUERTO MONTT",
+                "matricula": "121000",
+                "arancel": "274000"
             },
             {
                 "sede": "ALONSO DE OVALLE",
-                "matricula": "174000",
-                "arancel": "334000"
-            }
-        ],
-        "institucion": "Duoc UC"
-    },
-    {
-        "nombre_carrera": "Diseño de Vestuario",
-        "duracion": "8 Semestres",
-        "url_fuente": "https://www.duoc.cl/carreras/diseno-de-vestuario-2/",
-        "descripcion": "Las y los estudiantes de la carrera de Diseño de Vestuario podrán postular a alguna de las siguientes especializaciones ofrecidas durante el cuarto semestre:",
-        "campo_laboral": "La persona titulada de Diseño de Vestuario de Duoc UC podrá desarrollarse en diversas áreas del diseño tales como: ropa, accesorios, vestuario para audiovisuales, espacios y vitrinas, y vestuario para eventos específicos. Además, en el desarrollo de productos, supervisión y coordinación de vestuario, investigación histórica y cultural, estilismo para sesiones fotográficas y publicidad, innovación textil y tecnológica.\n\nEn su rol, tendrá la capacidad de crear y desarrollar indumentaria para una variedad de contextos, desde la moda y el entretenimiento hasta el diseño funcional para industrias e",
-        "malla_pdf": "/mallas/malla_diseño_de_vestuario.pdf",
-        "sedes": [
+                "matricula": "132000",
+                "arancel": "274000"
+            },
             {
-                "sede": "MODALIDAD ONLINE",
-                "matricula": "174000",
-                "arancel": "311000"
+                "sede": "ANTONIO VARAS",
+                "matricula": "132000",
+                "arancel": "280000"
+            },
+            {
+                "sede": "CAMPUS NACIMIENTO",
+                "matricula": "121000",
+                "arancel": "274000"
+            },
+            {
+                "sede": "MELIPILLA",
+                "matricula": "132000",
+                "arancel": "280000"
+            },
+            {
+                "sede": "PUENTE ALTO",
+                "matricula": "132000",
+                "arancel": "280000"
             },
             {
                 "sede": "VIÑA DEL MAR",
-                "matricula": "174000",
-                "arancel": "311000"
+                "matricula": "121000",
+                "arancel": "280000"
             },
             {
-                "sede": "SAN CARLOS DE APOQUINDO",
-                "matricula": "174000",
-                "arancel": "351000"
-            }
-        ],
-        "institucion": "Duoc UC"
-    },
-    {
-        "nombre_carrera": "Diseño Gráfico",
-        "duracion": "8 Semestres",
-        "url_fuente": "https://www.duoc.cl/carreras/diseno-grafico-3/",
-        "descripcion": "Las y los estudiantes de la carrera de Diseño Gráfico podrán postular a alguna de las siguientes menciones ofrecidas durante el cuarto semestre:",
-        "campo_laboral": "Descripción del Perfil de Egreso y campo laboral",
-        "malla_pdf": "/mallas/malla_diseño_gráfico.pdf",
-        "sedes": [
-            {
-                "sede": "MODALIDAD ONLINE",
-                "matricula": "174000",
-                "arancel": "311000"
-            },
-            {
-                "sede": "PLAZA OESTE",
-                "matricula": "174000",
-                "arancel": "311000"
+                "sede": "PLAZA NORTE",
+                "matricula": "132000",
+                "arancel": "280000"
             },
             {
                 "sede": "PLAZA VESPUCIO",
-                "matricula": "174000",
-                "arancel": "344000"
-            },
-            {
-                "sede": "SAN CARLOS DE APOQUINDO",
-                "matricula": "174000",
-                "arancel": "361000"
-            },
-            {
-                "sede": "VIÑA DEL MAR",
-                "matricula": "174000",
-                "arancel": "311000"
-            },
-            {
-                "sede": "ALONSO DE OVALLE",
-                "matricula": "174000",
-                "arancel": "344000"
-            },
-            {
-                "sede": "CONCEPCIÓN",
-                "matricula": "148000",
-                "arancel": "311000"
-            }
-        ],
-        "institucion": "Duoc UC"
-    },
-    {
-        "nombre_carrera": "Diseño Industrial e Innovación en Productos",
-        "duracion": "8 Semestres",
-        "url_fuente": "https://www.duoc.cl/carreras/diseno-industrial-3/",
-        "descripcion": "Las y los estudiantes de la carrera de Diseño de Productos podrán postular a alguna de las siguientes especializaciones ofrecidas durante el cuarto semestre:",
-        "campo_laboral": "La persona titulada de Diseño Industrial e Innovación en Productos de Duoc UC podrá desarrollarse en diversas áreas del diseño de: productos de consumo masivo, productos eléctricos y tecnológicos, equipamiento industrial, muebles y accesorios, equipamiento para espacios públicos y urbanos, y productos sostenibles.\n\nEn su rol tendrá la capacidad de diseñar objetos físicos, considerando su funcionalidad, ergonomía, estética, sostenibilidad y viabilidad económica, para ello debe integrar creatividad, habilidades técnicas, conocimientos de materiales y procesos de producción, así como una comprens",
-        "malla_pdf": "/mallas/malla_diseño_industrial_e_innovación_en_productos.pdf",
-        "sedes": [
-            {
-                "sede": "MODALIDAD ONLINE",
-                "matricula": "174000",
-                "arancel": "307000"
+                "matricula": "132000",
+                "arancel": "280000"
             },
             {
                 "sede": "PLAZA OESTE",
-                "matricula": "174000",
-                "arancel": "307000"
+                "matricula": "132000",
+                "arancel": "280000"
             },
             {
-                "sede": "SAN CARLOS DE APOQUINDO",
-                "matricula": "174000",
-                "arancel": "332000"
-            },
-            {
-                "sede": "ALONSO DE OVALLE",
-                "matricula": "174000",
-                "arancel": "332000"
-            },
-            {
-                "sede": "VIÑA DEL MAR",
-                "matricula": "148000",
-                "arancel": "307000"
-            },
-            {
-                "sede": "CONCEPCIÓN",
-                "matricula": "148000",
-                "arancel": "307000"
+                "sede": "SAN BERNARDO",
+                "matricula": "132000",
+                "arancel": "280000"
             }
         ],
         "institucion": "Duoc UC"
     },
     {
-        "nombre_carrera": "Gastronomía",
+        "nombre_carrera": "Técnico en Construcción",
         "duracion": "5 Semestres",
-        "url_fuente": "https://www.duoc.cl/carreras/gastronomia-2/",
+        "url_fuente": "https://www.duoc.cl/carreras/tecnico-en-construccion-2",
         "descripcion": "Competencias de la Carrera",
-        "campo_laboral": "Descripción del Campo Ocupacional",
-        "malla_pdf": "/mallas/malla_gastronomía.pdf",
+        "campo_laboral": "En el ámbito ocupacional, el/la Técnico(a) en Construcción puede desempeñarse en múltiples áreas de la industria, como edificación, obras viales, infraestructura civil e industrial, rehabilitación, mantenimiento y urbanización, además de encargarse de instalaciones domiciliarias y especiales. Gracias a su formación en metodología BIM, tecnologías, software y herramientas IA, puede participar en entidades públicas o privadas, apoyando procesos de supervisión, control de calidad y optimización de recursos",
+        "malla_pdf": "/mallas/malla_técnico_en_construcción.pdf",
         "sedes": [
             {
                 "sede": "MODALIDAD ONLINE",
                 "matricula": "132000",
-                "arancel": "318000"
+                "arancel": "266000"
+            },
+            {
+                "sede": "PUENTE ALTO",
+                "matricula": "132000",
+                "arancel": "266000"
+            },
+            {
+                "sede": "ALAMEDA",
+                "matricula": "132000",
+                "arancel": "278000"
+            },
+            {
+                "sede": "MELIPILLA",
+                "matricula": "132000",
+                "arancel": "261000"
+            },
+            {
+                "sede": "SAN BERNARDO",
+                "matricula": "132000",
+                "arancel": "278000"
+            },
+            {
+                "sede": "PUERTO MONTT",
+                "matricula": "121000",
+                "arancel": "266000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Técnico en Control y Monitoreo Remoto de Procesos Mineros",
+        "duracion": "10 Bimestres",
+        "url_fuente": "https://www.duoc.cl/carreras/tecnico-en-control-y-monitoreo-remoto-de-procesos-mineros",
+        "descripcion": "Competencias de la Carrera",
+        "campo_laboral": "Descripción del Campo Ocupacional",
+        "malla_pdf": "/mallas/malla_técnico_en_control_y_monitoreo_remoto_de_procesos_mineros.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "132000",
+                "arancel": "247000"
+            },
+            {
+                "sede": "ONLINE",
+                "matricula": "132000",
+                "arancel": "247000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Técnico en Electricidad y Automatización Industrial",
+        "duracion": "5 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/tecnico-en-electricidad-y-automatizacion-industrial",
+        "descripcion": "Competencias de la Carrera",
+        "campo_laboral": "El campo laboral de quienes se titulan de la carrera de Técnico en Electricidad y Automatización Industrial se encuentra conformado, fundamentalmente, por empresas vinculadas a los principales sectores industriales del país. Entre estos, se consideran organizaciones de áreas tales como minería, energía, silvoagrocultura, empresas agrícolas, forestales, acuícolas, de alimentos y bebidas, transporte y construcción, entre otras.",
+        "malla_pdf": "/mallas/malla_técnico_en_electricidad_y_automatización_industrial.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "132000",
+                "arancel": "283000"
+            },
+            {
+                "sede": "MAIPÚ",
+                "matricula": "132000",
+                "arancel": "283000"
+            },
+            {
+                "sede": "PLAZA NORTE",
+                "matricula": "132000",
+                "arancel": "291000"
+            },
+            {
+                "sede": "PUENTE ALTO",
+                "matricula": "132000",
+                "arancel": "291000"
+            },
+            {
+                "sede": "SAN JOAQUÍN",
+                "matricula": "132000",
+                "arancel": "283000"
+            },
+            {
+                "sede": "SAN BERNARDO",
+                "matricula": "132000",
+                "arancel": "291000"
+            },
+            {
+                "sede": "CONCEPCIÓN",
+                "matricula": "121000",
+                "arancel": "283000"
+            },
+            {
+                "sede": "CAMPUS NACIMIENTO",
+                "matricula": "121000",
+                "arancel": "283000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Técnico en Electricidad y Energías Renovables",
+        "duracion": "5 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/tecnico-en-electricidad-y-energias-renovables",
+        "descripcion": "Competencias de la Carrera",
+        "campo_laboral": "El campo laboral del/la Técnico(a) en Electricidad y Energías Renovables es amplio y diverso, abarcando toda el área asociada al sector residencial, comercial e industrial del país, para instalaciones eléctricas de baja tensión y renovables de pequeña y mediana escala. Podrá desarrollar proyectos de asesoría, gestión y supervisión en el ámbito eléctrico y de energías renovables.",
+        "malla_pdf": "/mallas/malla_técnico_en_electricidad_y_energías_renovables.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "132000",
+                "arancel": "287000"
+            },
+            {
+                "sede": "MAIPÚ",
+                "matricula": "132000",
+                "arancel": "287000"
+            },
+            {
+                "sede": "SAN JOAQUÍN",
+                "matricula": "132000",
+                "arancel": "287000"
+            },
+            {
+                "sede": "PLAZA NORTE",
+                "matricula": "132000",
+                "arancel": "287000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Técnico en Enfermería",
+        "duracion": "5 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/tecnico-en-enfermeria-2",
+        "descripcion": "Competencias de la Carrera",
+        "campo_laboral": "Descripción del Campo Ocupacional",
+        "malla_pdf": "/mallas/malla_técnico_en_enfermería.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "132000",
+                "arancel": "283000"
+            },
+            {
+                "sede": "MAIPÚ",
+                "matricula": "132000",
+                "arancel": "283000"
+            },
+            {
+                "sede": "PUENTE ALTO",
+                "matricula": "132000",
+                "arancel": "282000"
+            },
+            {
+                "sede": "SAN BERNARDO",
+                "matricula": "132000",
+                "arancel": "282000"
+            },
+            {
+                "sede": "SAN JOAQUÍN",
+                "matricula": "132000",
+                "arancel": "283000"
+            },
+            {
+                "sede": "CONCEPCIÓN",
+                "matricula": "121000",
+                "arancel": "283000"
+            },
+            {
+                "sede": "MELIPILLA",
+                "matricula": "121000",
+                "arancel": "271000"
+            },
+            {
+                "sede": "PUERTO MONTT",
+                "matricula": "121000",
+                "arancel": "283000"
+            },
+            {
+                "sede": "SAN CARLOS DE APOQUINDO",
+                "matricula": "132000",
+                "arancel": "287000"
+            },
+            {
+                "sede": "CAMPUS NACIMIENTO",
+                "matricula": "121000",
+                "arancel": "283000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Técnico en Geología",
+        "duracion": "5 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/tecnico-en-geologia-3",
+        "descripcion": "Competencias de la Carrera",
+        "campo_laboral": "Las y los técnicos en geología están capacitados para desempeñarse en una variedad de roles dentro del sector geológico y minero, contribuyendo activamente en actividades de exploración, evaluación y gestión de recursos naturales. Su formación y habilidades les permiten trabajar en diferentes entornos y desempeñar diversas funciones en el campo laboral.",
+        "malla_pdf": "/mallas/malla_técnico_en_geología.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "132000",
+                "arancel": "306000"
+            },
+            {
+                "sede": "PUENTE ALTO",
+                "matricula": "132000",
+                "arancel": "306000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Técnico en Gestión Logística",
+        "duracion": "5 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/tecnico-en-gestion-logistica",
+        "descripcion": "Competencias de la Carrera",
+        "campo_laboral": "El Campo ocupacional del Técnico en Gestión Logística contempla tanto organizaciones públicas como\nprivadas, dentro de las distintas áreas de la cadena de suministros en las que destacan compras y\nabastecimiento, almacenamiento, inventario, transporte, distribución y operaciones logísticas.\nEste profesional puede desempeñarse en empresas especializadas del sector, como operadores\nlogísticos y empresas de transporte, y en cualquier otro tipo de empresas que contemplen la\ncomercialización, distribución y transporte de bienes y servicios en el mercado nacional e\ninternacional.",
+        "malla_pdf": "/mallas/malla_técnico_en_gestión_logística.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "121000",
+                "arancel": "266000"
+            },
+            {
+                "sede": "PLAZA OESTE",
+                "matricula": "121000",
+                "arancel": "266000"
+            },
+            {
+                "sede": "CAMPUS NACIMIENTO",
+                "matricula": "121000",
+                "arancel": "274000"
+            },
+            {
+                "sede": "PLAZA NORTE",
+                "matricula": "132000",
+                "arancel": "280000"
             },
             {
                 "sede": "ALONSO DE OVALLE",
                 "matricula": "132000",
-                "arancel": "318000"
+                "arancel": "280000"
+            },
+            {
+                "sede": "PLAZA VESPUCIO",
+                "matricula": "132000",
+                "arancel": "280000"
+            },
+            {
+                "sede": "SAN BERNARDO",
+                "matricula": "132000",
+                "arancel": "280000"
+            },
+            {
+                "sede": "VIÑA DEL MAR",
+                "matricula": "121000",
+                "arancel": "266000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Técnico en Mantenimiento Industrial",
+        "duracion": "5 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/tecnico-en-mantenimiento-industrial",
+        "descripcion": "Competencias de la Carrera",
+        "campo_laboral": "Descripción del Campo Ocupacional",
+        "malla_pdf": "/mallas/malla_técnico_en_mantenimiento_industrial.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "121000",
+                "arancel": "281000"
+            },
+            {
+                "sede": "ONLINE",
+                "matricula": "121000",
+                "arancel": "281000"
+            },
+            {
+                "sede": "CAMPUS NACIMIENTO",
+                "matricula": "121000",
+                "arancel": "281000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Técnico en Maquinaria y Vehículos Pesados",
+        "duracion": "5 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/tecnico-en-maquinaria-y-vehiculos-pesados",
+        "descripcion": "Competencias de la Carrera",
+        "campo_laboral": "Descripción del Campo Ocupacional",
+        "malla_pdf": "/mallas/malla_técnico_en_maquinaria_y_vehículos_pesados.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "132000",
+                "arancel": "287000"
+            },
+            {
+                "sede": "MAIPÚ",
+                "matricula": "132000",
+                "arancel": "287000"
+            },
+            {
+                "sede": "SAN BERNARDO",
+                "matricula": "132000",
+                "arancel": "290000"
+            },
+            {
+                "sede": "SAN JOAQUÍN",
+                "matricula": "132000",
+                "arancel": "290000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Técnico en Mecánica Automotriz y Autotrónica",
+        "duracion": "5 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/tecnico-en-mecanica-automotriz-y-autotronica-2",
+        "descripcion": "Competencias de la Carrera",
+        "campo_laboral": "El campo ocupacional para la carrera de Técnico en Mecánica Automotriz y Autotrónica abarca el desempeño en la mecánica de vehículos automotrices, como también las labores asociadas al diagnóstico y la reparación de sistemas electrónicos y de control avanzados.",
+        "malla_pdf": "/mallas/malla_técnico_en_mecánica_automotriz_y_autotrónica.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "132000",
+                "arancel": "296000"
+            },
+            {
+                "sede": "MAIPÚ",
+                "matricula": "132000",
+                "arancel": "296000"
+            },
+            {
+                "sede": "PLAZA NORTE",
+                "matricula": "132000",
+                "arancel": "296000"
+            },
+            {
+                "sede": "PUENTE ALTO",
+                "matricula": "132000",
+                "arancel": "296000"
+            },
+            {
+                "sede": "SAN JOAQUÍN",
+                "matricula": "132000",
+                "arancel": "291000"
+            },
+            {
+                "sede": "SAN BERNARDO",
+                "matricula": "132000",
+                "arancel": "296000"
+            },
+            {
+                "sede": "MELIPILLA",
+                "matricula": "132000",
+                "arancel": "291000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Técnico en Odontología",
+        "duracion": "5 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/tecnico-en-odontologia-2",
+        "descripcion": "Competencias de la Carrera",
+        "campo_laboral": "En el ámbito ocupacional sus funciones son requeridas en puestos de trabajo tanto en el sector público como privado, desempeñándose en todos los niveles de atención incluyendo servicios de urgencia odontológica, en zonas urbanas o rurales. Asimismo, puede colaborar y/o coordinar en clínicas odontológicas, centros de atención dental, centros radiológicos dentales, centros digitales odontológicos y en la atención de telesalud odontológica, además de participar en campañas de educación comunitaria, operativos de salud y en puestos de trabajo relacionados a su rol.",
+        "malla_pdf": "/mallas/malla_técnico_en_odontología.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "132000",
+                "arancel": "282000"
+            },
+            {
+                "sede": "MAIPÚ",
+                "matricula": "132000",
+                "arancel": "282000"
+            },
+            {
+                "sede": "PUENTE ALTO",
+                "matricula": "132000",
+                "arancel": "282000"
+            },
+            {
+                "sede": "SAN JOAQUÍN",
+                "matricula": "132000",
+                "arancel": "282000"
+            },
+            {
+                "sede": "CONCEPCIÓN",
+                "matricula": "132000",
+                "arancel": "283000"
+            },
+            {
+                "sede": "SAN CARLOS DE APOQUINDO",
+                "matricula": "132000",
+                "arancel": "286000"
+            },
+            {
+                "sede": "MELIPILLA",
+                "matricula": "121000",
+                "arancel": "282000"
+            },
+            {
+                "sede": "PUERTO MONTT",
+                "matricula": "121000",
+                "arancel": "283000"
+            },
+            {
+                "sede": "SAN BERNARDO",
+                "matricula": "132000",
+                "arancel": "282000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Técnico en Operación y Supervisión de Procesos Mineros",
+        "duracion": "No especificada",
+        "url_fuente": "https://www.duoc.cl/carreras/tecnico-en-operacion-y-supervision-de-procesos-mineros-2",
+        "descripcion": "Competencias de la Carrera",
+        "campo_laboral": "Identifica los fundamentos mineros y metalúrgicos de la industria minera de acuerdo con sus procesos claves y principios químicos, físicos y geológicos de base.Desarrolla habilidades de liderazgo y supervisión de equipos de trabajo según normativas legales, de calidad, medioambientales y seguridad y salud ocupacional vigentes para lograr los resultados e identificar oportunidades de mejora y optimización.Opera y supervisa los procesos mineros gestionando al equipo de trabajo, los riesgos y resultados operacionales según procedimientos de trabajo y normativas legales vigentes.Opera y supervisa ",
+        "malla_pdf": "/mallas/malla_técnico_en_operación_y_supervisión_de_procesos_mineros.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "121000",
+                "arancel": "291000"
+            },
+            {
+                "sede": "PUENTE ALTO",
+                "matricula": "121000",
+                "arancel": "291000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Técnico en Operaciones Logísticas",
+        "duracion": "10 Bimestres",
+        "url_fuente": "https://www.duoc.cl/carreras/tecnico-en-operaciones-logisticas",
+        "descripcion": "Competencias de la Carrera",
+        "campo_laboral": "El campo ocupacional de quien se titula como Técnico en Operaciones Logísticas de Duoc UC, considera organizaciones y empresas que se vinculan con las distintas áreas de la cadena de suministro, y cuyo núcleo de operaciones es la logística, tanto a nivel nacional como internacional.\nAsimismo, también podrá desempeñarse en empresas que incorporan la gestión logística en procesos tales como comercialización, distribución y transporte de bienes y servicios, como retail, empresas forestales, industrias del sector minero, entre otras.",
+        "malla_pdf": "/mallas/malla_técnico_en_operaciones_logísticas.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "132000",
+                "arancel": "237000"
+            },
+            {
+                "sede": "ONLINE",
+                "matricula": "132000",
+                "arancel": "237000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Técnico en Prevención de Riesgos",
+        "duracion": "5 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/tecnico-en-prevencion-de-riesgos",
+        "descripcion": "Competencias de la Carrera",
+        "campo_laboral": "Aplicar herramientas para la identificación de peligros y\nevaluación de riesgos, así como protocolos de higiene, salud y\nseguridad ocupacional, utilizando herramientas y tecnologías\nespecializadas, como también recopilando datos que respalden la\ntoma de decisiones con el objetivo de mitigar los riesgos\nasociados a la actividad productiva, mejorar la eficiencia de los\nprocesos y asegurar el cumplimiento de la normativa vigente.Ejecutar planes de gestión ante desastres para la protección del\nbienestar de las personas, utilizando herramientas digitales para\nel monitoreo, aplicando criterios ético",
+        "malla_pdf": "/mallas/malla_técnico_en_prevención_de_riesgos.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "121000",
+                "arancel": "266000"
+            },
+            {
+                "sede": "ONLINE",
+                "matricula": "121000",
+                "arancel": "266000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Técnico en Prevención de Riesgos Laborales",
+        "duracion": "10 Bimestres",
+        "url_fuente": "https://www.duoc.cl/carreras/tecnico-en-prevencion-de-riesgos-laborales-2",
+        "descripcion": "Competencias de la Carrera",
+        "campo_laboral": "Diagnosticar y gestionar los riesgos laborales de acuerdo con la\nlegislación vigente y las políticas internas de la organización,\ncon el objetivo de proteger la salud y el bienestar de los\ntrabajadores.Generar soluciones para el bienestar ocupacional de las personas\nque son parte de una organización, en consideración de sus\ncaracterísticas y particularidades, asegurándose de que los\ntrabajadores formen parte de este proceso.Promover el desarrollo de la cultura preventiva frente al riesgo,\nseguridad y salud ocupacional en todos los niveles de la\norganización, integrando el uso de Tecnologías y ",
+        "malla_pdf": "/mallas/malla_técnico_en_prevención_de_riesgos_laborales.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "132000",
+                "arancel": "230000"
+            },
+            {
+                "sede": "ONLINE",
+                "matricula": "132000",
+                "arancel": "230000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Técnico en Química y Farmacia",
+        "duracion": "5 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/tecnico-en-quimica-y-farmacia",
+        "descripcion": "La evaluación de las competencias logradas por el alumno se realiza\nmediantepruebas parciales y exámenes transversalesque,\ncomo el nombre lo indica, se llevan a cabo para todas las sedes\ndonde se imparte la carrera. La Escuela de Salud ha considerado en\nel caso de las carreras técnicas aplicar unmodelo de evaluación práctico</strong >, que se realiza a través de:",
+        "campo_laboral": "El campo laboral del Técnico Superior en Química y Farmacia se enmarca\nen la industria química, específicamente en laboratorios químicos y\nmicrobiológicos, realizando análisis y control de calidad de los\nprocesos. En la industria farmacéutica, cosmética y química, participa\nen los procesos de producción, expendio, orden y mantenimiento de\nfármacos, magistrales y oficinales, bajo la supervisión del profesional\nfarmacéutico. En farmacias asistenciales de instituciones de salud,\nfarmacias privadas y almacén farmacéutico, recepciona, almacena,\ndistribuye y dispensa fármacos, a la vez que participa",
+        "malla_pdf": "/mallas/malla_técnico_en_química_y_farmacia.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "132000",
+                "arancel": "281000"
+            },
+            {
+                "sede": "MAIPÚ",
+                "matricula": "132000",
+                "arancel": "281000"
+            },
+            {
+                "sede": "PUENTE ALTO",
+                "matricula": "132000",
+                "arancel": "281000"
+            },
+            {
+                "sede": "SAN JOAQUÍN",
+                "matricula": "132000",
+                "arancel": "281000"
+            },
+            {
+                "sede": "SAN BERNARDO",
+                "matricula": "121000",
+                "arancel": "281000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Técnico de Redes y Telecomunicaciones",
+        "duracion": "5 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/tecnico-en-redes-y-telecomunicaciones",
+        "descripcion": "Competencias de la Carrera",
+        "campo_laboral": "El campo ocupacional está constituido por empresas de diversos rubros,\ntanto públicas como privadas, productivas o de servicios, que cuenten\ncon una red convergente de pequeño o mediano tamaño tanto locales como\nextendidas. Esto le permite desempeñarse en las áreas de internet de las\ncosas (IoT), instalación, administración, soporte, mantención de redes,\nasegurando la continuidad operacional de los servicios y los niveles de\nseguridad de la información requeridos por el negocio o la organización.",
+        "malla_pdf": "/mallas/malla_técnico_de_redes_y_telecomunicaciones.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "132000",
+                "arancel": "308000"
+            },
+            {
+                "sede": "PUENTE ALTO",
+                "matricula": "132000",
+                "arancel": "308000"
+            },
+            {
+                "sede": "ALONSO DE OVALLE",
+                "matricula": "132000",
+                "arancel": "308000"
+            },
+            {
+                "sede": "PLAZA VESPUCIO",
+                "matricula": "132000",
+                "arancel": "308000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Técnico en Trabajo Social",
+        "duracion": "10 Bimestres",
+        "url_fuente": "https://www.duoc.cl/carreras/tecnico-en-trabajo-social",
+        "descripcion": "Competencias de la Carrera",
+        "campo_laboral": "El campo laboral de quien se titula como Técnico en Trabajo Social considera instituciones públicas, privadas y de la sociedad civil que desarrollan programas, proyectos y acciones orientadas al bienestar social, la inclusión, el desarrollo comunitario y la mejora de la calidad de vida de sujetos y comunidades. Su quehacer considera la implementación y coordinación de intervenciones sociales, el trabajo colaborativo con equipos interdisciplinarios, y la gestión técnica y administrativa de iniciativas orientadas al cumplimiento de objetivos sociales y organizacionales.",
+        "malla_pdf": "/mallas/malla_técnico_en_trabajo_social.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "132000",
+                "arancel": "243000"
+            },
+            {
+                "sede": "ONLINE",
+                "matricula": "132000",
+                "arancel": "243000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Técnico en Turismo y Hospitalidad",
+        "duracion": "4 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/tecnico-en-turismo-y-hospitalidad-2",
+        "descripcion": "Competencias del Perfil de Egreso",
+        "campo_laboral": "Así mismo, podrá ejercer su profesión de manera autónoma, de acuerdo con el dinamismo propio del ámbito ocupacional de las áreas del turismo y\nhotelería.",
+        "malla_pdf": "/mallas/malla_técnico_en_turismo_y_hospitalidad.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "174000",
+                "arancel": "346000"
+            },
+            {
+                "sede": "ALONSO DE OVALLE",
+                "matricula": "174000",
+                "arancel": "346000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Técnico Topógrafo Geomático",
+        "duracion": "5 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/tecnico-topografo-geomatico",
+        "descripcion": "Competencias de la Carrera",
+        "campo_laboral": "Descripción del Campo Ocupacional",
+        "malla_pdf": "/mallas/malla_técnico_topógrafo_geomático.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "132000",
+                "arancel": "257000"
+            },
+            {
+                "sede": "ONLINE",
+                "matricula": "132000",
+                "arancel": "257000"
+            },
+            {
+                "sede": "ALAMEDA",
+                "matricula": "132000",
+                "arancel": "257000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Técnico Veterinario y Pecuario",
+        "duracion": "5 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/tecnico-veterinario-y-pecuario",
+        "descripcion": "Competencias del Perfil de Egreso",
+        "campo_laboral": "El campo laboral del Técnico Veterinario está compuesto por empresas públicas y privadas de servicios sanitarios de animales, principalmente centros veterinarios, criaderos, zoológicos, laboratorios, entre otras. Así como también, en predios o campos de producción pecuaria de pequeña y mediana escala. El Técnico Veterinario y Pecuario con la especialización en Animales de compañía está preparado para insertarse en la industria como asistente de la atención clínica del médico veterinario y de apoyo a la gestión de centros veterinarios, estilista de animales de compañía y adiestrador de mascotas",
+        "malla_pdf": "/mallas/malla_técnico_veterinario_y_pecuario.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "132000",
+                "arancel": "306000"
+            },
+            {
+                "sede": "MAIPÚ",
+                "matricula": "132000",
+                "arancel": "306000"
+            },
+            {
+                "sede": "PUENTE ALTO",
+                "matricula": "132000",
+                "arancel": "274000"
+            },
+            {
+                "sede": "SAN BERNARDO",
+                "matricula": "132000",
+                "arancel": "306000"
+            }
+        ],
+        "institucion": "Duoc UC"
+    },
+    {
+        "nombre_carrera": "Tecnología en Sonido e Iluminación",
+        "duracion": "5 Semestres",
+        "url_fuente": "https://www.duoc.cl/carreras/tecnologia-en-sonido-e-iluminacion",
+        "descripcion": "Competencias de la Carrera",
+        "campo_laboral": "Descripción del Campo Ocupacional",
+        "malla_pdf": "/mallas/malla_tecnología_en_sonido_e_iluminación.pdf",
+        "sedes": [
+            {
+                "sede": "MODALIDAD ONLINE",
+                "matricula": "132000",
+                "arancel": "299000"
+            },
+            {
+                "sede": "VIÑA DEL MAR",
+                "matricula": "132000",
+                "arancel": "299000"
+            },
+            {
+                "sede": "SAN CARLOS DE APOQUINDO",
+                "matricula": "132000",
+                "arancel": "330000"
             }
         ],
         "institucion": "Duoc UC"
