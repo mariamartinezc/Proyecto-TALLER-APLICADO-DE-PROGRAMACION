@@ -1,6 +1,25 @@
+/* =========================
+   ESTILOS GENERALES
+========================= */
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #282c34;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+
 .App {
   text-align: center;
+  min-height: 100vh;
+  background-color: #282c34;
 }
+
+
+/* =========================
+   LOGO
+========================= */
 
 .App-logo {
   height: 40vmin;
@@ -8,31 +27,180 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
+
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+
 }
+
+
+/* =========================
+   HEADER
+========================= */
 
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
+
   display: flex;
   flex-direction: column;
+
   align-items: center;
   justify-content: center;
+
   font-size: calc(10px + 2vmin);
+
   color: white;
 }
+
+
+/* =========================
+   LINKS
+========================= */
 
 .App-link {
   color: #61dafb;
 }
 
+
+/* =========================
+   ANIMACIÓN
+========================= */
+
 @keyframes App-logo-spin {
+
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+
+}
+
+
+/* =========================
+   SECCIÓN MAPA
+========================= */
+
+.mapa-container {
+
+  width: 90%;
+  margin: 40px auto;
+
+  background-color: #1f2329;
+
+  padding: 25px;
+
+  border-radius: 20px;
+
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4);
+
+}
+
+
+/* =========================
+   TÍTULO MAPA
+========================= */
+
+.titulo-mapa {
+
+  color: #61dafb;
+
+  margin-bottom: 20px;
+
+  font-size: 2rem;
+
+  font-weight: bold;
+
+}
+
+
+/* =========================
+   LEAFLET MAPA
+========================= */
+
+.leaflet-container {
+
+  width: 100%;
+  height: 600px;
+
+  border-radius: 15px;
+
+}
+
+
+/* =========================
+   POPUPS LEAFLET
+========================= */
+
+.leaflet-popup-content-wrapper {
+
+  background-color: #282c34;
+  color: white;
+
+  border-radius: 12px;
+
+}
+
+.leaflet-popup-tip {
+
+  background-color: #282c34;
+
+}
+
+
+/* =========================
+   TEXTO POPUPS
+========================= */
+
+.popup-titulo {
+
+  color: #61dafb;
+
+  font-size: 18px;
+
+  margin-bottom: 10px;
+
+}
+
+.popup-texto {
+
+  margin: 5px 0;
+
+}
+
+
+/* =========================
+   BOTONES FUTUROS FILTROS
+========================= */
+
+.boton-filtro {
+
+  background-color: #61dafb;
+
+  border: none;
+
+  padding: 10px 18px;
+
+  border-radius: 10px;
+
+  margin: 10px;
+
+  cursor: pointer;
+
+  font-weight: bold;
+
+  transition: 0.3s;
+
+}
+
+.boton-filtro:hover {
+
+  background-color: #4fa8c7;
+
+  transform: scale(1.05);
+
 }

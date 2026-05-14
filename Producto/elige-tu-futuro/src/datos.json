@@ -10,62 +10,92 @@
             {
                 "sede": "MODALIDAD ONLINE",
                 "matricula": "132000",
-                "arancel": "288000"
+                "arancel": "288000",
+                "coordenadas": null
             },
             {
                 "sede": "MAIPÚ",
                 "matricula": "132000",
-                "arancel": "288000"
+                "arancel": "288000",
+                "coordenadas": null
             },
             {
                 "sede": "PLAZA NORTE",
                 "matricula": "132000",
-                "arancel": "307000"
+                "arancel": "307000",
+                "coordenadas": {
+                    "lat": -33.36324,
+                    "lng": -70.67802
+                }
             },
             {
                 "sede": "PLAZA OESTE",
                 "matricula": "132000",
-                "arancel": "307000"
+                "arancel": "307000",
+                "coordenadas": {
+                    "lat": -33.51512,
+                    "lng": -70.71847
+                }
             },
             {
                 "sede": "SAN JOAQUÍN",
                 "matricula": "132000",
-                "arancel": "283000"
+                "arancel": "283000",
+                "coordenadas": null
             },
             {
                 "sede": "SAN BERNARDO",
                 "matricula": "132000",
-                "arancel": "307000"
+                "arancel": "307000",
+                "coordenadas": null
             },
             {
                 "sede": "VIÑA DEL MAR",
                 "matricula": "121000",
-                "arancel": "283000"
+                "arancel": "283000",
+                "coordenadas": {
+                    "lat": -33.0248,
+                    "lng": -71.551
+                }
             },
             {
                 "sede": "ALONSO DE OVALLE",
                 "matricula": "132000",
-                "arancel": "307000"
+                "arancel": "307000",
+                "coordenadas": null
             },
             {
                 "sede": "MELIPILLA",
                 "matricula": "132000",
-                "arancel": "299000"
+                "arancel": "299000",
+                "coordenadas": {
+                    "lat": -33.69446,
+                    "lng": -71.21387
+                }
             },
             {
                 "sede": "PUENTE ALTO",
                 "matricula": "132000",
-                "arancel": "288000"
+                "arancel": "288000",
+                "coordenadas": {
+                    "lat": -33.59855,
+                    "lng": -70.57946
+                }
             },
             {
                 "sede": "PLAZA VESPUCIO",
                 "matricula": "132000",
-                "arancel": "307000"
+                "arancel": "307000",
+                "coordenadas": {
+                    "lat": -33.51656,
+                    "lng": -70.59999
+                }
             },
             {
                 "sede": "CAMPUS NACIMIENTO",
                 "matricula": "121000",
-                "arancel": "288000"
+                "arancel": "288000",
+                "coordenadas": null
             }
         ],
         "institucion": "Duoc UC"
@@ -81,82 +111,122 @@
             {
                 "sede": "MODALIDAD ONLINE",
                 "matricula": "174000",
-                "arancel": "327000"
+                "arancel": "327000",
+                "coordenadas": null
             },
             {
                 "sede": "MAIPÚ",
                 "matricula": "174000",
-                "arancel": "327000"
+                "arancel": "327000",
+                "coordenadas": null
             },
             {
                 "sede": "ANTONIO VARAS",
                 "matricula": "174000",
-                "arancel": "339000"
+                "arancel": "339000",
+                "coordenadas": null
             },
             {
                 "sede": "PUENTE ALTO",
                 "matricula": "174000",
-                "arancel": "339000"
+                "arancel": "339000",
+                "coordenadas": {
+                    "lat": -33.59855,
+                    "lng": -70.57946
+                }
             },
             {
                 "sede": "PLAZA OESTE",
                 "matricula": "174000",
-                "arancel": "339000"
+                "arancel": "339000",
+                "coordenadas": {
+                    "lat": -33.51512,
+                    "lng": -70.71847
+                }
             },
             {
                 "sede": "SAN JOAQUÍN",
                 "matricula": "174000",
-                "arancel": "339000"
+                "arancel": "339000",
+                "coordenadas": null
             },
             {
                 "sede": "PLAZA NORTE",
                 "matricula": "174000",
-                "arancel": "339000"
+                "arancel": "339000",
+                "coordenadas": {
+                    "lat": -33.36324,
+                    "lng": -70.67802
+                }
             },
             {
                 "sede": "ALONSO DE OVALLE",
                 "matricula": "174000",
-                "arancel": "339000"
+                "arancel": "339000",
+                "coordenadas": null
             },
             {
                 "sede": "SAN BERNARDO",
                 "matricula": "174000",
-                "arancel": "339000"
+                "arancel": "339000",
+                "coordenadas": null
             },
             {
                 "sede": "MELIPILLA",
                 "matricula": "174000",
-                "arancel": "327000"
+                "arancel": "327000",
+                "coordenadas": {
+                    "lat": -33.69446,
+                    "lng": -71.21387
+                }
             },
             {
                 "sede": "VIÑA DEL MAR",
                 "matricula": "174000",
-                "arancel": "327000"
+                "arancel": "327000",
+                "coordenadas": {
+                    "lat": -33.0248,
+                    "lng": -71.551
+                }
             },
             {
                 "sede": "SAN CARLOS DE APOQUINDO",
                 "matricula": "174000",
-                "arancel": "346000"
+                "arancel": "346000",
+                "coordenadas": {
+                    "lat": -33.40018,
+                    "lng": -70.50703
+                }
             },
             {
                 "sede": "PLAZA VESPUCIO",
                 "matricula": "174000",
-                "arancel": "339000"
+                "arancel": "339000",
+                "coordenadas": {
+                    "lat": -33.51656,
+                    "lng": -70.59999
+                }
             },
             {
                 "sede": "CONCEPCIÓN",
                 "matricula": "148000",
-                "arancel": "299000"
+                "arancel": "299000",
+                "coordenadas": {
+                    "lat": -36.79539,
+                    "lng": -73.06251
+                }
             },
             {
                 "sede": "ALAMEDA",
                 "matricula": "174000",
-                "arancel": "339000"
+                "arancel": "339000",
+                "coordenadas": null
             },
             {
                 "sede": "PUERTO MONTT",
                 "matricula": "148000",
-                "arancel": "299000"
+                "arancel": "299000",
+                "coordenadas": null
             }
         ],
         "institucion": "Duoc UC"
@@ -172,72 +242,107 @@
             {
                 "sede": "MODALIDAD ONLINE",
                 "matricula": "174000",
-                "arancel": "326000"
+                "arancel": "326000",
+                "coordenadas": null
             },
             {
                 "sede": "MAIPÚ",
                 "matricula": "174000",
-                "arancel": "326000"
+                "arancel": "326000",
+                "coordenadas": null
             },
             {
                 "sede": "ANTONIO VARAS",
                 "matricula": "174000",
-                "arancel": "326000"
+                "arancel": "326000",
+                "coordenadas": null
             },
             {
                 "sede": "MELIPILLA",
                 "matricula": "174000",
-                "arancel": "326000"
+                "arancel": "326000",
+                "coordenadas": {
+                    "lat": -33.69446,
+                    "lng": -71.21387
+                }
             },
             {
                 "sede": "ALONSO DE OVALLE",
                 "matricula": "174000",
-                "arancel": "326000"
+                "arancel": "326000",
+                "coordenadas": null
             },
             {
                 "sede": "PLAZA NORTE",
                 "matricula": "174000",
-                "arancel": "326000"
+                "arancel": "326000",
+                "coordenadas": {
+                    "lat": -33.36324,
+                    "lng": -70.67802
+                }
             },
             {
                 "sede": "PLAZA VESPUCIO",
                 "matricula": "174000",
-                "arancel": "326000"
+                "arancel": "326000",
+                "coordenadas": {
+                    "lat": -33.51656,
+                    "lng": -70.59999
+                }
             },
             {
                 "sede": "PLAZA OESTE",
                 "matricula": "174000",
-                "arancel": "297000"
+                "arancel": "297000",
+                "coordenadas": {
+                    "lat": -33.51512,
+                    "lng": -70.71847
+                }
             },
             {
                 "sede": "VIÑA DEL MAR",
                 "matricula": "148000",
-                "arancel": "325000"
+                "arancel": "325000",
+                "coordenadas": {
+                    "lat": -33.0248,
+                    "lng": -71.551
+                }
             },
             {
                 "sede": "CONCEPCIÓN",
                 "matricula": "148000",
-                "arancel": "297000"
+                "arancel": "297000",
+                "coordenadas": {
+                    "lat": -36.79539,
+                    "lng": -73.06251
+                }
             },
             {
                 "sede": "PUENTE ALTO",
                 "matricula": "174000",
-                "arancel": "297000"
+                "arancel": "297000",
+                "coordenadas": {
+                    "lat": -33.59855,
+                    "lng": -70.57946
+                }
             },
             {
                 "sede": "ALAMEDA",
                 "matricula": "174000",
-                "arancel": "326000"
+                "arancel": "326000",
+                "coordenadas": null
             },
             {
                 "sede": "PUERTO MONTT",
                 "matricula": "148000",
-                "arancel": "297000"
+                "arancel": "297000",
+                "coordenadas": null
             },
             {
                 "sede": "SAN BERNARDO",
                 "matricula": "174000",
-                "arancel": "326000"
+                "arancel": "326000",
+                "coordenadas": null
             }
         ],
         "institucion": "Duoc UC"
@@ -253,12 +358,14 @@
             {
                 "sede": "MODALIDAD ONLINE",
                 "matricula": "174000",
-                "arancel": "276000"
+                "arancel": "276000",
+                "coordenadas": null
             },
             {
                 "sede": "ONLINE",
                 "matricula": "174000",
-                "arancel": "276000"
+                "arancel": "276000",
+                "coordenadas": null
             }
         ],
         "institucion": "Duoc UC"
@@ -274,17 +381,20 @@
             {
                 "sede": "MODALIDAD ONLINE",
                 "matricula": "174000",
-                "arancel": "339000"
+                "arancel": "339000",
+                "coordenadas": null
             },
             {
                 "sede": "ONLINE",
                 "matricula": "174000",
-                "arancel": "339000"
+                "arancel": "339000",
+                "coordenadas": null
             },
             {
                 "sede": "ANTONIO VARAS",
                 "matricula": "174000",
-                "arancel": "339000"
+                "arancel": "339000",
+                "coordenadas": null
             }
         ],
         "institucion": "Duoc UC"
@@ -300,12 +410,14 @@
             {
                 "sede": "MODALIDAD ONLINE",
                 "matricula": "132000",
-                "arancel": "237000"
+                "arancel": "237000",
+                "coordenadas": null
             },
             {
                 "sede": "ONLINE",
                 "matricula": "132000",
-                "arancel": "237000"
+                "arancel": "237000",
+                "coordenadas": null
             }
         ],
         "institucion": "Duoc UC"
@@ -321,27 +433,32 @@
             {
                 "sede": "MODALIDAD ONLINE",
                 "matricula": "174000",
-                "arancel": "443000"
+                "arancel": "443000",
+                "coordenadas": null
             },
             {
                 "sede": "ALONSO DE OVALLE",
                 "matricula": "174000",
-                "arancel": "443000"
+                "arancel": "443000",
+                "coordenadas": null
             },
             {
                 "sede": "ANTONIO VARAS",
                 "matricula": "174000",
-                "arancel": "443000"
+                "arancel": "443000",
+                "coordenadas": null
             },
             {
                 "sede": "SAN BERNARDO",
                 "matricula": "148000",
-                "arancel": "443000"
+                "arancel": "443000",
+                "coordenadas": null
             },
             {
                 "sede": "PUERTO MONTT",
                 "matricula": "148000",
-                "arancel": "383000"
+                "arancel": "383000",
+                "coordenadas": null
             }
         ],
         "institucion": "Duoc UC"
@@ -357,22 +474,29 @@
             {
                 "sede": "MODALIDAD ONLINE",
                 "matricula": "174000",
-                "arancel": "390000"
+                "arancel": "390000",
+                "coordenadas": null
             },
             {
                 "sede": "SAN BERNARDO",
                 "matricula": "174000",
-                "arancel": "390000"
+                "arancel": "390000",
+                "coordenadas": null
             },
             {
                 "sede": "CONCEPCIÓN",
                 "matricula": "174000",
-                "arancel": "383000"
+                "arancel": "383000",
+                "coordenadas": {
+                    "lat": -36.79539,
+                    "lng": -73.06251
+                }
             },
             {
                 "sede": "ANTONIO VARAS",
                 "matricula": "174000",
-                "arancel": "443000"
+                "arancel": "443000",
+                "coordenadas": null
             }
         ],
         "institucion": "Duoc UC"
@@ -388,27 +512,35 @@
             {
                 "sede": "MODALIDAD ONLINE",
                 "matricula": "174000",
-                "arancel": "390000"
+                "arancel": "390000",
+                "coordenadas": null
             },
             {
                 "sede": "ALONSO DE OVALLE",
                 "matricula": "174000",
-                "arancel": "390000"
+                "arancel": "390000",
+                "coordenadas": null
             },
             {
                 "sede": "ANTONIO VARAS",
                 "matricula": "174000",
-                "arancel": "443000"
+                "arancel": "443000",
+                "coordenadas": null
             },
             {
                 "sede": "CONCEPCIÓN",
                 "matricula": "148000",
-                "arancel": "383000"
+                "arancel": "383000",
+                "coordenadas": {
+                    "lat": -36.79539,
+                    "lng": -73.06251
+                }
             },
             {
                 "sede": "SAN BERNARDO",
                 "matricula": "174000",
-                "arancel": "390000"
+                "arancel": "390000",
+                "coordenadas": null
             }
         ],
         "institucion": "Duoc UC"
@@ -424,17 +556,20 @@
             {
                 "sede": "MODALIDAD ONLINE",
                 "matricula": "174000",
-                "arancel": "443000"
+                "arancel": "443000",
+                "coordenadas": null
             },
             {
                 "sede": "ONLINE",
                 "matricula": "174000",
-                "arancel": "443000"
+                "arancel": "443000",
+                "coordenadas": null
             },
             {
                 "sede": "ANTONIO VARAS",
                 "matricula": "174000",
-                "arancel": "443000"
+                "arancel": "443000",
+                "coordenadas": null
             }
         ],
         "institucion": "Duoc UC"
@@ -450,12 +585,14 @@
             {
                 "sede": "MODALIDAD ONLINE",
                 "matricula": "174000",
-                "arancel": "276000"
+                "arancel": "276000",
+                "coordenadas": null
             },
             {
                 "sede": "ONLINE",
                 "matricula": "174000",
-                "arancel": "276000"
+                "arancel": "276000",
+                "coordenadas": null
             }
         ],
         "institucion": "Duoc UC"
@@ -471,12 +608,14 @@
             {
                 "sede": "MODALIDAD ONLINE",
                 "matricula": "132000",
-                "arancel": "306000"
+                "arancel": "306000",
+                "coordenadas": null
             },
             {
                 "sede": "ONLINE",
                 "matricula": "132000",
-                "arancel": "306000"
+                "arancel": "306000",
+                "coordenadas": null
             }
         ],
         "institucion": "Duoc UC"
@@ -492,27 +631,41 @@
             {
                 "sede": "MODALIDAD ONLINE",
                 "matricula": "174000",
-                "arancel": "398000"
+                "arancel": "398000",
+                "coordenadas": null
             },
             {
                 "sede": "MAIPÚ",
                 "matricula": "174000",
-                "arancel": "398000"
+                "arancel": "398000",
+                "coordenadas": null
             },
             {
                 "sede": "VIÑA DEL MAR",
                 "matricula": "174000",
-                "arancel": "354000"
+                "arancel": "354000",
+                "coordenadas": {
+                    "lat": -33.0248,
+                    "lng": -71.551
+                }
             },
             {
                 "sede": "SAN CARLOS DE APOQUINDO",
                 "matricula": "174000",
-                "arancel": "409000"
+                "arancel": "409000",
+                "coordenadas": {
+                    "lat": -33.40018,
+                    "lng": -70.50703
+                }
             },
             {
                 "sede": "CONCEPCIÓN",
                 "matricula": "148000",
-                "arancel": "354000"
+                "arancel": "354000",
+                "coordenadas": {
+                    "lat": -36.79539,
+                    "lng": -73.06251
+                }
             }
         ],
         "institucion": "Duoc UC"
@@ -528,62 +681,92 @@
             {
                 "sede": "MODALIDAD ONLINE",
                 "matricula": "174000",
-                "arancel": "301000"
+                "arancel": "301000",
+                "coordenadas": null
             },
             {
                 "sede": "PLAZA OESTE",
                 "matricula": "174000",
-                "arancel": "301000"
+                "arancel": "301000",
+                "coordenadas": {
+                    "lat": -33.51512,
+                    "lng": -70.71847
+                }
             },
             {
                 "sede": "MELIPILLA",
                 "matricula": "174000",
-                "arancel": "301000"
+                "arancel": "301000",
+                "coordenadas": {
+                    "lat": -33.69446,
+                    "lng": -71.21387
+                }
             },
             {
                 "sede": "ANTONIO VARAS",
                 "matricula": "174000",
-                "arancel": "301000"
+                "arancel": "301000",
+                "coordenadas": null
             },
             {
                 "sede": "ALONSO DE OVALLE",
                 "matricula": "174000",
-                "arancel": "301000"
+                "arancel": "301000",
+                "coordenadas": null
             },
             {
                 "sede": "PLAZA NORTE",
                 "matricula": "174000",
-                "arancel": "301000"
+                "arancel": "301000",
+                "coordenadas": {
+                    "lat": -33.36324,
+                    "lng": -70.67802
+                }
             },
             {
                 "sede": "VIÑA DEL MAR",
                 "matricula": "174000",
-                "arancel": "290000"
+                "arancel": "290000",
+                "coordenadas": {
+                    "lat": -33.0248,
+                    "lng": -71.551
+                }
             },
             {
                 "sede": "PLAZA VESPUCIO",
                 "matricula": "174000",
-                "arancel": "301000"
+                "arancel": "301000",
+                "coordenadas": {
+                    "lat": -33.51656,
+                    "lng": -70.59999
+                }
             },
             {
                 "sede": "SAN BERNARDO",
                 "matricula": "174000",
-                "arancel": "301000"
+                "arancel": "301000",
+                "coordenadas": null
             },
             {
                 "sede": "PUENTE ALTO",
                 "matricula": "174000",
-                "arancel": "301000"
+                "arancel": "301000",
+                "coordenadas": {
+                    "lat": -33.59855,
+                    "lng": -70.57946
+                }
             },
             {
                 "sede": "ALAMEDA",
                 "matricula": "174000",
-                "arancel": "301000"
+                "arancel": "301000",
+                "coordenadas": null
             },
             {
                 "sede": "PUERTO MONTT",
                 "matricula": "148000",
-                "arancel": "291000"
+                "arancel": "291000",
+                "coordenadas": null
             }
         ],
         "institucion": "Duoc UC"
@@ -599,62 +782,92 @@
             {
                 "sede": "MODALIDAD ONLINE",
                 "matricula": "174000",
-                "arancel": "301000"
+                "arancel": "301000",
+                "coordenadas": null
             },
             {
                 "sede": "PLAZA OESTE",
                 "matricula": "174000",
-                "arancel": "301000"
+                "arancel": "301000",
+                "coordenadas": {
+                    "lat": -33.51512,
+                    "lng": -70.71847
+                }
             },
             {
                 "sede": "MELIPILLA",
                 "matricula": "174000",
-                "arancel": "301000"
+                "arancel": "301000",
+                "coordenadas": {
+                    "lat": -33.69446,
+                    "lng": -71.21387
+                }
             },
             {
                 "sede": "ANTONIO VARAS",
                 "matricula": "174000",
-                "arancel": "301000"
+                "arancel": "301000",
+                "coordenadas": null
             },
             {
                 "sede": "ALONSO DE OVALLE",
                 "matricula": "174000",
-                "arancel": "301000"
+                "arancel": "301000",
+                "coordenadas": null
             },
             {
                 "sede": "PLAZA NORTE",
                 "matricula": "174000",
-                "arancel": "301000"
+                "arancel": "301000",
+                "coordenadas": {
+                    "lat": -33.36324,
+                    "lng": -70.67802
+                }
             },
             {
                 "sede": "VIÑA DEL MAR",
                 "matricula": "174000",
-                "arancel": "290000"
+                "arancel": "290000",
+                "coordenadas": {
+                    "lat": -33.0248,
+                    "lng": -71.551
+                }
             },
             {
                 "sede": "PLAZA VESPUCIO",
                 "matricula": "174000",
-                "arancel": "301000"
+                "arancel": "301000",
+                "coordenadas": {
+                    "lat": -33.51656,
+                    "lng": -70.59999
+                }
             },
             {
                 "sede": "SAN BERNARDO",
                 "matricula": "174000",
-                "arancel": "301000"
+                "arancel": "301000",
+                "coordenadas": null
             },
             {
                 "sede": "PUENTE ALTO",
                 "matricula": "174000",
-                "arancel": "301000"
+                "arancel": "301000",
+                "coordenadas": {
+                    "lat": -33.59855,
+                    "lng": -70.57946
+                }
             },
             {
                 "sede": "ALAMEDA",
                 "matricula": "174000",
-                "arancel": "301000"
+                "arancel": "301000",
+                "coordenadas": null
             },
             {
                 "sede": "PUERTO MONTT",
                 "matricula": "148000",
-                "arancel": "291000"
+                "arancel": "291000",
+                "coordenadas": null
             }
         ],
         "institucion": "Duoc UC"
@@ -670,12 +883,14 @@
             {
                 "sede": "MODALIDAD ONLINE",
                 "matricula": "174000",
-                "arancel": "254000"
+                "arancel": "254000",
+                "coordenadas": null
             },
             {
                 "sede": "ONLINE",
                 "matricula": "174000",
-                "arancel": "254000"
+                "arancel": "254000",
+                "coordenadas": null
             }
         ],
         "institucion": "Duoc UC"
@@ -691,27 +906,38 @@
             {
                 "sede": "MODALIDAD ONLINE",
                 "matricula": "132000",
-                "arancel": "280000"
+                "arancel": "280000",
+                "coordenadas": null
             },
             {
                 "sede": "VIÑA DEL MAR",
                 "matricula": "132000",
-                "arancel": "280000"
+                "arancel": "280000",
+                "coordenadas": {
+                    "lat": -33.0248,
+                    "lng": -71.551
+                }
             },
             {
                 "sede": "PLAZA VESPUCIO",
                 "matricula": "132000",
-                "arancel": "280000"
+                "arancel": "280000",
+                "coordenadas": {
+                    "lat": -33.51656,
+                    "lng": -70.59999
+                }
             },
             {
                 "sede": "ALONSO DE OVALLE",
                 "matricula": "132000",
-                "arancel": "280000"
+                "arancel": "280000",
+                "coordenadas": null
             },
             {
                 "sede": "SAN BERNARDO",
                 "matricula": "132000",
-                "arancel": "280000"
+                "arancel": "280000",
+                "coordenadas": null
             }
         ],
         "institucion": "Duoc UC"
@@ -727,22 +953,35 @@
             {
                 "sede": "MODALIDAD ONLINE",
                 "matricula": "174000",
-                "arancel": "353000"
+                "arancel": "353000",
+                "coordenadas": null
             },
             {
                 "sede": "VIÑA DEL MAR",
                 "matricula": "174000",
-                "arancel": "353000"
+                "arancel": "353000",
+                "coordenadas": {
+                    "lat": -33.0248,
+                    "lng": -71.551
+                }
             },
             {
                 "sede": "SAN CARLOS DE APOQUINDO",
                 "matricula": "174000",
-                "arancel": "438000"
+                "arancel": "438000",
+                "coordenadas": {
+                    "lat": -33.40018,
+                    "lng": -70.50703
+                }
             },
             {
                 "sede": "CONCEPCIÓN",
                 "matricula": "148000",
-                "arancel": "353000"
+                "arancel": "353000",
+                "coordenadas": {
+                    "lat": -36.79539,
+                    "lng": -73.06251
+                }
             }
         ],
         "institucion": "Duoc UC"
@@ -758,37 +997,53 @@
             {
                 "sede": "MODALIDAD ONLINE",
                 "matricula": "132000",
-                "arancel": "263000"
+                "arancel": "263000",
+                "coordenadas": null
             },
             {
                 "sede": "MAIPÚ",
                 "matricula": "132000",
-                "arancel": "263000"
+                "arancel": "263000",
+                "coordenadas": null
             },
             {
                 "sede": "PLAZA NORTE",
                 "matricula": "132000",
-                "arancel": "276000"
+                "arancel": "276000",
+                "coordenadas": {
+                    "lat": -33.36324,
+                    "lng": -70.67802
+                }
             },
             {
                 "sede": "PLAZA VESPUCIO",
                 "matricula": "132000",
-                "arancel": "276000"
+                "arancel": "276000",
+                "coordenadas": {
+                    "lat": -33.51656,
+                    "lng": -70.59999
+                }
             },
             {
                 "sede": "VIÑA DEL MAR",
                 "matricula": "132000",
-                "arancel": "263000"
+                "arancel": "263000",
+                "coordenadas": {
+                    "lat": -33.0248,
+                    "lng": -71.551
+                }
             },
             {
                 "sede": "SAN BERNARDO",
                 "matricula": "132000",
-                "arancel": "276000"
+                "arancel": "276000",
+                "coordenadas": null
             },
             {
                 "sede": "ALONSO DE OVALLE",
                 "matricula": "132000",
-                "arancel": "276000"
+                "arancel": "276000",
+                "coordenadas": null
             }
         ],
         "institucion": "Duoc UC"
@@ -804,12 +1059,14 @@
             {
                 "sede": "MODALIDAD ONLINE",
                 "matricula": "132000",
-                "arancel": "233000"
+                "arancel": "233000",
+                "coordenadas": null
             },
             {
                 "sede": "ONLINE",
                 "matricula": "132000",
-                "arancel": "233000"
+                "arancel": "233000",
+                "coordenadas": null
             }
         ],
         "institucion": "Duoc UC"
@@ -825,12 +1082,14 @@
             {
                 "sede": "MODALIDAD ONLINE",
                 "matricula": "132000",
-                "arancel": "260000"
+                "arancel": "260000",
+                "coordenadas": null
             },
             {
                 "sede": "ONLINE",
                 "matricula": "132000",
-                "arancel": "260000"
+                "arancel": "260000",
+                "coordenadas": null
             }
         ],
         "institucion": "Duoc UC"
@@ -846,12 +1105,14 @@
             {
                 "sede": "MODALIDAD ONLINE",
                 "matricula": "132000",
-                "arancel": "290000"
+                "arancel": "290000",
+                "coordenadas": null
             },
             {
                 "sede": "ONLINE",
                 "matricula": "132000",
-                "arancel": "290000"
+                "arancel": "290000",
+                "coordenadas": null
             }
         ],
         "institucion": "Duoc UC"
@@ -867,17 +1128,20 @@
             {
                 "sede": "MODALIDAD ONLINE",
                 "matricula": "132000",
-                "arancel": "263000"
+                "arancel": "263000",
+                "coordenadas": null
             },
             {
                 "sede": "MAIPÚ",
                 "matricula": "132000",
-                "arancel": "263000"
+                "arancel": "263000",
+                "coordenadas": null
             },
             {
                 "sede": "ALAMEDA",
                 "matricula": "132000",
-                "arancel": "268000"
+                "arancel": "268000",
+                "coordenadas": null
             }
         ],
         "institucion": "Duoc UC"
@@ -893,27 +1157,41 @@
             {
                 "sede": "MODALIDAD ONLINE",
                 "matricula": "174000",
-                "arancel": "334000"
+                "arancel": "334000",
+                "coordenadas": null
             },
             {
                 "sede": "PLAZA OESTE",
                 "matricula": "174000",
-                "arancel": "334000"
+                "arancel": "334000",
+                "coordenadas": {
+                    "lat": -33.51512,
+                    "lng": -70.71847
+                }
             },
             {
                 "sede": "VIÑA DEL MAR",
                 "matricula": "174000",
-                "arancel": "310000"
+                "arancel": "310000",
+                "coordenadas": {
+                    "lat": -33.0248,
+                    "lng": -71.551
+                }
             },
             {
                 "sede": "SAN CARLOS DE APOQUINDO",
                 "matricula": "174000",
-                "arancel": "329000"
+                "arancel": "329000",
+                "coordenadas": {
+                    "lat": -33.40018,
+                    "lng": -70.50703
+                }
             },
             {
                 "sede": "ALONSO DE OVALLE",
                 "matricula": "174000",
-                "arancel": "334000"
+                "arancel": "334000",
+                "coordenadas": null
             }
         ],
         "institucion": "Duoc UC"
@@ -929,17 +1207,26 @@
             {
                 "sede": "MODALIDAD ONLINE",
                 "matricula": "174000",
-                "arancel": "311000"
+                "arancel": "311000",
+                "coordenadas": null
             },
             {
                 "sede": "VIÑA DEL MAR",
                 "matricula": "174000",
-                "arancel": "311000"
+                "arancel": "311000",
+                "coordenadas": {
+                    "lat": -33.0248,
+                    "lng": -71.551
+                }
             },
             {
                 "sede": "SAN CARLOS DE APOQUINDO",
                 "matricula": "174000",
-                "arancel": "351000"
+                "arancel": "351000",
+                "coordenadas": {
+                    "lat": -33.40018,
+                    "lng": -70.50703
+                }
             }
         ],
         "institucion": "Duoc UC"
@@ -955,37 +1242,59 @@
             {
                 "sede": "MODALIDAD ONLINE",
                 "matricula": "174000",
-                "arancel": "311000"
+                "arancel": "311000",
+                "coordenadas": null
             },
             {
                 "sede": "PLAZA OESTE",
                 "matricula": "174000",
-                "arancel": "311000"
+                "arancel": "311000",
+                "coordenadas": {
+                    "lat": -33.51512,
+                    "lng": -70.71847
+                }
             },
             {
                 "sede": "PLAZA VESPUCIO",
                 "matricula": "174000",
-                "arancel": "344000"
+                "arancel": "344000",
+                "coordenadas": {
+                    "lat": -33.51656,
+                    "lng": -70.59999
+                }
             },
             {
                 "sede": "SAN CARLOS DE APOQUINDO",
                 "matricula": "174000",
-                "arancel": "361000"
+                "arancel": "361000",
+                "coordenadas": {
+                    "lat": -33.40018,
+                    "lng": -70.50703
+                }
             },
             {
                 "sede": "VIÑA DEL MAR",
                 "matricula": "174000",
-                "arancel": "311000"
+                "arancel": "311000",
+                "coordenadas": {
+                    "lat": -33.0248,
+                    "lng": -71.551
+                }
             },
             {
                 "sede": "ALONSO DE OVALLE",
                 "matricula": "174000",
-                "arancel": "344000"
+                "arancel": "344000",
+                "coordenadas": null
             },
             {
                 "sede": "CONCEPCIÓN",
                 "matricula": "148000",
-                "arancel": "311000"
+                "arancel": "311000",
+                "coordenadas": {
+                    "lat": -36.79539,
+                    "lng": -73.06251
+                }
             }
         ],
         "institucion": "Duoc UC"
@@ -1001,32 +1310,50 @@
             {
                 "sede": "MODALIDAD ONLINE",
                 "matricula": "174000",
-                "arancel": "307000"
+                "arancel": "307000",
+                "coordenadas": null
             },
             {
                 "sede": "PLAZA OESTE",
                 "matricula": "174000",
-                "arancel": "307000"
+                "arancel": "307000",
+                "coordenadas": {
+                    "lat": -33.51512,
+                    "lng": -70.71847
+                }
             },
             {
                 "sede": "SAN CARLOS DE APOQUINDO",
                 "matricula": "174000",
-                "arancel": "332000"
+                "arancel": "332000",
+                "coordenadas": {
+                    "lat": -33.40018,
+                    "lng": -70.50703
+                }
             },
             {
                 "sede": "ALONSO DE OVALLE",
                 "matricula": "174000",
-                "arancel": "332000"
+                "arancel": "332000",
+                "coordenadas": null
             },
             {
                 "sede": "VIÑA DEL MAR",
                 "matricula": "148000",
-                "arancel": "307000"
+                "arancel": "307000",
+                "coordenadas": {
+                    "lat": -33.0248,
+                    "lng": -71.551
+                }
             },
             {
                 "sede": "CONCEPCIÓN",
                 "matricula": "148000",
-                "arancel": "307000"
+                "arancel": "307000",
+                "coordenadas": {
+                    "lat": -36.79539,
+                    "lng": -73.06251
+                }
             }
         ],
         "institucion": "Duoc UC"
@@ -1042,12 +1369,14 @@
             {
                 "sede": "MODALIDAD ONLINE",
                 "matricula": "132000",
-                "arancel": "318000"
+                "arancel": "318000",
+                "coordenadas": null
             },
             {
                 "sede": "ALONSO DE OVALLE",
                 "matricula": "132000",
-                "arancel": "318000"
+                "arancel": "318000",
+                "coordenadas": null
             }
         ],
         "institucion": "Duoc UC"
