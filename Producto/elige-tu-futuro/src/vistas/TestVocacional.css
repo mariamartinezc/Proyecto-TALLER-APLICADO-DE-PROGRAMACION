@@ -1,0 +1,96 @@
+/* Forzamos que el fondo de la página sea claro para este componente */
+.contenedor-principal-vocacional {
+    background-color: #f7fafc !important; 
+    min-height: 100vh;
+    padding: 40px 20px;
+    font-family: 'Segoe UI', sans-serif;
+    display: block; /* Asegura que ocupe su espacio */
+}
+
+.titulo-superior {
+    text-align: center;
+    color: #1a202c !important;
+    margin-bottom: 20px;
+}
+
+/* La tarjeta verde claro - Base del diseño */
+.contenido-test {
+    background-color: #e9f0e9 !important;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid #c5d0c5;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Pregunta en azul oscuro */
+.pregunta-texto {
+    color: #002d72 !important;
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+/* Opciones con texto negro/gris */
+.opcion-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    background-color: rgba(255,255,255,0.4);
+    margin-bottom: 10px;
+    color: #2d3748 !important;
+    cursor: pointer;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    transition: all 0.2s;
+}
+
+.opcion-item:hover {
+    background-color: white;
+    border-color: #4a7c4a;
+}
+
+/* Estilo de los Resultados (Tarjetas Blancas) */
+.item-resultado-card {
+    background: white !important;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border-left: 5px solid #002d72;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    text-align: left;
+}
+
+.item-resultado-card h3 {
+    color: #002d72 !important;
+    margin: 0 0 10px 0;
+}
+
+.item-resultado-card p {
+    color: #4a5568 !important;
+    margin: 5px 0;
+}
+
+/* Botones de navegación */
+.botones-navegacion {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.btn-nav {
+    padding: 12px 30px;
+    border-radius: 8px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.btn-atras { background-color: #a3bda3 !important; color: white !important; }
+.btn-siguiente { background-color: #4a7c4a !important; color: white !important; }
+.btn-ficha { background-color: #002d72 !important; color: white !important; margin-top: 10px; }

@@ -6,7 +6,7 @@ import './App.css';
 import React from 'react';
 
 import Home from './vistas/Home';
-import Mapa from './vistas/Mapa';
+
 
 function App() {
 
@@ -16,10 +16,6 @@ function App() {
 
       {/* Vista principal */}
       <Home />
-
-      {/* Vista del mapa */}
-      <Mapa />
-
     </div>
 
   );
