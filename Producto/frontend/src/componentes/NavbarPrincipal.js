@@ -3,9 +3,6 @@ import { Navbar, Container, Nav } from 'react-bootstrap';
 // Importa tu logo aquí. Si está en la carpeta assets:
 import logo from '../assets/logo1.png';
 
-import Mapa from '../vistas/Mapa';
-import TestVocacional from '../vistas/TestVocacional';
-
 function NavbarPrincipal() {
     return (
         <Navbar expand="lg" bg="dark" data-bs-theme="dark" className="sticky-top shadow">
@@ -27,8 +24,8 @@ function NavbarPrincipal() {
                     <Nav className="me-auto">
                         <Nav.Link href="#home">Inicio</Nav.Link>
                         <Nav.Link href="#comparador">Comparador</Nav.Link>
-                        <Nav.Link href='../vistas/TestVocacional'>Test Vocacional</Nav.Link>
-                        <Nav.Link href="Mapa">Mapa</Nav.Link>
+                        <Nav.Link href=''>Test Vocacional</Nav.Link>
+                        <Nav.Link href="">Mapa</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

@@ -6,7 +6,8 @@ import './App.css';
 import React from 'react';
 
 import Home from './vistas/Home';
-
+import Mapa from './vistas/Mapa';
+import TestVocacional from './vistas/TestVocacional';
 
 function App() {
 
@@ -16,6 +17,9 @@ function App() {
 
       {/* Vista principal */}
       <Home />
+      <Mapa />
+      <TestVocacional />
+
     </div>
 
   );
