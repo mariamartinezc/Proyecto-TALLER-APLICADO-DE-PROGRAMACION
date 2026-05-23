@@ -1,14 +1,36 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import BarraDeProgreso from '../componentes/BarraDeProgreso';
 import ResultadoTest from '../componentes/ResultadoTest';
 import './TestVocacional.css';
-import datosDuoc from '../datos.json';
+import { supabase } from '../supabaseClient';
 
 const TestVocacional = () => {
   const [paso, setPaso] = useState(0);
   const [seleccion, setSeleccion] = useState(null);
   const [puntajes, setPuntajes] = useState({ informatica: 0, turismo: 0, administracion: 0, diseno: 0 });
   const [finalizado, setFinalizado] = useState(false);
+  const [datosDuoc, setDatosDuoc] = useState([]);
+
+  useEffect(() => {
+    async function cargarCarrerasTest() {
+      try {
+        const { data, error } = await supabase.from('carreras').select('*');
+        if (error) throw error;
+        if (data) {
+          const adaptadas = data.map(item => ({
+            ...item,
+            nombre_carrera: item.nombre || "",
+            institucion: "Duoc UC",
+            duracion: item.duracion_semestre ? `${item.duracion_semestre} Semestres` : "No disponible"
+          }));
+          setDatosDuoc(adaptadas);
+        }
+      } catch (err) {
+        console.error("Error en TestVocacional con Supabase:", err.message);
+      }
+    }
+    cargarCarrerasTest();
+  }, []);
 
   const preguntas = [
     { texto: "¿Qué materia se te facilita más?", opciones: [{t:"Matemáticas", c:"informatica"}, {t:"Idiomas", c:"turismo"}, {t:"Economía", c:"administracion"}, {t:"Dibujo", c:"diseno"}] },

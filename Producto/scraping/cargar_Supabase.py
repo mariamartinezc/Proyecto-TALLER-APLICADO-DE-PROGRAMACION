@@ -2,9 +2,11 @@ import json
 import re
 import requests
 import os
-
 from dotenv import load_dotenv
 
+# ============================================================================
+# CONFIGURACIÓN Y CREDENCIALES
+# ============================================================================
 # Cargar credenciales ocultas (.env)
 load_dotenv()
 
@@ -23,7 +25,24 @@ HEADERS = {
 }
 
 INSTITUCION_ID = 1
-BUCKET_NAME = "mallas-curriculares"  # El contenedor que creaste
+BUCKET_NAME = "mallas-curriculares"
+
+# ============================================================================
+# FUNCIONES UTILITARIAS
+# ============================================================================
+def encontrar_archivo(nombre_archivo: str):
+    """Busca un archivo en múltiples ubicaciones posibles"""
+    rutas_posibles = [
+        nombre_archivo,
+        os.path.join("src", nombre_archivo),
+        os.path.join(os.getcwd(), nombre_archivo),
+        os.path.join(os.getcwd(), "src", nombre_archivo),
+        os.path.join('..', 'scraping', nombre_archivo)
+    ]
+    for ruta in rutas_posibles:
+        if os.path.exists(ruta):
+            return ruta
+    return None
 
 def extraer_numero(texto):
     """Extrae números de textos como '8 Semestres'"""
@@ -32,16 +51,13 @@ def extraer_numero(texto):
     return int(numeros[0]) if numeros else 0
 
 def limpiar_monto(monto_str):
-    """Limpia textos como '327000' o nulos"""
+    """Limpia textos numéricos o montos enteros"""
     if not monto_str: return 0
     num_str = str(monto_str).replace('.', '').strip()
     return int(num_str) if num_str.isdigit() else 0
 
 def subir_pdf_a_storage(nombre_archivo):
-    """
-    Busca el PDF en public/malla/ y lo sube a Supabase Storage.
-    Retorna la URL pública tanto si lo sube por primera vez como si ya existía.
-    """
+    """Busca el PDF en la ruta local y lo sube a Supabase Storage"""
     ruta_local = os.path.join('../frontend/public/mallas', nombre_archivo)
     
     if not os.path.exists(ruta_local):
@@ -59,69 +75,66 @@ def subir_pdf_a_storage(nombre_archivo):
     try:
         with open(ruta_local, "rb") as pdf_file:
             response = requests.post(url_upload, headers=headers_storage, data=pdf_file)
-            
-            # URL estándar pública que le corresponde a este archivo en Supabase
             url_publica = f"{SUPABASE_URL}/storage/v1/object/public/{BUCKET_NAME}/{nombre_archivo}"
             
-            # CASO 1: Se subió correctamente (200)
             if response.status_code == 200:
                 print(f"   ✅ PDF subido exitosamente al Storage.")
                 return url_publica
-                
-            # CASO 2: Error 400 (Probablemente ya existe en el Storage)
             elif response.status_code == 400:
                 print(f"   ℹ️ El PDF ya existe en Storage. Vinculando URL existente...")
                 return url_publica
-                
             else:
                 print(f"   ❌ Error inesperado en Storage (Status {response.status_code}): {response.text}")
-                return None
-                
+                return None       
     except Exception as e:
         print(f"   ❌ Error inesperado subiendo el PDF: {e}")
         return None
 
-
+# ============================================================================
+# PROCESO PRINCIPAL DE MIGRACIÓN
+# ============================================================================
 def subir_datos():
-    print("Iniciando migración a Supabase (Datos + PDFs)...")
+    print("Iniciando migración a Supabase (Datos Cruzados + PDFs)...")
     
-    # Ruta estandarizada hacia donde guarda el JSON tu scraper original
-    ruta_json = os.path.join('..', 'scraping', 'datos.json')
-    try:
-        with open(ruta_json, "r", encoding="utf-8") as f:
-            carreras = json.load(f)
-    except FileNotFoundError:
-        print(f"Error: No se encontró el archivo JSON en la ruta esperada: {ruta_json}")
+    # Buscamos el archivo correcto generado por el traductor/mezclador
+    ruta_json = encontrar_archivo("datos_con_empleabilidad.json")
+    
+    if not ruta_json:
+        print("❌ Error: No se encontró el archivo 'datos_con_empleabilidad.json'.")
+        print("Asegúrate de ejecutar primero el script que cruza los datos de Duoc con MiFuturo.")
         return
 
-    # Verificar conexión inicial a la API
+    print(f"Leyendo datos desde: {ruta_json}")
+    with open(ruta_json, "r", encoding="utf-8") as f:
+        crawled_data = json.load(f)
+
+    # Verificar conexión inicial a la API Rest de Supabase
     prueba_conexion = requests.get(f"{SUPABASE_URL}/rest/v1/carreras?limit=1", headers=HEADERS)
     if prueba_conexion.status_code not in [200, 201]:
-        print("Error: No se pudo conectar a Supabase. Revisa tu archivo .env")
+        print("❌ Error: No se pudo conectar a Supabase. Revisa las credenciales de tu .env")
         return
         
-    for carrera in carreras:
+    for carrera in crawled_data:
         nombre_carrera = carrera.get("nombre_carrera")
         print(f"\nProcesando: {nombre_carrera}")
         
-        # --- SUBIDA DEL PDF DE LA MALLA ---
-        # Extraer el nombre correcto del PDF según la ruta limpia que genera el scraper
+        # --- 1. SUBIDA DEL PDF DE LA MALLA ---
         malla_pdf_field = carrera.get("malla_pdf")
         malla_url_cloud = None
         
         if malla_pdf_field:
-            # Tu scraper guarda "/mallas/malla_nombre.pdf", esto recorta la barra y deja solo "malla_nombre.pdf"
             nombre_archivo_pdf = malla_pdf_field.split('/')[-1]
-            # Subimos el PDF y capturamos la URL en la nube
             malla_url_cloud = subir_pdf_a_storage(nombre_archivo_pdf)
         else:
-            print("Esta carrera no posee un archivo PDF de malla registrado.")
+            print("   Esta carrera no posee un archivo PDF de malla registrado.")
 
+        # --- 2. EXTRACCIÓN SEGURA DE EMPLEABILIDAD Y FINANZAS ---
         emp = carrera.get("empleabilidad") or {}
+        
         arancel_ref = limpiar_monto(carrera["sedes"][0].get("arancel")) if carrera.get("sedes") else 0
         matricula_ref = limpiar_monto(carrera["sedes"][0].get("matricula")) if carrera.get("sedes") else 0
 
-        # Mapeo de datos estructurados para la base de datos
+        # Mapeo estructurado para las columnas exactas de tu tabla en Supabase
         datos_carrera = {
             "institucion_id": INSTITUCION_ID,
             "nombre": nombre_carrera,
@@ -134,28 +147,29 @@ def subir_datos():
             "modalidad": "Presencial",
             "arancel_anual": arancel_ref,
             "matricula_referencial": matricula_ref,
-            "empleabilidad_1er_anio": emp.get("empleabilidad_primer_ano"),
-            "empleabilidad_2do_anio": emp.get("empleabilidad_segundo_ano"),
-            "ingreso_promedio_4to_anio": limpiar_monto(emp.get("ingreso_promedio_cuarto_ano")),
+            
+            # Datos de empleabilidad rescatados de manera segura (evita errores si son None)
+            "empleabilidad_1er_anio": emp.get("empleabilidad_primer_ano") if emp.get("empleabilidad_primer_ano") is not None else None,
+            "empleabilidad_2do_anio": emp.get("empleabilidad_segundo_ano") if emp.get("empleabilidad_segundo_ano") is not None else None,
+            "ingreso_promedio_4to_anio": limpiar_monto(emp.get("ingreso_promedio_cuarto_ano")) if emp.get("ingreso_promedio_cuarto_ano") else 0,
+            
             "acreditacion": "SI",
-            "malla_pdf_url": malla_url_cloud  # <--- GUARDAMOS LA URL GENERADA DE SUPABASE
+            "malla_pdf_url": malla_url_cloud
         }
 
-        # --- 1. INSERTAR CARRERA ---
+        # --- 3. ENVIAR CARRERA A SUPABASE ---
         res_carrera = requests.post(f"{SUPABASE_URL}/rest/v1/carreras", json=datos_carrera, headers=HEADERS)
         
         if res_carrera.status_code not in [200, 201]:
-            print(f"Error guardando carrera en la tabla: {res_carrera.text}")
+            print(f"   ❌ Error guardando carrera en la tabla: {res_carrera.text}")
             continue
             
         carrera_id = res_carrera.json()[0]['id']
-        print(f"Carrera guardada en Base de Datos (ID: {carrera_id})")
+        print(f"   ✅ Carrera guardada en Base de Datos (ID: {carrera_id})")
 
-        # --- 2. PROCESAR SEDES DE ESTA CARRERA ---
+        # --- 4. PROCESAR SEDES DE ESTA CARRERA ---
         for sede_data in carrera.get("sedes", []):
             nombre_sede = sede_data.get("sede")
-            
-            # Ajuste crucial: Tu scraper guarda latitud y longitud planos en la raíz del diccionario de la sede
             lat = sede_data.get("latitud")
             lng = sede_data.get("longitud")
             
@@ -179,7 +193,7 @@ def subir_datos():
                 if res_nueva_sede.status_code in [200, 201]:
                     sede_id = res_nueva_sede.json()[0]['id']
 
-            # --- 3. VINCULAR LA CARRERA CON LA SEDE ---
+            # --- 5. ASOCIAR CARRERA CON SU SEDE (Muchos a Muchos) ---
             if sede_id:
                 vinculo = {
                     "carrera_id": carrera_id,
@@ -190,9 +204,9 @@ def subir_datos():
                 headers_upsert["Prefer"] = "resolution=ignore-duplicates"
                 
                 requests.post(f"{SUPABASE_URL}/rest/v1/carreras_sedes", json=vinculo, headers=headers_upsert)
-                print(f"Vinculada con éxito a sede: {nombre_sede}")
+                print(f"      Connected to Sede: {nombre_sede}")
 
-    print("\n¡MIGRACIÓN COMPLETA! Revisa las tablas y el Storage en tu dashboard de Supabase.")
+    print("\n🚀 ¡MIGRACIÓN COMPLETADA EXITOSAMENTE! Revisa tus datos en Supabase.")
 
 if __name__ == "__main__":
     subir_datos()

@@ -1,8 +1,7 @@
-/* Contenedor con Scroll Lateral para que sea Responsive */
+/* Contenedor adaptativo con scroll horizontal para celulares */
 .tabla-container {
-    border: 1.5px solid #84a584;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
     background-color: white;
     overflow-x: auto; 
     display: block;
@@ -12,47 +11,69 @@
 }
 
 .table {
-    min-width: 900px; /* Evita que se amontone en celular */
+    min-width: 1200px;
     margin-bottom: 0;
 }
 
+/* Color verde menta pastel exacto del mockup */
 .tabla-header {
     background-color: #e2ede3 !important;
-    color: #2c3e50 !important;
-    text-align: center;
 }
 
-/* RE-APLICANDO TUS COLORES A LOS BOTONES */
+.tabla-header th {
+    color: #334d38 !important;
+    font-weight: 600 !important;
+    padding: 14px 8px !important;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #dee2e6 !important;
+}
 
+/* Celda del nombre de la carrera */
+.col-nombre-carrera {
+    min-width: 320px;
+    padding: 18px 12px !important;
+}
+
+/* Botón Ver (Fondo blanco, borde sutil) */
 .btn-tabla-ver {
-    background-color: transparent;
-    color: #333;
-    border: 1.5px solid #333;
-    border-radius: 8px;
-    padding: 5px 15px;
-    font-weight: bold;
-    transition: 0.3s;
+    background-color: #ffffff;
+    color: #333333;
+    border: 1px solid #6c757d;
+    border-radius: 6px;
+    padding: 2px 14px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
 }
 
 .btn-tabla-ver:hover {
-    background-color: #f4f7f4;
+    background-color: #f8f9fa;
+    border-color: #333333;
 }
 
+/* Botón Agregar (Verde institucional) */
 .btn-tabla-agregar {
-    background-color: #789c79; /* Tu verde institucional */
-    color: white;
-    border: 1.5px solid #333; /* Borde oscuro como el de buscar */
-    border-radius: 8px;
-    padding: 5px 15px;
-    font-weight: bold;
-    transition: 0.3s;
+    background-color: #729676;
+    color: #ffffff;
+    border: 1px solid #5a7a5e;
+    border-radius: 6px;
+    padding: 2px 14px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
 }
 
 .btn-tabla-agregar:hover {
-    background-color: #6a8a6b;
+    background-color: #618265;
 }
 
-.col-nombre-carrera {
-    min-width: 280px;
-    padding: 15px !important;
+/* Badge de Duración en azul brillante/celeste */
+.badge-duracion {
+    background-color: #00bdf2;
+    color: #ffffff;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    display: inline-block;
 }

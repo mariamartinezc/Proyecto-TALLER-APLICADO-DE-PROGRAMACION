@@ -29,7 +29,6 @@ const ResultadoTest = ({ recomendaciones, alReiniciar }) => {
                 </button>
               </div>
 
-              {/* Ficha Detallada (Solo se ve si presionas el botón) */}
               {fichaSeleccionada === i && (
                 <div className="ficha-detalle-animada">
                   <hr />
