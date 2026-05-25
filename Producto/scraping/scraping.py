@@ -11,10 +11,33 @@ from selenium.webdriver.edge.options import Options
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
 import unicodedata
 
-
 # --- CACHÉ GLOBAL DE COORDENADAS ---
 # Evita buscar la misma sede en Google Maps decenas de veces, acelerando el proceso.
 CACHE_COORDENADAS = {}
+
+# --- DICCIONARIO DE REGIONES ---
+MAPEO_REGIONES = {
+    "MAIPÚ": "Región Metropolitana",
+    "PLAZA OESTE": "Región Metropolitana",
+    "SAN JOAQUÍN": "Región Metropolitana",
+    "PUENTE ALTO": "Región Metropolitana",
+    "ALONSO DE OVALLE": "Región Metropolitana",
+    "PADRE ALONSO DE OVALLE": "Región Metropolitana",
+    "PLAZA NORTE": "Región Metropolitana",
+    "MELIPILLA": "Región Metropolitana",
+    "SANTIAGO CENTRO": "Región Metropolitana",
+    "SAN BERNARDO": "Región Metropolitana",
+    "ALAMEDA": "Región Metropolitana",
+    "PLAZA VESPUCIO": "Región Metropolitana",
+    "SAN CARLOS DE APOQUINDO": "Región Metropolitana",
+    "ANTONIO VARAS": "Región Metropolitana",
+    "VIÑA DEL MAR": "Región de Valparaíso",
+    "CONCEPCIÓN": "Región del Biobío",
+    "CAMPUS NACIMIENTO": "Región del Biobío",
+    "SAN ANDRÉS DE CONCEPCIÓN": "Región del Biobío",
+    "PUERTO MONTT": "Región de Los Lagos",
+    "ONLINE": "Modalidad Virtual"
+}
 
 # --- PARTE 1: COMPROBACIÓN ÉTICA ---
 def verificar_permiso_etico(navegador, url_base):
@@ -40,18 +63,10 @@ def limpiar_nombre_archivo(nombre):
     Quita tildes, eñes y caracteres especiales para cumplir 
     con las reglas estrictas de Supabase Storage desde el origen.
     """
-    # Cambia espacios por guiones bajos y pasa a minúsculas
     nombre = nombre.replace(" ", "_").lower()
-    
-    # Normaliza el texto para separar las letras de sus tildes
     nombre_normalizado = unicodedata.normalize('NFKD', nombre)
-    
-    # Filtra y se queda solo con caracteres ASCII (letras simples, números y guiones)
     nombre_limpio = "".join([c for c in nombre_normalizado if not unicodedata.combining(c)])
-    
-    # Por seguridad extra, elimina cualquier cosa que no sea letra, número, guion o punto
     nombre_limpio = re.sub(r'[^a-z0-9_\.]', '', nombre_limpio)
-    
     return nombre_limpio
 
 def descargar_malla_pdf(enlace_pdf, nombre_carrera):
@@ -59,10 +74,7 @@ def descargar_malla_pdf(enlace_pdf, nombre_carrera):
         carpeta = os.path.join('../frontend/public/mallas')
         if not os.path.exists(carpeta): os.makedirs(carpeta)
         
-        # 1. Pasamos el nombre de la carrera por el limpiador de tildes y caracteres
         nombre_seguro = limpiar_nombre_archivo(nombre_carrera)
-        
-        # 2. Ahora el nombre del archivo final está 100% estandarizado para Supabase
         nombre_archivo = f"malla_{nombre_seguro}.pdf"
         ruta_final = os.path.join(carpeta, nombre_archivo)
         
@@ -71,8 +83,6 @@ def descargar_malla_pdf(enlace_pdf, nombre_carrera):
             with open(ruta_final, 'wb') as f:
                 for chunk in res.iter_content(chunk_size=1024):
                     if chunk: f.write(chunk)
-            
-            # Retorna la ruta limpia que se escribirá en el JSON
             return f"/mallas/{nombre_archivo}"
         return None
     except Exception as e:
@@ -96,7 +106,6 @@ def buscar_coordenadas_maps(navegador, nombre_sede):
     try:
         ventana_duoc = navegador.current_window_handle
         
-        # Abrir pestaña secundaria en Edge
         navegador.execute_script("window.open('');")
         navegador.switch_to.window(navegador.window_handles[-1])
         
@@ -104,7 +113,6 @@ def buscar_coordenadas_maps(navegador, nombre_sede):
         url_maps = f"https://www.google.com/maps/search/{urllib.parse.quote(termino_busqueda)}"
         navegador.get(url_maps)
         
-        # Espera para que cargue la redirección geolocalizada de Google Maps (@lat,lon)
         time.sleep(5)
         
         url_actual = navegador.current_url
@@ -145,7 +153,7 @@ def extraer_datos_carrera(navegador, url_especifica, url_base):
     try:
         navegador.get(url_especifica)
         
-        # Tu scroll dinámico original intacto
+        # Tu scroll dinámico
         navegador.execute_script("window.scrollTo(0, 800);")
         time.sleep(5)
         navegador.execute_script("window.scrollTo(0, 1400);")
@@ -166,12 +174,22 @@ def extraer_datos_carrera(navegador, url_especifica, url_base):
         # 3. Descripción y Campo Laboral 
         desc = "Descripción no disponible."
         campo = "Campo laboral no disponible."
-        for bloque in soup.find_all(['p', 'div', 'span']):
-            txt = bloque.get_text().upper()
-            if "PERFIL DE EGRESO" in txt or "LA CARRERA" in txt:
-                desc = bloque.get_text(strip=True)
-            if "CAMPO LABORAL" in txt or "OCUPACIONAL" in txt:
-                campo = bloque.get_text(strip=True)
+        
+        # Estrategia: Buscar los títulos y extraer el párrafo de texto que los acompaña
+        for etiqueta in soup.find_all(['h2', 'h3', 'h4', 'strong', 'span', 'div']):
+            txt_titulo = etiqueta.get_text(strip=True).upper()
+            
+            # --- BUSCAR DESCRIPCIÓN ---
+            if ("PERFIL DE EGRESO" in txt_titulo or "DESCRIPCIÓN" in txt_titulo) and len(txt_titulo) < 50:
+                parrafo_desc = etiqueta.find_next('p')
+                if parrafo_desc and len(parrafo_desc.get_text(strip=True)) > 20:
+                    desc = parrafo_desc.get_text(strip=True)
+
+            # --- BUSCAR CAMPO LABORAL ---
+            if ("CAMPO LABORAL" in txt_titulo or "DESEMPEÑO" in txt_titulo) and len(txt_titulo) < 50:
+                parrafo_campo = etiqueta.find_next('p')
+                if parrafo_campo and len(parrafo_campo.get_text(strip=True)) > 20:
+                    campo = parrafo_campo.get_text(strip=True)
 
         # 4. Sedes y Aranceles
         sedes_validas = ["MAIPÚ", "PLAZA OESTE", "SAN JOAQUÍN", "VIÑA DEL MAR", "PUENTE ALTO", 
@@ -187,6 +205,7 @@ def extraer_datos_carrera(navegador, url_especifica, url_base):
             if precios_web:
                 info_sedes.append({
                     "sede": "MODALIDAD ONLINE",
+                    "region": MAPEO_REGIONES["ONLINE"], # <-- REGIÓN AGREGADA AQUÍ
                     "matricula": limpiar_monto_dinero(precios_web[0]),
                     "arancel": limpiar_monto_dinero(precios_web[-1]),
                     "latitud": None,
@@ -202,11 +221,15 @@ def extraer_datos_carrera(navegador, url_especifica, url_base):
                 precios = re.findall(r'\$\s?[\d\.]+', txt_c)
                 if precios:
                     if not any(item['sede'] == sede_encontrada for item in info_sedes):
-                        # -> Aquí llamamos a Google Maps usando el navegador activo
+                        # Llamamos a Google Maps usando el navegador activo
                         geo = buscar_coordenadas_maps(navegador, sede_encontrada)
+                        
+                        # Buscamos la región en nuestro diccionario
+                        region_asignada = MAPEO_REGIONES.get(sede_encontrada, "Sin Región")
                         
                         info_sedes.append({
                             "sede": sede_encontrada,
+                            "region": region_asignada, # <-- REGIÓN AGREGADA AQUÍ
                             "matricula": limpiar_monto_dinero(precios[0]),
                             "arancel": limpiar_monto_dinero(precios[-1]),
                             "latitud": geo["latitud"],
@@ -240,7 +263,7 @@ def iniciar_extraccion_total():
         "nombre": "Duoc UC",
         "web": "https://www.duoc.cl",
         "urls": [
-            "https://www.duoc.cl/carreras/administracion-de-empresas",
+          "https://www.duoc.cl/carreras/administracion-de-empresas",
             "https://www.duoc.cl/carreras/administracion-en-turismo-y-hospitalidad-mencion-administracion-hotelera-2",
             "https://www.duoc.cl/carreras/administracion-en-turismo-y-hospitalidad-mencion-ecoturismo",
             "https://www.duoc.cl/carreras/administracion-en-turismo-y-hospitalidad-mencion-gestion-de-destinos-turisticos",
@@ -322,7 +345,7 @@ def iniciar_extraccion_total():
             "https://www.duoc.cl/carreras/tecnico-en-turismo-y-hospitalidad-2",
             "https://www.duoc.cl/carreras/tecnico-topografo-geomatico",
             "https://www.duoc.cl/carreras/tecnico-veterinario-y-pecuario",
-            "https://www.duoc.cl/carreras/tecnologia-en-sonido-e-iluminacion"
+            "https://www.duoc.cl/carreras/tecnologia-en-sonido-e-iluminacion",
         ]
     }
     
@@ -330,7 +353,6 @@ def iniciar_extraccion_total():
     opciones.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0.0.0")
     
     try:
-        # Usamos tu inicializador original de Edge Chromium
         navegador = webdriver.Edge(options=opciones)
         resultados = []
 
@@ -342,7 +364,6 @@ def iniciar_extraccion_total():
                     resultados.append(datos)
                 time.sleep(3)
 
-        # Guardado final estructurado en tu ruta original
         ruta_json = os.path.join('..', 'scraping', 'datos.json')
         os.makedirs(os.path.dirname(ruta_json), exist_ok=True)
         with open(ruta_json, 'w', encoding='utf-8') as f:

@@ -69,3 +69,6 @@ Si instalas una librería nueva, debes actualizar la lista para el resto del equ
 Comando:
 
 		pip freeze > requirements.txt
+
+desactivar venv
+	deactivate

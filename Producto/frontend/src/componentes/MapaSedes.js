@@ -1,8 +1,14 @@
+// src/componentes/MapaSedes.js
 import { useEffect, useState } from "react";
-import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
+import {
+  MapContainer,
+  TileLayer,
+  Marker,
+  Popup,
+  useMap
+} from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
-import { supabase } from '../supabaseClient'; 
 
 // ================================
 // ICONOS LEAFLET
@@ -21,9 +27,10 @@ function calcularDistancia(lat1, lon1, lat2, lon2) {
   const R = 6371;
   const dLat = (lat2 - lat1) * Math.PI / 180;
   const dLon = (lon2 - lon1) * Math.PI / 180;
-  const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-            Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
-            Math.sin(dLon / 2) * Math.sin(dLon / 2);
+  const a =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+    Math.sin(dLon / 2) * Math.sin(dLon / 2);
   const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
   return R * c;
 }
@@ -40,73 +47,78 @@ function CambiarVistaMapa({ centro }) {
 }
 
 // ================================
-// COMPONENTE PRINCIPAL
+// COMPONENTE PRINCIPAL (Recibe 'carreras' por props)
 // ================================
-function MapaSedes() {
+function MapaSedes({ carreras }) {
+  // Santiago por defecto
   const [ubicacionUsuario, setUbicacionUsuario] = useState([-33.4489, -70.6693]);
+  // Sedes cercanas
   const [sedesCercanas, setSedesCercanas] = useState([]);
+  // Estado carga
   const [cargando, setCargando] = useState(true);
+  // Error ubicación
   const [errorUbicacion, setErrorUbicacion] = useState("");
 
   useEffect(() => {
+    // Si aún no se cargan las carreras desde la vista superior, esperamos
+    if (!carreras || carreras.length === 0) return;
+
     if (!navigator.geolocation) {
       setErrorUbicacion("Tu navegador no soporta geolocalización.");
       setCargando(false);
       return;
     }
 
+    // ================================
+    // OBTENER UBICACIÓN
+    // ================================
     navigator.geolocation.getCurrentPosition(
-      async (position) => {
+      (position) => {
         const latUsuario = position.coords.latitude;
         const lngUsuario = position.coords.longitude;
+
+        console.log("Ubicación usuario:", latUsuario, lngUsuario);
+
         setUbicacionUsuario([latUsuario, lngUsuario]);
+        const todasLasSedes = [];
 
-        try {
-          const { data, error } = await supabase
-            .from('carreras')
-            .select(`
-              nombre,
-              matricula_referencial,
-              arancel_anual,
-              carreras_sedes (
-                sedes ( nombre, latitud, longitud )
-              )
-            `);
+        // ================================
+        // RECORRER ARREGLO DINÁMICO DE SUPABASE
+        // ================================
+        carreras.forEach((carrera) => {
+          if (!carrera.sedes) return;
+          carrera.sedes.forEach((sede) => {
+            // Evaluamos tanto coordenadas mapeadas 'lat/lng' como 'latitud/longitud' por seguridad
+            const latSede = parseFloat(sede.lat || sede.latitud);
+            const lngSede = parseFloat(sede.lng || sede.longitud);
 
-          if (error) throw error;
+            if (latSede && lngSede && !isNaN(latSede) && !isNaN(lngSede)) {
+              const distancia = calcularDistancia(
+                latUsuario,
+                lngUsuario,
+                latSede,
+                lngSede
+              );
 
-          const todasLasSedes = [];
-
-          data.forEach((carrera) => {
-            carrera.carreras_sedes?.forEach((vinculo) => {
-              const sede = vinculo.sedes;
-              if (sede && sede.latitud && sede.longitud) {
-                const latSede = parseFloat(sede.latitud);
-                const lngSede = parseFloat(sede.longitud);
-
-                if (!isNaN(latSede) && !isNaN(lngSede)) {
-                  const distancia = calcularDistancia(latUsuario, lngUsuario, latSede, lngSede);
-                  todasLasSedes.push({
-                    sede: sede.nombre,
-                    carrera: carrera.nombre,
-                    matricula: carrera.matricula_referencial || 0,
-                    arancel: carrera.arancel_anual || 0,
-                    lat: latSede,
-                    lng: lngSede,
-                    distancia
-                  });
-                }
-              }
-            });
+              todasLasSedes.push({
+                ...sede,
+                lat: latSede,
+                lng: lngSede,
+                carrera: carrera.nombre_carrera,
+                distancia
+              });
+            }
           });
+        });
 
-          todasLasSedes.sort((a, b) => a.distancia - b.distancia);
-          setSedesCercanas(todasLasSedes.slice(0, 5));
-        } catch (err) {
-          console.error("Error en mapa con Supabase:", err.message);
-        } finally {
-          setCargando(false);
-        }
+        // ================================
+        // ORDENAR POR DISTANCIA
+        // ================================
+        todasLasSedes.sort((a, b) => a.distancia - b.distancia);
+
+        // TOP 5
+        setSedesCercanas(todasLasSedes.slice(0, 5));
+        setCargando(false);
       },
       (error) => {
         console.log(error);
@@ -119,7 +131,7 @@ function MapaSedes() {
         maximumAge: 0
       }
     );
-  }, []);
+  }, [carreras]); // Reacciona cuando las carreras cambien
 
   if (cargando) {
     return (
@@ -140,10 +152,16 @@ function MapaSedes() {
   return (
     <div className="mapa-container">
       <h2 className="titulo-mapa">Sedes más cercanas a ti</h2>
+
       <MapContainer center={ubicacionUsuario} zoom={12} className="leaflet-container">
         <CambiarVistaMapa centro={ubicacionUsuario} />
-        <TileLayer attribution='&copy; OpenStreetMap contributors' url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-        
+
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+
+        {/* MARCADOR USUARIO */}
         <Marker position={ubicacionUsuario}>
           <Popup>
             <div>
@@ -154,14 +172,15 @@ function MapaSedes() {
           </Popup>
         </Marker>
 
+        {/* MARCADORES SEDES */}
         {sedesCercanas.map((sede, index) => (
           <Marker key={index} position={[sede.lat, sede.lng]}>
             <Popup>
               <div>
                 <h3 className="popup-titulo">{sede.sede}</h3>
                 <p className="popup-texto"><strong>Carrera:</strong> {sede.carrera}</p>
-                <p className="popup-texto"><strong>Matrícula:</strong> ${parseInt(sede.matricula).toLocaleString('es-CL')}</p>
-                <p className="popup-texto"><strong>Arancel:</strong> ${parseInt(sede.arancel).toLocaleString('es-CL')}</p>
+                <p className="popup-texto"><strong>Matrícula:</strong> ${sede.matricula}</p>
+                <p className="popup-texto"><strong>Arancel Anual:</strong> ${sede.arancel}</p>
                 <p className="popup-texto"><strong>Distancia:</strong> {sede.distancia.toFixed(2)} km</p>
               </div>
             </Popup>

@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import BarraDeProgreso from '../componentes/BarraDeProgreso';
 import ResultadoTest from '../componentes/ResultadoTest';
 import './TestVocacional.css';
-import { supabase } from '../supabaseClient';
+import { obtenerCarrerasMapeadas } from '../services/carrerasService';
+// Importamos los iconos de flechas desde Heroicons
+import { HiArrowSmLeft, HiArrowSmRight } from 'react-icons/hi';
 
 const TestVocacional = () => {
   const [paso, setPaso] = useState(0);
@@ -11,25 +13,20 @@ const TestVocacional = () => {
   const [finalizado, setFinalizado] = useState(false);
   const [datosDuoc, setDatosDuoc] = useState([]);
 
+  // Consumimos el servicio unificado de Supabase
   useEffect(() => {
-    async function cargarCarrerasTest() {
-      try {
-        const { data, error } = await supabase.from('carreras').select('*');
-        if (error) throw error;
-        if (data) {
-          const adaptadas = data.map(item => ({
-            ...item,
-            nombre_carrera: item.nombre || "",
-            institucion: "Duoc UC",
-            duracion: item.duracion_semestre ? `${item.duracion_semestre} Semestres` : "No disponible"
-          }));
-          setDatosDuoc(adaptadas);
-        }
-      } catch (err) {
-        console.error("Error en TestVocacional con Supabase:", err.message);
-      }
-    }
-    cargarCarrerasTest();
+    obtenerCarrerasMapeadas()
+      .then(data => {
+        const adaptadosParaTest = data.map(c => ({
+          nombre_carrera: c.nombre_carrera,
+          duracion: c.duracion,
+          institucion: c.institucion,
+          campo_laboral: c.descripcion,
+          url_fuente: c.urlOficial || "https://www.duoc.cl"
+        }));
+        setDatosDuoc(adaptadosParaTest);
+      })
+      .catch(err => console.error("Error en test:", err.message));
   }, []);
 
   const preguntas = [
@@ -61,7 +58,9 @@ const TestVocacional = () => {
 
   const filtrarResultados = () => {
     const winner = Object.keys(puntajes).reduce((a, b) => puntajes[a] > puntajes[b] ? a : b);
-    return datosDuoc.filter(c => c.nombre_carrera.toLowerCase().includes(winner.substring(0,4))).slice(0, 3);
+    return datosDuoc
+      .filter(c => c.nombre_carrera.toLowerCase().includes(winner.substring(0,4)))
+      .slice(0, 3);
   };
 
   if (finalizado) return <ResultadoTest recomendaciones={filtrarResultados()} alReiniciar={() => window.location.reload()} />;
@@ -82,9 +81,22 @@ const TestVocacional = () => {
             </label>
           ))}
         </div>
-        <div className="botones-navegacion">
-          <button className="btn-nav btn-atras" onClick={() => paso > 0 && setPaso(paso-1)}>← Atrás</button>
-          <button className="btn-nav btn-siguiente" onClick={siguiente}>Siguiente →</button>
+        
+        {/* Sección de navegación optimizada con react-icons */}
+        <div className="botones-navegacion d-flex justify-content-between mt-4">
+          <button 
+            className="btn-nav btn-atras btn btn-secondary d-inline-flex align-items-center gap-2" 
+            onClick={() => paso > 0 && setPaso(paso - 1)}
+            disabled={paso === 0}
+          >
+            <HiArrowSmLeft size={20} /> Atrás
+          </button>
+          <button 
+            className="btn-nav btn-siguiente btn btn-primary d-inline-flex align-items-center gap-2" 
+            onClick={siguiente}
+          >
+            Siguiente <HiArrowSmRight size={20} />
+          </button>
         </div>
       </main>
     </div>
