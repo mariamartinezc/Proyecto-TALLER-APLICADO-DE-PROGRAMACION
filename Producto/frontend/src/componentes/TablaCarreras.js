@@ -7,7 +7,7 @@ const TablaCarreras = ({ carreras, filtroSede }) => {
   const [showModal, setShowModal] = useState(false);
   const [fichaData, setFichaData] = useState(null);
 
-  // Tu formateador original de dinero CLP
+  // formateador de dinero CLP
   const fmt = (v) => new Intl.NumberFormat('es-CL', { style: 'currency', currency: 'CLP', minimumFractionDigits: 0 }).format(v || 0);
 
   // Funciones para limpiar los datos estadísticos que vienen de Supabase
@@ -92,7 +92,7 @@ const TablaCarreras = ({ carreras, filtroSede }) => {
                       <td className="text-center">{fmt(arancelMensual)}</td>
                       <td className="text-center fw-bold text-success">{fmt(arancelAnual)}</td>
                       
-                      {/* CELDA DE DURACIÓN (Tu diseño original con Badge) */}
+                      {/* CELDA DE DURACIÓN */}
                       <td className="text-center">
                         <span className="badge bg-info text-dark">
                           {carrera.duracion || "No disponible"}

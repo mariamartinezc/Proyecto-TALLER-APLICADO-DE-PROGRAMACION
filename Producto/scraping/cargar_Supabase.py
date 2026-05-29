@@ -61,7 +61,7 @@ def subir_pdf_a_storage(nombre_archivo):
     ruta_local = os.path.join('../frontend/public/mallas', nombre_archivo)
     
     if not os.path.exists(ruta_local):
-        print(f"   ⚠️ Advertencia: No se encontró el PDF local en {ruta_local}")
+        print(f"Advertencia: No se encontró el PDF local en {ruta_local}")
         return None
 
     url_upload = f"{SUPABASE_URL}/storage/v1/object/{BUCKET_NAME}/{nombre_archivo}"
@@ -78,16 +78,16 @@ def subir_pdf_a_storage(nombre_archivo):
             url_publica = f"{SUPABASE_URL}/storage/v1/object/public/{BUCKET_NAME}/{nombre_archivo}"
             
             if response.status_code == 200:
-                print(f"   ✅ PDF subido exitosamente al Storage.")
+                print(f"PDF subido exitosamente al Storage.")
                 return url_publica
             elif response.status_code == 400:
-                print(f"   ℹ️ El PDF ya existe en Storage. Vinculando URL existente...")
+                print(f"El PDF ya existe en Storage. Vinculando URL existente...")
                 return url_publica
             else:
-                print(f"   ❌ Error inesperado en Storage (Status {response.status_code}): {response.text}")
+                print(f"Error inesperado en Storage (Status {response.status_code}): {response.text}")
                 return None       
     except Exception as e:
-        print(f"   ❌ Error inesperado subiendo el PDF: {e}")
+        print(f"Error inesperado subiendo el PDF: {e}")
         return None
 
 # ============================================================================
@@ -100,7 +100,7 @@ def subir_datos():
     ruta_json = encontrar_archivo("datos_con_empleabilidad.json")
     
     if not ruta_json:
-        print("❌ Error: No se encontró el archivo 'datos_con_empleabilidad.json'.")
+        print("Error: No se encontró el archivo 'datos_con_empleabilidad.json'.")
         print("Asegúrate de ejecutar primero el script que cruza los datos de Duoc con MiFuturo.")
         return
 
@@ -111,7 +111,7 @@ def subir_datos():
     # Verificar conexión inicial a la API Rest de Supabase
     prueba_conexion = requests.get(f"{SUPABASE_URL}/rest/v1/carreras?limit=1", headers=HEADERS)
     if prueba_conexion.status_code not in [200, 201]:
-        print("❌ Error: No se pudo conectar a Supabase. Revisa las credenciales de tu .env")
+        print("Error: No se pudo conectar a Supabase. Revisa las credenciales de tu .env")
         return
         
     for carrera in crawled_data:
@@ -126,7 +126,7 @@ def subir_datos():
             nombre_archivo_pdf = malla_pdf_field.split('/')[-1]
             malla_url_cloud = subir_pdf_a_storage(nombre_archivo_pdf)
         else:
-            print("   Esta carrera no posee un archivo PDF de malla registrado.")
+            print("Esta carrera no posee un archivo PDF de malla registrado.")
 
         # --- 2. EXTRACCIÓN SEGURA DE EMPLEABILIDAD Y FINANZAS ---
         emp = carrera.get("empleabilidad") or {}
@@ -161,11 +161,11 @@ def subir_datos():
         res_carrera = requests.post(f"{SUPABASE_URL}/rest/v1/carreras", json=datos_carrera, headers=HEADERS)
         
         if res_carrera.status_code not in [200, 201]:
-            print(f"   ❌ Error guardando carrera en la tabla: {res_carrera.text}")
+            print(f"Error guardando carrera en la tabla: {res_carrera.text}")
             continue
             
         carrera_id = res_carrera.json()[0]['id']
-        print(f"   ✅ Carrera guardada en Base de Datos (ID: {carrera_id})")
+        print(f"Carrera guardada en Base de Datos (ID: {carrera_id})")
 
         # --- 4. PROCESAR SEDES DE ESTA CARRERA ---
         for sede_data in carrera.get("sedes", []):
@@ -206,7 +206,7 @@ def subir_datos():
                 requests.post(f"{SUPABASE_URL}/rest/v1/carreras_sedes", json=vinculo, headers=headers_upsert)
                 print(f"      Connected to Sede: {nombre_sede}")
 
-    print("\n🚀 ¡MIGRACIÓN COMPLETADA EXITOSAMENTE! Revisa tus datos en Supabase.")
+    print("\n¡MIGRACIÓN COMPLETADA EXITOSAMENTE! Revisa tus datos en Supabase.")
 
 if __name__ == "__main__":
     subir_datos()
