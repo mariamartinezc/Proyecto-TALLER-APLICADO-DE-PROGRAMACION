@@ -1,10 +1,10 @@
-// src/componentes/MapaSedes.js
 import { useEffect, useState } from "react";
 import {
   MapContainer,
   TileLayer,
   Marker,
   Popup,
+  Circle,
   useMap
 } from "react-leaflet";
 import L from "leaflet";
@@ -21,10 +21,10 @@ L.Icon.Default.mergeOptions({
 });
 
 // ================================
-// FUNCIÓN DISTANCIA
+// FUNCIÓN DISTANCIA (Haversine)
 // ================================
 function calcularDistancia(lat1, lon1, lat2, lon2) {
-  const R = 6371;
+  const R = 6371; // Radio de la Tierra en km
   const dLat = (lat2 - lat1) * Math.PI / 180;
   const dLon = (lon2 - lon1) * Math.PI / 180;
   const a =
@@ -36,31 +36,33 @@ function calcularDistancia(lat1, lon1, lat2, lon2) {
 }
 
 // ================================
-// MOVER MAPA AUTOMÁTICAMENTE
+// CONTROLADOR DINÁMICO DE VISTA
 // ================================
-function CambiarVistaMapa({ centro }) {
+function CambiarVistaMapa({ centro, zoom }) {
   const mapa = useMap();
   useEffect(() => {
-    mapa.setView(centro, 12);
-  }, [centro, mapa]);
+    if (centro) {
+      mapa.setView(centro, zoom);
+    }
+  }, [centro, zoom, mapa]);
   return null;
 }
 
 // ================================
-// COMPONENTE PRINCIPAL (Recibe 'carreras' por props)
+// COMPONENTE PRINCIPAL
 // ================================
 function MapaSedes({ carreras }) {
-  // Santiago por defecto
-  const [ubicacionUsuario, setUbicacionUsuario] = useState([-33.4489, -70.6693]);
-  // Sedes cercanas
+  // Estado inicial nulo para saber si ya tenemos la ubicación real del usuario
+  const [ubicacionUsuario, setUbicacionUsuario] = useState(null);
   const [sedesCercanas, setSedesCercanas] = useState([]);
-  // Estado carga
   const [cargando, setCargando] = useState(true);
-  // Error ubicación
   const [errorUbicacion, setErrorUbicacion] = useState("");
 
+  // Configuraciones de rango ajustables
+  const RADIO_MAXIMO_KM = 25; // Radio extendido para regiones donde las distancias son mayores
+  const ZOOM_MAPA = 11;       // Nivel de zoom adecuado para abarcar el radio
+
   useEffect(() => {
-    // Si aún no se cargan las carreras desde la vista superior, esperamos
     if (!carreras || carreras.length === 0) return;
 
     if (!navigator.geolocation) {
@@ -69,26 +71,20 @@ function MapaSedes({ carreras }) {
       return;
     }
 
-    // ================================
-    // OBTENER UBICACIÓN
-    // ================================
+    // OBTENER UBICACIÓN EN TIEMPO REAL
     navigator.geolocation.getCurrentPosition(
       (position) => {
         const latUsuario = position.coords.latitude;
         const lngUsuario = position.coords.longitude;
 
-        console.log("Ubicación usuario:", latUsuario, lngUsuario);
-
+        console.log("Ubicación detectada en región:", latUsuario, lngUsuario);
         setUbicacionUsuario([latUsuario, lngUsuario]);
+        
         const todasLasSedes = [];
 
-        // ================================
-        // RECORRER ARREGLO DINÁMICO DE SUPABASE
-        // ================================
         carreras.forEach((carrera) => {
           if (!carrera.sedes) return;
           carrera.sedes.forEach((sede) => {
-            // Evaluamos tanto coordenadas mapeadas 'lat/lng' como 'latitud/longitud' por seguridad
             const latSede = parseFloat(sede.lat || sede.latitud);
             const lngSede = parseFloat(sede.lng || sede.longitud);
 
@@ -100,88 +96,108 @@ function MapaSedes({ carreras }) {
                 lngSede
               );
 
-              todasLasSedes.push({
-                ...sede,
-                lat: latSede,
-                lng: lngSede,
-                carrera: carrera.nombre_carrera,
-                distancia
-              });
+              // Filtra sedes dentro del radio sin importar en qué región de Chile estén
+              if (distancia <= RADIO_MAXIMO_KM) {
+                todasLasSedes.push({
+                  ...sede,
+                  lat: latSede,
+                  lng: lngSede,
+                  carrera: carrera.nombre_carrera,
+                  institucion: carrera.institucion || "No especificada",
+                  distancia
+                });
+              }
             }
           });
         });
 
-        // ================================
-        // ORDENAR POR DISTANCIA
-        // ================================
+        // Ordenar por cercanía absoluta
         todasLasSedes.sort((a, b) => a.distancia - b.distancia);
-
-        // TOP 5
-        setSedesCercanas(todasLasSedes.slice(0, 5));
+        setSedesCercanas(todasLasSedes);
         setCargando(false);
       },
       (error) => {
-        console.log(error);
-        setErrorUbicacion("No se pudo obtener tu ubicación.");
+        console.error("Error de geolocalización:", error);
+        setErrorUbicacion(
+          "Por favor, permite el acceso a tu ubicación para mostrar las sedes de tu región."
+        );
         setCargando(false);
       },
       {
         enableHighAccuracy: true,
-        timeout: 10000,
+        timeout: 15000, // 15 segundos de tolerancia para GPS de teléfonos en regiones
         maximumAge: 0
       }
     );
-  }, [carreras]); // Reacciona cuando las carreras cambien
+  }, [carreras]);
 
+  // Pantallas de transición necesarias para asegurar que el mapa no se monte a ciegas en Santiago
   if (cargando) {
     return (
-      <div className="mapa-container">
-        <h2 className="titulo-mapa">Obteniendo ubicación y sedes...</h2>
+      <div className="mapa-container text-center py-4">
+        <h2 className="titulo-mapa">Detectando tu ubicación geográfica...</h2>
+        <div className="spinner-border text-success mt-2"></div>
       </div>
     );
   }
 
-  if (errorUbicacion) {
+  if (errorUbicacion || !ubicacionUsuario) {
     return (
-      <div className="mapa-container">
-        <h2 className="titulo-mapa">{errorUbicacion}</h2>
+      <div className="mapa-container p-4 text-center">
+        <h2 className="titulo-mapa text-danger">{errorUbicacion || "Ubicación no disponible"}</h2>
       </div>
     );
   }
 
   return (
     <div className="mapa-container">
-      <h2 className="titulo-mapa">Sedes más cercanas a ti</h2>
+      <h2 className="titulo-mapa mb-3">Sedes en tu zona (Radio: {RADIO_MAXIMO_KM} km)</h2>
 
-      <MapContainer center={ubicacionUsuario} zoom={12} className="leaflet-container">
-        <CambiarVistaMapa centro={ubicacionUsuario} />
+      {/* El mapa ahora nace centrado directamente en las coordenadas reales obtenidas */}
+      <MapContainer center={ubicacionUsuario} zoom={ZOOM_MAPA} className="leaflet-container">
+        <CambiarVistaMapa centro={ubicacionUsuario} zoom={ZOOM_MAPA} />
 
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
 
+        {/* LÍMITE VISUAL DEL RADIO EN TU REGIÓN */}
+        <Circle
+          center={ubicacionUsuario}
+          radius={RADIO_MAXIMO_KM * 1000}
+          pathOptions={{
+            color: '#320afd',
+            fillColor: '#4bb33b',
+            fillOpacity: 0.12,
+            weight: 1.5
+          }}
+        />
+
         {/* MARCADOR USUARIO */}
         <Marker position={ubicacionUsuario}>
           <Popup>
-            <div>
-              <h3 className="popup-titulo">Tu ubicación actual</h3>
-              <p className="popup-texto">Lat: {ubicacionUsuario[0].toFixed(5)}</p>
-              <p className="popup-texto">Lng: {ubicacionUsuario[1].toFixed(5)}</p>
+            <div className="text-center">
+              <strong>Tu Posición</strong>
             </div>
           </Popup>
         </Marker>
 
-        {/* MARCADORES SEDES */}
+        {/* MARCADORES DE LAS SEDES REGIONALES */}
         {sedesCercanas.map((sede, index) => (
           <Marker key={index} position={[sede.lat, sede.lng]}>
             <Popup>
               <div>
-                <h3 className="popup-titulo">{sede.sede}</h3>
-                <p className="popup-texto"><strong>Carrera:</strong> {sede.carrera}</p>
-                <p className="popup-texto"><strong>Matrícula:</strong> ${sede.matricula}</p>
-                <p className="popup-texto"><strong>Arancel Anual:</strong> ${sede.arancel}</p>
-                <p className="popup-texto"><strong>Distancia:</strong> {sede.distancia.toFixed(2)} km</p>
+                <h3 className="popup-titulo" style={{ margin: '0 0 5px 0', fontSize: '1.1rem', color: '#00ff26' }}>
+                  {sede.sede}
+                </h3>
+                <p className="popup-texto" style={{ margin: '0 0 4px 0', color: '#0368d4' }}>
+                  <strong>Institución:</strong> {sede.institucion}
+                </p>
+               
+                <p className="popup-texto" style={{ margin: 0, fontWeight: 'bold', color: '#c03e27' }}>
+                  <strong>Distancia:</strong> {sede.distancia.toFixed(2)} km
+                </p>
               </div>
             </Popup>
           </Marker>

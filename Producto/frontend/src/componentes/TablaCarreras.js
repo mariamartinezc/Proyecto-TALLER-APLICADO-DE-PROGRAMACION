@@ -3,14 +3,11 @@ import { Table, Modal, Button, Row, Col } from 'react-bootstrap';
 import '../vistas/TablaCarreras.css';
 
 const TablaCarreras = ({ carreras, filtroSede }) => {
-  // Estados para controlar el Modal de la Ficha Técnica
   const [showModal, setShowModal] = useState(false);
   const [fichaData, setFichaData] = useState(null);
 
-  // Tu formateador original de dinero CLP
   const fmt = (v) => new Intl.NumberFormat('es-CL', { style: 'currency', currency: 'CLP', minimumFractionDigits: 0 }).format(v || 0);
 
-  // Funciones para limpiar los datos estadísticos que vienen de Supabase
   const formatoIngreso = (valor) => {
     if (!valor || valor === "No disponible") return "No registrada";
     if (typeof valor === 'string' && valor.includes('$')) return valor;
@@ -27,7 +24,6 @@ const TablaCarreras = ({ carreras, filtroSede }) => {
     return `${num.toFixed(1)}%`;
   };
 
-  // Función para activar el Modal al hacer click en "Ver"
   const handleAbrirFicha = (carrera, sede, mensual, anual) => {
     setFichaData({
       ...carrera,
@@ -57,32 +53,31 @@ const TablaCarreras = ({ carreras, filtroSede }) => {
             </tr>
           </thead>
           <tbody>
-            {carreras.length > 0 ? (
+            {carreras && carreras.length > 0 ? (
               carreras.map((carrera, i) => (
                 carrera.sedes?.filter(s => {
                   if (!s || !s.sede) return false;
                   return filtroSede === "Todas" || s.sede.toUpperCase() === filtroSede.toUpperCase();
                 }).map((sede, idx) => {
                   
-                  //(mensual * 12)
                   const arancelMensual = parseInt(sede.arancel || 0);
                   const arancelAnual = arancelMensual * 12;
 
                   return (
                     <tr key={`${i}-${idx}`}>
-                      {/* CELDA CON NOMBRE Y BOTONES*/}
                       <td className="col-nombre-carrera text-center">
                         <div className="fw-bold mb-3" style={{ color: '#2c3e50', fontSize: '1.1rem' }}>
                           {carrera.nombre_carrera}
                         </div>
-                        <div className="d-flex justify-content-center gap-2">
+                        <div className="d-flex justify-content-center">
+                          {/* Solo conservamos el botón Ver */}
                           <button 
-                            className="btn btn-sm btn-tabla-ver"
+                            type="button"
+                            className="btn btn-sm btn-tabla-ver px-4"
                             onClick={() => handleAbrirFicha(carrera, sede, arancelMensual, arancelAnual)}
                           >
                             Ver
                           </button>
-                          <button className="btn btn-sm btn-tabla-agregar">Ag</button>
                         </div>
                       </td>
 
@@ -92,14 +87,12 @@ const TablaCarreras = ({ carreras, filtroSede }) => {
                       <td className="text-center">{fmt(arancelMensual)}</td>
                       <td className="text-center fw-bold text-success">{fmt(arancelAnual)}</td>
                       
-                      {/* CELDA DE DURACIÓN (Tu diseño original con Badge) */}
                       <td className="text-center">
                         <span className="badge bg-info text-dark">
                           {carrera.duracion || "No disponible"}
                         </span>
                       </td>
 
-                      {/* Datos estadísticos de Supabase con la nueva columna incorporada */}
                       <td className="text-center text-secondary">{formatoIngreso(carrera.ingresoCuartoAno)}</td>
                       <td className="text-center fw-medium">{formatoPorcentaje(carrera.empleabilidad1erAno)}</td>
                       <td className="text-center fw-medium text-muted">{formatoPorcentaje(carrera.empleabilidad2doAno)}</td>
@@ -109,9 +102,8 @@ const TablaCarreras = ({ carreras, filtroSede }) => {
               ))
             ) : (
               <tr>
-                {/* Ajustado el colSpan a 10 para cubrir la nueva columna */}
                 <td colSpan="10" className="text-center py-5 text-muted">
-                  No se encontraron resultados.
+                  Cargando catálogo...
                 </td>
               </tr>
             )}
@@ -119,7 +111,7 @@ const TablaCarreras = ({ carreras, filtroSede }) => {
         </Table>
       </div>
 
-      {/* MODAL DE LA FICHA TÉCNICA (Se abre al pulsar 'Ver')  */}
+      {/* MODAL DE LA FICHA TÉCNICA */}
       {fichaData && (
         <Modal show={showModal} onHide={() => setShowModal(false)} size="lg" centered>
           <Modal.Header closeButton className="border-0 bg-light">
@@ -129,7 +121,6 @@ const TablaCarreras = ({ carreras, filtroSede }) => {
           </Modal.Header>
           <Modal.Body className="px-4 pb-2">
             
-            {/* Encabezado */}
             <div className="mb-4">
               <span className="badge bg-secondary mb-2 me-2 text-uppercase">{fichaData.institucion}</span>
               <span className="badge bg-dark mb-2 text-uppercase">Escuela: {fichaData.escuela}</span>
@@ -141,7 +132,6 @@ const TablaCarreras = ({ carreras, filtroSede }) => {
               </p>
             </div>
 
-            {/* Acerca de la carrera */}
             <div className="mb-4 p-3 rounded bg-light border-start border-4 border-info">
               <h6 className="fw-bold text-dark mb-2">Acerca de la carrera</h6>
               <p className="text-secondary mb-0" style={{ fontSize: '0.9rem', lineHeight: '1.5' }}>
@@ -150,7 +140,6 @@ const TablaCarreras = ({ carreras, filtroSede }) => {
             </div>
 
             <Row className="g-4 mb-4">
-              {/* Detalles del Programa */}
               <Col md={12}>
                 <div className="p-3 rounded border bg-light">
                   <h6 className="fw-bold mb-3 border-bottom pb-2" style={{ color: '#2c3e50' }}>
@@ -181,7 +170,6 @@ const TablaCarreras = ({ carreras, filtroSede }) => {
                 </div>
               </Col>
 
-              {/* Bloque Financiero */}
               <Col md={6}>
                 <div className="p-3 rounded border bg-white shadow-sm h-100">
                   <h6 className="fw-bold mb-3 border-bottom pb-2" style={{ color: '#2c3e50' }}>
@@ -202,7 +190,6 @@ const TablaCarreras = ({ carreras, filtroSede }) => {
                 </div>
               </Col>
 
-              {/* Bloque Proyección */}
               <Col md={6}>
                 <div className="p-3 rounded border bg-white shadow-sm h-100">
                   <h6 className="fw-bold mb-3 border-bottom pb-2" style={{ color: '#2c3e50' }}>
@@ -224,7 +211,6 @@ const TablaCarreras = ({ carreras, filtroSede }) => {
               </Col>
             </Row>
 
-            {/* BOTONES DE LA FICHA CONECTADOS A LAS COLUMNAS */}
             <div className="d-flex flex-column flex-sm-row gap-3 pt-3 border-top">
               {fichaData.urlMalla ? (
                 <a 
@@ -236,7 +222,7 @@ const TablaCarreras = ({ carreras, filtroSede }) => {
                   Ver Malla Curricular
                 </a>
               ) : (
-                <button className="btn btn-outline-secondary flex-fill" disabled>
+                <button type="button" className="btn btn-outline-secondary flex-fill" disabled>
                   Malla No Disponible
                 </button>
               )}
@@ -251,7 +237,7 @@ const TablaCarreras = ({ carreras, filtroSede }) => {
                   Visitar Sitio Oficial
                 </a>
               ) : (
-                <button className="btn btn-secondary flex-fill" disabled>
+                <button type="button" className="btn btn-secondary flex-fill" disabled>
                   Web No Disponible
                 </button>
               )}
@@ -259,11 +245,9 @@ const TablaCarreras = ({ carreras, filtroSede }) => {
 
           </Modal.Body>
           <Modal.Footer className="border-0 bg-light mt-2">
+            {/* Solo queda el botón Cerrar estándar */}
             <Button variant="outline-secondary" onClick={() => setShowModal(false)}>
               Cerrar
-            </Button>
-            <Button style={{ backgroundColor: '#729676', border: 'none' }}>
-              Agregar a Comparador
             </Button>
           </Modal.Footer>
         </Modal>

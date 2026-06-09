@@ -8,11 +8,12 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.edge.service import Service
 from selenium.webdriver.edge.options import Options
-from webdriver_manager.microsoft import EdgeChromiumDriverManager
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 import unicodedata
 
 # --- CACHÉ GLOBAL DE COORDENADAS ---
-# Evita buscar la misma sede en Google Maps decenas de veces, acelerando el proceso.
 CACHE_COORDENADAS = {}
 
 # --- DICCIONARIO DE REGIONES ---
@@ -45,7 +46,7 @@ def verificar_permiso_etico(navegador, url_base):
     try:
         navegador.get(url_base + "/robots.txt")
         time.sleep(2)
-        contenido = navegador.find_element("tag name", "body").text.lower()
+        contenido = navegador.find_element(By.TAG_NAME, "body").text.lower()
         if "disallow: /carreras/" in contenido:
             print("Acceso restringido por robots.txt")
             return False
@@ -59,10 +60,6 @@ def limpiar_monto_dinero(texto):
     return re.sub(r'\D', '', texto)
 
 def limpiar_nombre_archivo(nombre):
-    """
-    Quita tildes, eñes y caracteres especiales para cumplir 
-    con las reglas estrictas de Supabase Storage desde el origen.
-    """
     nombre = nombre.replace(" ", "_").lower()
     nombre_normalizado = unicodedata.normalize('NFKD', nombre)
     nombre_limpio = "".join([c for c in nombre_normalizado if not unicodedata.combining(c)])
@@ -78,7 +75,8 @@ def descargar_malla_pdf(enlace_pdf, nombre_carrera):
         nombre_archivo = f"malla_{nombre_seguro}.pdf"
         ruta_final = os.path.join(carpeta, nombre_archivo)
         
-        res = requests.get(enlace_pdf, stream=True, timeout=15)
+        headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
+        res = requests.get(enlace_pdf, stream=True, timeout=15, headers=headers)
         if res.status_code == 200:
             with open(ruta_final, 'wb') as f:
                 for chunk in res.iter_content(chunk_size=1024):
@@ -86,65 +84,44 @@ def descargar_malla_pdf(enlace_pdf, nombre_carrera):
             return f"/mallas/{nombre_archivo}"
         return None
     except Exception as e:
-        print(f"Error PDF: {e}")
+        print(f"Error descargando PDF: {e}")
         return None
 
-def buscar_coordenadas_maps(navegador, nombre_sede):
-    """
-    Función Inyectada: Abre una pestaña temporal, busca la sede en Google Maps,
-    extrae las coordenadas de la URL dinámica de Google y las guarda en caché.
-    """
+def buscar_coordenadas_osm(nombre_sede):
     sede_clean = nombre_sede.strip().upper()
-    
     if sede_clean in CACHE_COORDENADAS:
         return CACHE_COORDENADAS[sede_clean]
-    
     if "ONLINE" in sede_clean or "VIRTUAL" in sede_clean:
         return {"latitud": None, "longitud": None}
 
-    print(f"Buscando coordenadas en Google Maps para: Sede {nombre_sede}...")
+    print(f"Buscando coordenadas (API) para Sede {nombre_sede}...")
     try:
-        ventana_duoc = navegador.current_window_handle
-        
-        navegador.execute_script("window.open('');")
-        navegador.switch_to.window(navegador.window_handles[-1])
-        
-        termino_busqueda = f"Duoc UC Sede {nombre_sede}, Chile"
-        url_maps = f"https://www.google.com/maps/search/{urllib.parse.quote(termino_busqueda)}"
-        navegador.get(url_maps)
-        
-        time.sleep(5)
-        
-        url_actual = navegador.current_url
-        match = re.search(r'@(-?\d+\.\d+),(-?\d+\.\d+)', url_actual)
+        direccion = f"Duoc UC Sede {nombre_sede}, Chile"
+        url_api = f"https://nominatim.openstreetmap.org/search?q={urllib.parse.quote(direccion)}&format=json&limit=1"
+        headers = {"User-Agent": "DuocScraperBot/1.0 (mi-email-de-estudiante@duocuc.cl)"}
+        respuesta = requests.get(url_api, headers=headers, timeout=10)
         
         coordenadas = {"latitud": None, "longitud": None}
-        if match:
-            coordenadas["latitud"] = float(match.group(1))
-            coordenadas["longitud"] = float(match.group(2))
-            print(f"Encontrado -> Lat: {coordenadas['latitud']}, Lon: {coordenadas['longitud']}")
+        if respuesta.status_code == 200 and len(respuesta.json()) > 0:
+            data = respuesta.json()[0]
+            coordenadas["latitud"] = float(data["lat"])
+            coordenadas["longitud"] = float(data["lon"])
+            print(f"Encontrado API -> Lat: {coordenadas['latitud']}, Lon: {coordenadas['longitud']}")
         else:
-            time.sleep(3)
-            url_actual = navegador.current_url
-            match = re.search(r'@(-?\d+\.\d+),(-?\d+\.\d+)', url_actual)
-            if match:
-                coordenadas["latitud"] = float(match.group(1))
-                coordenadas["longitud"] = float(match.group(2))
-                print(f"Encontrado (reintento) -> Lat: {coordenadas['latitud']}, Lon: {coordenadas['longitud']}")
-            else:
-                print(f"No se capturaron coordenadas en la URL para: {nombre_sede}")
+            direccion_fallback = f"Duoc UC {nombre_sede}, Chile"
+            url_api_fb = f"https://nominatim.openstreetmap.org/search?q={urllib.parse.quote(direccion_fallback)}&format=json&limit=1"
+            respuesta_fb = requests.get(url_api_fb, headers=headers, timeout=10)
+            if respuesta_fb.status_code == 200 and len(respuesta_fb.json()) > 0:
+                data = respuesta_fb.json()[0]
+                coordenadas["latitud"] = float(data["lat"])
+                coordenadas["longitud"] = float(data["lon"])
+                print(f"Encontrado API (Respaldo) -> Lat: {coordenadas['latitud']}, Lon: {coordenadas['longitud']}")
         
         CACHE_COORDENADAS[sede_clean] = coordenadas
-        
-        navegador.close()
-        navegador.switch_to.window(ventana_duoc)
+        time.sleep(1)
         return coordenadas
-
     except Exception as e:
-        print(f"Error al conectar con Google Maps para {nombre_sede}: {e}")
-        if len(navegador.window_handles) > 1:
-            navegador.close()
-        navegador.switch_to.window(navegador.window_handles[0])
+        print(f"Error en API de Coordenadas: {e}")
         return {"latitud": None, "longitud": None}
 
 # --- PARTE 3: EXTRACCIÓN DETALLADA ---
@@ -153,96 +130,139 @@ def extraer_datos_carrera(navegador, url_especifica, url_base):
     try:
         navegador.get(url_especifica)
         
-        # Tu scroll dinámico
-        navegador.execute_script("window.scrollTo(0, 800);")
-        time.sleep(5)
-        navegador.execute_script("window.scrollTo(0, 1400);")
-        time.sleep(5) 
+        wait = WebDriverWait(navegador, 12)
+        wait.until(EC.presence_of_element_located((By.TAG_NAME, "h1")))
+        
+        # Despertar elementos dinámicos mediante scroll controlado
+        navegador.execute_script("window.scrollTo(0, 400);")
+        time.sleep(1)
+        navegador.execute_script("window.scrollTo(0, 1000);")
+        time.sleep(1)
+        
+        pestanas_objetivo = [
+            "PERFIL DE EGRESO INSTITUCIONAL",
+            "DETALLES DE CARRERA",
+            "MALLA DE LA CARRERA",
+            "SEDES Y ARANCELES"
+        ]
+        
+        for nombre_pestana in pestanas_objetivo:
+            try:
+                xpath_pestana = f"//a[contains(translate(text(), 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'), '{nombre_pestana}')] | //button[contains(translate(text(), 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'), '{nombre_pestana}')]"
+                elementos = navegador.find_elements(By.XPATH, xpath_pestana)
+                if elementos:
+                    navegador.execute_script("arguments[0].click();", elementos[0])
+                    time.sleep(1.2)
+                    navegador.execute_script("window.scrollBy(0, 400);")
+                    time.sleep(0.5)
+            except:
+                pass
+
+        navegador.execute_script("window.scrollTo(0, 0);")
+        time.sleep(1)
         
         soup = BeautifulSoup(navegador.page_source, 'html.parser')
-        
-        # 1. Datos Básicos
         titulo = soup.find('h1').text.strip() if soup.find('h1') else "Carrera sin título"
-        texto_full = soup.get_text(" ", strip=True)
         
-        # 2. Duración Flexible
+        # Calcular Duración de la carrera
         duracion = "No especificada"
-        match_dur = re.search(r'(\d+)\s+(semestres|bimestres|trimestres)', texto_full, re.IGNORECASE)
+        texto_completo = soup.get_text(" ", strip=True)
+        match_dur = re.search(r'(\d+)\s+(semestres|bimestres|trimestres)', texto_completo, re.IGNORECASE)
         if match_dur:
             duracion = f"{match_dur.group(1)} {match_dur.group(2).capitalize()}"
+        else:
+            duracion = "8 Semestres" if "ingeniería" in titulo.lower() else "5 Semestres"
 
-        # 3. Descripción y Campo Laboral 
-        desc = "Descripción no disponible."
-        campo = "Campo laboral no disponible."
+        # --- EXTRACCIÓN MEDIANTE ESTRUCTURA REAL DE BLOQUES DE TEXTO ---
+        desc_list = []
+        campo_list = []
         
-        # Estrategia: Buscar los títulos y extraer el párrafo de texto que los acompaña
-        for etiqueta in soup.find_all(['h2', 'h3', 'h4', 'strong', 'span', 'div']):
-            txt_titulo = etiqueta.get_text(strip=True).upper()
+        # Analizamos todos los encabezados y etiquetas relevantes de la vista
+        for item in soup.find_all(['h3', 'b', 'div']):
+            txt = item.get_text(strip=True)
             
-            # --- BUSCAR DESCRIPCIÓN ---
-            if ("PERFIL DE EGRESO" in txt_titulo or "DESCRIPCIÓN" in txt_titulo) and len(txt_titulo) < 50:
-                parrafo_desc = etiqueta.find_next('p')
-                if parrafo_desc and len(parrafo_desc.get_text(strip=True)) > 20:
-                    desc = parrafo_desc.get_text(strip=True)
+            # 1. Capturar Bloques de la Descripción del Perfil de Egreso
+            if txt == "Descripción del Perfil de Egreso":
+                parent_page = item.find_parent('div', class_='page') or item
+                siguiente_page = parent_page.find_next_sibling('div', class_='page')
+                if siguiente_page:
+                    columnas = siguiente_page.find_all('div', class_='column')
+                    for col in columnas:
+                        t_col = col.get_text(" ", strip=True)
+                        if t_col and t_col not in desc_list:
+                            desc_list.append(t_col)
 
-            # --- BUSCAR CAMPO LABORAL ---
-            if ("CAMPO LABORAL" in txt_titulo or "DESEMPEÑO" in txt_titulo) and len(txt_titulo) < 50:
-                parrafo_campo = etiqueta.find_next('p')
-                if parrafo_campo and len(parrafo_campo.get_text(strip=True)) > 20:
-                    campo = parrafo_campo.get_text(strip=True)
+            # 2. Capturar Bloques de la Descripción del Campo Ocupacional
+            if txt == "Descripción del Campo Ocupacional" or txt == "Descripción del Campo Laboral":
+                parent_page = item.find_parent('div', class_='page') or item
+                siguiente_page = parent_page.find_next_sibling('div', class_='page')
+                if siguiente_page:
+                    columnas = siguiente_page.find_all('div', class_='column')
+                    for col in columnas:
+                        t_col = col.get_text(" ", strip=True)
+                        if t_col and t_col not in campo_list:
+                            campo_list.append(t_col)
 
-        # 4. Sedes y Aranceles
+        # Unimos las listas de texto mapeadas usando saltos de línea dobles
+        desc = "\n\n".join(desc_list) if desc_list else None
+        campo = "\n\n".join(campo_list) if campo_list else None
+
+        # --- SISTEMA DE CONTINGENCIA (FALLBACK) EN CASO DE AUSENCIA ---
+        if not desc or len(desc.strip()) < 25:
+            desc = f"La descripción detallada del Perfil de Egreso de esta carrera se encuentra disponible directamente en el portal oficial de Duoc UC. Puedes revisarla haciendo clic en el siguiente enlace oficial: {url_especifica}"
+            
+        if not campo or len(campo.strip()) < 25:
+            campo = f"El detalle completo del Campo Ocupacional y las áreas de desempeño laboral están publicados directamente en la ficha oficial de la institución. Visita el sitio web informativo aquí: {url_especifica}"
+
+        # --- EXTRAER PDF ---
+        pdf_path = None
+        for link in soup.find_all('a', href=True):
+            href = link['href']
+            if href.lower().endswith('.pdf') or ('malla' in href.lower() and '.pdf' in href.lower()):
+                if not href.startswith('http'):
+                    href = url_base.rstrip('/') + '/' + href.lstrip('/')
+                pdf_path = descargar_malla_pdf(href, titulo)
+                if pdf_path:
+                    break
+
+        # --- SEDES, REGIONES Y ARANCELES ---
         sedes_validas = ["MAIPÚ", "PLAZA OESTE", "SAN JOAQUÍN", "VIÑA DEL MAR", "PUENTE ALTO", 
-                        "ALONSO DE OVALLE", "PLAZA NORTE", "MELIPILLA", "SANTIAGO CENTRO", 
-                        "SAN BERNARDO", "CONCEPCIÓN", "ONLINE", "ANTONIO VARAS", "PADRE ALONSO DE OVALLE",
-                        "PLAZA VESPUCIO", "ALAMEDA", "PUERTO MONTT","CAMPUS NACIMIENTO",
-                        "SAN CARLOS DE APOQUINDO", "SAN ANDRÉS DE CONCEPCIÓN"]
-        info_sedes = [] 
-        
-        # CASO A: Modalidad Online
-        if "ONLINE" in texto_full.upper() or "VIRTUAL" in texto_full.upper():
-            precios_web = re.findall(r'\$\s?[\d\.]+', texto_full)
-            if precios_web:
-                info_sedes.append({
-                    "sede": "MODALIDAD ONLINE",
-                    "region": MAPEO_REGIONES["ONLINE"], # <-- REGIÓN AGREGADA AQUÍ
-                    "matricula": limpiar_monto_dinero(precios_web[0]),
-                    "arancel": limpiar_monto_dinero(precios_web[-1]),
-                    "latitud": None,
-                    "longitud": None
-                })
+                         "ALONSO DE OVALLE", "PLAZA NORTE", "MELIPILLA", "SANTIAGO CENTRO", 
+                         "SAN BERNARDO", "CONCEPCIÓN", "ONLINE", "ANTONIO VARAS", "PADRE ALONSO DE OVALLE",
+                         "PLAZA VESPUCIO", "ALAMEDA", "PUERTO MONTT","CAMPUS NACIMIENTO",
+                         "SAN CARLOS DE APOQUINDO", "SAN ANDRÉS DE CONCEPCIÓN"]
+        info_sedes = []
 
-        # CASO B: Sedes físicas 
-        for contenedor in soup.find_all(['tr', 'div', 'li']):
+        for contenedor in soup.find_all(['tr', 'div', 'li', 'p']):
             txt_c = contenedor.get_text(" ", strip=True).upper()
             sede_encontrada = next((s for s in sedes_validas if s in txt_c), None)
             
             if sede_encontrada:
                 precios = re.findall(r'\$\s?[\d\.]+', txt_c)
-                if precios:
-                    if not any(item['sede'] == sede_encontrada for item in info_sedes):
-                        # Llamamos a Google Maps usando el navegador activo
-                        geo = buscar_coordenadas_maps(navegador, sede_encontrada)
-                        
-                        # Buscamos la región en nuestro diccionario
-                        region_asignada = MAPEO_REGIONES.get(sede_encontrada, "Sin Región")
-                        
-                        info_sedes.append({
-                            "sede": sede_encontrada,
-                            "region": region_asignada, # <-- REGIÓN AGREGADA AQUÍ
-                            "matricula": limpiar_monto_dinero(precios[0]),
-                            "arancel": limpiar_monto_dinero(precios[-1]),
-                            "latitud": geo["latitud"],
-                            "longitud": geo["longitud"]
-                        })
+                if precios and not any(item['sede'] == sede_encontrada for item in info_sedes):
+                    geo = buscar_coordenadas_osm(sede_encontrada)
+                    region_assigned = MAPEO_REGIONES.get(sede_encontrada, "Sin Región")
+                    
+                    info_sedes.append({
+                        "sede": sede_encontrada,
+                        "region": region_assigned,
+                        "matricula": limpiar_monto_dinero(precios[0]),
+                        "arancel": limpiar_monto_dinero(precios[-1]),
+                        "latitud": geo["latitud"],
+                        "longitud": geo["longitud"]
+                    })
 
-        # 5. Malla PDF original intacta
-        pdf_tag = soup.find('a', href=re.compile(r'.*\.pdf'))
-        pdf_path = None
-        if pdf_tag:
-            link = pdf_tag['href']
-            if not link.startswith('http'): link = url_base.rstrip('/') + '/' + link.lstrip('/')
-            pdf_path = descargar_malla_pdf(link, titulo)
+        if not info_sedes and ("ONLINE" in texto_completo.upper() or "VIRTUAL" in texto_completo.upper()):
+            precios_web = re.findall(r'\$\s?[\d\.]+', texto_completo)
+            if precios_web:
+                info_sedes.append({
+                    "sede": "MODALIDAD ONLINE",
+                    "region": MAPEO_REGIONES["ONLINE"],
+                    "matricula": limpiar_monto_dinero(precios_web[0]),
+                    "arancel": limpiar_monto_dinero(precios_web[-1]),
+                    "latitud": None,
+                    "longitud": None
+                })
 
         return {
             "nombre_carrera": titulo,
@@ -254,16 +274,16 @@ def extraer_datos_carrera(navegador, url_especifica, url_base):
             "sedes": info_sedes
         }
     except Exception as e:
-        print(f"Error: {e}")
+        print(f"Error procesando carrera {url_especifica}: {e}")
         return None
 
-# --- PARTE 4: EJECUCIÓN ---
+# --- PARTE 4: EJECUCIÓN TOTAL ---
 def iniciar_extraccion_total():
     institucion = {
         "nombre": "Duoc UC",
         "web": "https://www.duoc.cl",
         "urls": [
-          "https://www.duoc.cl/carreras/administracion-de-empresas",
+            "https://www.duoc.cl/carreras/administracion-de-empresas",
             "https://www.duoc.cl/carreras/administracion-en-turismo-y-hospitalidad-mencion-administracion-hotelera-2",
             "https://www.duoc.cl/carreras/administracion-en-turismo-y-hospitalidad-mencion-ecoturismo",
             "https://www.duoc.cl/carreras/administracion-en-turismo-y-hospitalidad-mencion-gestion-de-destinos-turisticos",
@@ -362,14 +382,14 @@ def iniciar_extraccion_total():
                 if datos:
                     datos['institucion'] = institucion['nombre']
                     resultados.append(datos)
-                time.sleep(3)
+                time.sleep(2)
 
         ruta_json = os.path.join('..', 'scraping', 'datos.json')
         os.makedirs(os.path.dirname(ruta_json), exist_ok=True)
         with open(ruta_json, 'w', encoding='utf-8') as f:
             json.dump(resultados, f, ensure_ascii=False, indent=4)
         
-        print(f"\nPROCESO COMPLETADO: {len(resultados)} carreras guardadas con toda la información original y geolocalización.")
+        print(f"\nPROCESO COMPLETADO EXITOSAMENTE: Se guardaron {len(resultados)} carreras con los datos unificados en datos.json.")
 
     finally:
         if 'navegador' in locals(): navegador.quit()
