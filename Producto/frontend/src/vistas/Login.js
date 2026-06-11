@@ -1,12 +1,17 @@
 import { useState } from "react";
 import { supabase } from "../supabaseClient";
+// 1. Importamos el componente del Modal flotante
 
+import ModalTerminos from "../componentes/ModalTerminos";
 function Login({ alConfirmarIngreso }) {
   // Controles de flujo
   const [esRegistro, setEsRegistro] = useState(false);
   const [paso, setPaso] = useState(1); // Controla las pantallas del registro (1 a 4)
   const [cargando, setCargando] = useState(false);
   const [mensajeError, setMensajeError] = useState("");
+  
+  // Estado para controlar la visibilidad del modal legal flotante
+  const [abrirModal, setAbrirModal] = useState(false); 
 
   // Datos del Formulario Único
   const [datosFormulario, setDatosFormulario] = useState({
@@ -31,6 +36,29 @@ function Login({ alConfirmarIngreso }) {
       ...previo,
       [campo]: valor
     }));
+  };
+
+  // Solicita la geolocalización nativa al navegador de manera explícita
+  const solicitarUbicacionGPS = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (posicion) => {
+          console.log("Coordenadas autorizadas con éxito:", posicion.coords.latitude, posicion.coords.longitude);
+        },
+        (error) => {
+          console.warn("El usuario denegó el acceso GPS:", error.message);
+        }
+      );
+    }
+  };
+
+  // Maneja el evento cuando interactúan directo con el checkbox
+  const manejarCambioCheckbox = (e) => {
+    const checked = e.target.checked;
+    actualizarCampo("aceptaTerminos", checked);
+    if (checked) {
+      solicitarUbicacionGPS();
+    }
   };
 
   // --- LÓGICA DE INICIO DE SESIÓN ---
@@ -70,7 +98,6 @@ function Login({ alConfirmarIngreso }) {
     setMensajeError("");
 
     try {
-      // Pasamos los datos adicionales a las opciones de metadatos de Supabase Auth
       const { error } = await supabase.auth.signUp({
         email: datosFormulario.correo,
         password: datosFormulario.contrasena,
@@ -83,15 +110,13 @@ function Login({ alConfirmarIngreso }) {
             region: datosFormulario.region,
             tipo_establecimiento: datosFormulario.tipoEstablecimiento,
             puntaje_paes: datosFormulario.puntajePaes,
-            ranking_notas: datosFormulario.rankingNotas,
+            ranking_notas: datosFormulario.rankingNotas, 
             tipo_usuario: datosFormulario.tipoUsuario
           }
         }
       });
 
       if (error) throw error;
-      
-      // Si el registro fue exitoso, avanzamos al paso 4 (Pantalla de Cuenta Creada)
       setPaso(4);
     } catch (error) {
       setMensajeError(error.message || "Error al intentar registrar el usuario.");
@@ -100,16 +125,11 @@ function Login({ alConfirmarIngreso }) {
     }
   };
 
-  // Reinicia los estados para volver a la pantalla inicial de login
   const volverAlLoginInicial = () => {
     setEsRegistro(false);
     setPaso(1);
     setMensajeError("");
   };
-
-  // ========================================================
-  // RENDERIZADO DE VISTAS SEGÚN EL FLUJO
-  // ========================================================
 
   // --- VISTA: INICIAR SESIÓN NORMAL ---
   if (!esRegistro) {
@@ -217,7 +237,6 @@ function Login({ alConfirmarIngreso }) {
               <option value="Metropolitana">Metropolitana</option>
               <option value="Valparaíso">Valparaíso</option>
               <option value="Biobío">Biobío</option>
-              {/* Agrega más regiones si es necesario */}
             </select>
           </div>
 
@@ -302,12 +321,27 @@ function Login({ alConfirmarIngreso }) {
                 <input className="form-check-input" type="radio" name="tipoUsuario" id="apo" checked={datosFormulario.tipoUsuario === "Apoderado"} onChange={() => actualizarCampo("tipoUsuario", "Apoderado")} />
                 <label className="form-check-label small" htmlFor="apo">Apoderado</label>
               </div>
+              {/* LA OPCIÓN DE ADMIN SE REMOVIÓ DE AQUÍ PARA ASIGNARSE EXCLUSIVAMENTE DESDE EL PANEL DE SUPABASE */}
             </div>
 
-            <div className="form-check mb-4">
-              <input className="form-check-input" type="checkbox" id="terminos" checked={datosFormulario.aceptaTerminos} onChange={(e) => actualizarCampo("aceptaTerminos", e.target.checked)} />
+            {/* SECCIÓN INTERACTIVA CON ENLACE AL MODAL */}
+            <div className="form-check mb-4 d-flex align-items-center gap-1">
+              <input 
+                className="form-check-input" 
+                type="checkbox" 
+                id="terminos" 
+                checked={datosFormulario.aceptaTerminos} 
+                onChange={manejarCambioCheckbox} 
+              />
               <label className="form-check-label small" htmlFor="terminos">
-                Acepto los términos y condiciones
+                Acepto los{" "}
+                <span 
+                  className="text-primary text-decoration-underline" 
+                  style={{ cursor: "pointer", fontWeight: "500" }}
+                  onClick={() => setAbrirModal(true)}
+                >
+                  términos y condiciones
+                </span>
               </label>
             </div>
 
@@ -319,11 +353,21 @@ function Login({ alConfirmarIngreso }) {
             </div>
           </form>
         </div>
+
+        {/* MODAL CONECTADO AL ESTADO DE APERTURA */}
+        <ModalTerminos 
+          mostrar={abrirModal} 
+          ordenarCierre={() => setAbrirModal(false)} 
+          alAceptar={() => {
+            actualizarCampo("aceptaTerminos", true);
+            solicitarUbicacionGPS(); // Pide la ubicación si aceptan a través del botón del modal
+          }} 
+        />
       </div>
     );
   }
 
-  // --- REGISTRO ETAPA 4: CUENTA CREADA EXITOSAMENTE ---
+  // --- REGISTRO ETAPA 4: CUENTA CREADA ---
   if (paso === 4) {
     return (
       <div className="card shadow-sm text-center" style={{ maxWidth: "450px", margin: "40px auto", padding: "25px", borderRadius: "12px" }}>
@@ -340,16 +384,12 @@ function Login({ alConfirmarIngreso }) {
           </div>
 
           <p className="text-muted small px-2">
-            Hemos enviado un correo de confirmación. Por favor revisa tu bandeja de entrada y haz clic en el enlace para activar tu cuenta.
+            Tu cuenta ha sido registrada con éxito en el sistema. Ya puedes iniciar sesión para configurar tu perfil.
           </p>
 
           <button onClick={volverAlLoginInicial} className="btn btn-outline-secondary w-100 mt-4 fw-bold">
             IR A INICIAR SESIÓN
           </button>
-
-          <p className="text-center small mt-3 mb-0">
-            ¿No recibiste el correo? <span className="text-primary style={{cursor:'pointer'}}">Reenviar correo de confirmación</span>
-          </p>
         </div>
       </div>
     );

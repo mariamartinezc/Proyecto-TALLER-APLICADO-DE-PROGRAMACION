@@ -4,7 +4,7 @@
     min-height: 100vh;
     padding: 40px 20px;
     font-family: 'Segoe UI', sans-serif;
-    display: block; /* Asegura que ocupe su espacio */
+    display: block;
 }
 
 .titulo-superior {

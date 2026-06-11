@@ -1,4 +1,3 @@
-// src/App.js
 import React, { useEffect, useState } from 'react';
 
 // 1. IMPORTACIONES DE ESTILOS

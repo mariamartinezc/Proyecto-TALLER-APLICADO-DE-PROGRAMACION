@@ -3,30 +3,31 @@ import BarraDeProgreso from '../componentes/BarraDeProgreso';
 import ResultadoTest from '../componentes/ResultadoTest';
 import './TestVocacional.css';
 import { obtenerCarrerasMapeadas } from '../services/carrerasService';
-// Importamos los iconos de flechas desde Heroicons
 import { HiArrowSmLeft, HiArrowSmRight } from 'react-icons/hi';
 
 const TestVocacional = () => {
   const [paso, setPaso] = useState(0);
-  const [seleccion, setSeleccion] = useState(null);
-  const [puntajes, setPuntajes] = useState({ informatica: 0, turismo: 0, administracion: 0, diseno: 0 });
+  const [respuestas, setRespuestas] = useState(Array(10).fill(null));
   const [finalizado, setFinalizado] = useState(false);
   const [datosDuoc, setDatosDuoc] = useState([]);
+  const [cargandoDatos, setCargandoDatos] = useState(true); // Control de seguridad para la API
 
-  // Consumimos el servicio unificado de Supabase
   useEffect(() => {
     obtenerCarrerasMapeadas()
       .then(data => {
-        const adaptadosParaTest = data.map(c => ({
-          nombre_carrera: c.nombre_carrera,
-          duracion: c.duracion,
-          institucion: c.institucion,
-          campo_laboral: c.descripcion,
-          url_fuente: c.urlOficial || "https://www.duoc.cl"
-        }));
-        setDatosDuoc(adaptadosParaTest);
+        if (data && Array.isArray(data)) {
+          const adaptadosParaTest = data.map(c => ({
+            nombre_carrera: c.nombre_carrera || "",
+            duracion: c.duracion || "",
+            institucion: c.institucion || "",
+            campo_laboral: c.descripcion || "",
+            url_fuente: c.urlOficial || "https://www.duoc.cl"
+          }));
+          setDatosDuoc(adaptadosParaTest);
+        }
       })
-      .catch(err => console.error("Error en test:", err.message));
+      .catch(err => console.error("Error en test:", err.message))
+      .finally(() => setCargandoDatos(false));
   }, []);
 
   const preguntas = [
@@ -42,28 +43,63 @@ const TestVocacional = () => {
     { texto: "¿Cuál es tu prioridad laboral?", opciones: [{t:"Innovación", c:"informatica"}, {t:"Aventura", c:"turismo"}, {t:"Estabilidad", c:"administracion"}, {t:"Estética", c:"diseno"}] }
   ];
 
+  const manejarSeleccion = (indiceOpcion) => {
+    const nuevasRespuestas = [...respuestas];
+    nuevasRespuestas[paso] = indiceOpcion;
+    setRespuestas(nuevasRespuestas);
+  };
+
   const siguiente = () => {
-    if (seleccion === null) return alert("Elige una opción");
-    
-    const cat = preguntas[paso].opciones[seleccion].c;
-    setPuntajes(prev => ({ ...prev, [cat]: prev[cat] + 1 }));
+    if (respuestas[paso] === null) return alert("Elige una opción");
 
     if (paso + 1 < preguntas.length) {
       setPaso(paso + 1);
-      setSeleccion(null);
     } else {
       setFinalizado(true);
     }
   };
 
   const filtrarResultados = () => {
-    const winner = Object.keys(puntajes).reduce((a, b) => puntajes[a] > puntajes[b] ? a : b);
+    const puntajesFinales = { informatica: 0, turismo: 0, administracion: 0, diseno: 0 };
+    
+    respuestas.forEach((indiceOpcion, indicePregunta) => {
+      if (indiceOpcion !== null && preguntas[indicePregunta]?.opciones[indiceOpcion]) {
+        const cat = preguntas[indicePregunta].opciones[indiceOpcion].c;
+        if (puntajesFinales[cat] !== undefined) {
+          puntajesFinales[cat] += 1;
+        }
+      }
+    });
+
+    const winner = Object.keys(puntajesFinales).reduce((a, b) => puntajesFinales[a] > puntajesFinales[b] ? a : b);
+    
+    // Si no han cargado las carreras aún, devolvemos un array vacío preventivo
+    if (!datosDuoc.length) return [];
+
     return datosDuoc
-      .filter(c => c.nombre_carrera.toLowerCase().includes(winner.substring(0,4)))
+      .filter(c => {
+        const nombreValido = c.nombre_carrera ? c.nombre_carrera.toLowerCase() : "";
+        const criterioBusqueda = winner ? winner.substring(0, 4) : "";
+        return nombreValido.includes(criterioBusqueda);
+      })
       .slice(0, 3);
   };
 
-  if (finalizado) return <ResultadoTest recomendaciones={filtrarResultados()} alReiniciar={() => window.location.reload()} />;
+  if (finalizado) {
+    return <ResultadoTest recomendaciones={filtrarResultados()} alReiniciar={() => window.location.reload()} />;
+  }
+
+  // Si el servicio externo está lento, mostramos un spinner estético antes de iniciar
+  if (cargandoDatos) {
+    return (
+      <div className="d-flex justify-content-center align-items-center" style={{ minHeight: "100vh" }}>
+        <div className="text-center">
+          <div className="spinner-border text-primary mb-2" role="status"></div>
+          <p className="text-muted fw-bold">Preparando tus preguntas vocacionales...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="contenedor-principal">
@@ -72,17 +108,21 @@ const TestVocacional = () => {
         <h2 className="titulo-seccion">Descubre tu Vocación</h2>
         <BarraDeProgreso porcentaje={Math.round((paso / preguntas.length) * 100)} />
         
-        <p className="pregunta-texto">{paso + 1}. {preguntas[paso].texto}</p>
+        <p className="pregunta-texto">{paso + 1}. {preguntas[paso]?.texto}</p>
         <div className="lista-opciones">
-          {preguntas[paso].opciones.map((o, i) => (
+          {preguntas[paso]?.opciones.map((o, i) => (
             <label key={i} className="opcion-item">
-              <input type="checkbox" checked={seleccion === i} onChange={() => setSeleccion(i)} />
+              <input 
+                type="radio" 
+                name={`pregunta-${paso}`} 
+                checked={respuestas[paso] === i} 
+                onChange={() => manejarSeleccion(i)} 
+              />
               {o.t}
             </label>
           ))}
         </div>
         
-        {/* Sección de navegación optimizada con react-icons */}
         <div className="botones-navegacion d-flex justify-content-between mt-4">
           <button 
             className="btn-nav btn-atras btn btn-secondary d-inline-flex align-items-center gap-2" 
