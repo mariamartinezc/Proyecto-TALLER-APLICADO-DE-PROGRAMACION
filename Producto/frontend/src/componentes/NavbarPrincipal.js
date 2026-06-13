@@ -1,9 +1,24 @@
 import React from 'react';
-import { Navbar, Container, Nav } from 'react-bootstrap';
-import { FaHome, FaExchangeAlt, FaFileAlt, FaMapMarkedAlt } from 'react-icons/fa';
+import { Navbar, Container, Nav, Button } from 'react-bootstrap';
+// NUEVO: Agregamos FaUserCircle a las importaciones de íconos
+import { FaHome, FaExchangeAlt, FaFileAlt, FaMapMarkedAlt, FaSignOutAlt, FaUserCircle } from 'react-icons/fa'; 
+import { useNavigate } from 'react-router-dom'; 
+import { supabase } from '../supabaseClient'; 
 import logo from '../assets/logo-s.png';
 
 function NavbarPrincipal() {
+    const navigate = useNavigate();
+
+    const manejarCerrarSesion = async () => {
+        try {
+            const { error } = await supabase.auth.signOut();
+            if (error) throw error;
+            navigate('/login');
+        } catch (error) {
+            console.error('Error al cerrar sesión:', error.message);
+        }
+    };
+
     return (
         <Navbar expand="lg" bg="dark" data-bs-theme="dark" className="sticky-top shadow">
             <Container>
@@ -20,6 +35,8 @@ function NavbarPrincipal() {
 
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
+                    
+                    {/* ENLACES IZQUIERDOS */}
                     <Nav className="me-auto gap-2">
                         <Nav.Link href="#home" className="d-flex align-items-center gap-2">
                             <FaHome /> Inicio
@@ -34,6 +51,26 @@ function NavbarPrincipal() {
                             <FaMapMarkedAlt /> Mapa
                         </Nav.Link>
                     </Nav>
+
+                    {/* SECCIÓN DERECHA: PERFIL Y BOTÓN DE SALIR */}
+                    <Nav className="ms-auto mt-3 mt-lg-0 d-flex align-items-center gap-3">
+                        
+                        {/* NUEVO: Ícono y texto de Perfil */}
+                        <Nav.Link href="#perfil" className="d-flex align-items-center gap-2 text-light" style={{ transition: '0.3s' }}>
+                            <FaUserCircle size={24} /> 
+                            <span className="fw-semibold">Mi Perfil</span>
+                        </Nav.Link>
+
+                        <Button 
+                            variant="outline-danger" 
+                            onClick={manejarCerrarSesion}
+                            className="d-flex align-items-center gap-2"
+                            style={{ borderRadius: '10px' }}
+                        >
+                            <FaSignOutAlt /> Cerrar Sesión
+                        </Button>
+                    </Nav>
+
                 </Navbar.Collapse>
             </Container>
         </Navbar>
