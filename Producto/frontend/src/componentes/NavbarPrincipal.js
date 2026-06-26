@@ -1,10 +1,11 @@
 import React from 'react';
 import { Navbar, Container, Nav, Button } from 'react-bootstrap';
 // NUEVO: Agregamos FaUserCircle a las importaciones de íconos
-import { FaHome, FaExchangeAlt, FaFileAlt, FaMapMarkedAlt, FaSignOutAlt, FaUserCircle } from 'react-icons/fa'; 
-import { useNavigate } from 'react-router-dom'; 
-import { supabase } from '../supabaseClient'; 
+import { FaHome, FaExchangeAlt, FaFileAlt, FaMapMarkedAlt, FaSignOutAlt, FaUserCircle } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
+import { supabase } from '../supabaseClient';
 import logo from '../assets/logo-s.png';
+import { FaChartBar } from 'react-icons/fa';
 
 function NavbarPrincipal() {
     const navigate = useNavigate();
@@ -35,7 +36,7 @@ function NavbarPrincipal() {
 
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
-                    
+
                     {/* ENLACES IZQUIERDOS */}
                     <Nav className="me-auto gap-2">
                         <Nav.Link href="#home" className="d-flex align-items-center gap-2">
@@ -50,19 +51,22 @@ function NavbarPrincipal() {
                         <Nav.Link href="#mapa" className="d-flex align-items-center gap-2">
                             <FaMapMarkedAlt /> Mapa
                         </Nav.Link>
+                        <Nav.Link href="#dashboard" className="d-flex align-items-center gap-2">
+                            <FaChartBar /> Dashboard
+                        </Nav.Link>
                     </Nav>
 
                     {/* SECCIÓN DERECHA: PERFIL Y BOTÓN DE SALIR */}
                     <Nav className="ms-auto mt-3 mt-lg-0 d-flex align-items-center gap-3">
-                        
+
                         {/* NUEVO: Ícono y texto de Perfil */}
                         <Nav.Link href="#perfil" className="d-flex align-items-center gap-2 text-light" style={{ transition: '0.3s' }}>
-                            <FaUserCircle size={24} /> 
+                            <FaUserCircle size={24} />
                             <span className="fw-semibold">Mi Perfil</span>
                         </Nav.Link>
 
-                        <Button 
-                            variant="outline-danger" 
+                        <Button
+                            variant="outline-danger"
                             onClick={manejarCerrarSesion}
                             className="d-flex align-items-center gap-2"
                             style={{ borderRadius: '10px' }}
