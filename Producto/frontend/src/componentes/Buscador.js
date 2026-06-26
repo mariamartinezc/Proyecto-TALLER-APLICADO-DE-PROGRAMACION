@@ -42,7 +42,7 @@ const Buscador = ({ filtros, setFiltros, opciones }) => {
 
       <div className="panel-busqueda p-4 rounded shadow-sm border border-secondary mx-auto" style={{ maxWidth: '1100px' }}>
         <Row className="align-items-center">
-          <Col md={9}>
+          <Col md={12}> {/* Cambiado de md={9} a md={12} para que ocupe todo el ancho */}
             <Form.Control 
               name="palabraClave"
               placeholder="Escribe una palabra clave..." 
@@ -63,11 +63,7 @@ const Buscador = ({ filtros, setFiltros, opciones }) => {
               </span>
             </div>
           </Col>
-          <Col md={3} className="text-end">
-            <button className="btn btn-success rounded-pill px-4 py-2 fw-bold d-inline-flex align-items-center gap-2">
-              <FaSearch /> BUSCAR
-            </button>
-          </Col>
+          {/* ELIMINADO: El botón de búsqueda ya no está aquí */}
         </Row>
       </div>
     </Container>

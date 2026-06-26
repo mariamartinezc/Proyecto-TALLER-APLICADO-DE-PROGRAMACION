@@ -204,3 +204,636 @@ body {
   transform: scale(1.05);
 
 }
+
+
+
+/* ========================================
+   DASHBOARD - Estilos exclusivos (Agregar al final de App.css)
+   ======================================== */
+
+.dashboard-wrapper {
+  --primary-color: #61dafb;
+  --primary-dark: #4fa8c7;
+  --primary-light: #8de4ff;
+  --primary-gradient: linear-gradient(135deg, #61dafb 0%, #4fa8c7 100%);
+  --bg-dark: #282c34;
+  --bg-card: #1f2329;
+  --bg-card-hover: #2a303a;
+  --text-white: #ffffff;
+  --text-muted: #a0aec0;
+  --text-dim: #718096;
+  --shadow-card: 0px 4px 20px rgba(0, 0, 0, 0.4);
+  --shadow-hover: 0px 8px 30px rgba(0, 0, 0, 0.6);
+  --border-radius: 20px;
+  --border-radius-sm: 12px;
+  background: var(--bg-dark);
+  padding: 20px;
+  min-height: 100vh;
+  color: var(--text-white);
+}
+
+/* ========================================
+   ANIMACIONES DEL DASHBOARD
+   ======================================== */
+
+@keyframes dashboardFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes dashboardPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes dashboardFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes dashboardSlideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes dashboardSlideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes dashboardShimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes dashboardGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(97, 218, 251, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(97, 218, 251, 0.3);
+  }
+}
+
+/* ========================================
+   TARJETAS DE KPIS (Info Boxes)
+   ======================================== */
+
+.dashboard-wrapper .info-box {
+  background: var(--bg-card) !important;
+  border-radius: var(--border-radius) !important;
+  padding: 20px 24px !important;
+  position: relative !important;
+  overflow: hidden !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  animation: dashboardFadeInUp 0.6s ease-out !important;
+  border: 1px solid rgba(97, 218, 251, 0.08) !important;
+  box-shadow: var(--shadow-card) !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+  margin-bottom: 15px !important;
+}
+
+.dashboard-wrapper .info-box:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: var(--shadow-hover) !important;
+  border-color: var(--primary-color) !important;
+  animation: dashboardGlow 2s ease-in-out infinite !important;
+}
+
+.dashboard-wrapper .info-box::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 4px !important;
+  background: var(--primary-gradient) !important;
+}
+
+.dashboard-wrapper .info-box .info-box-icon {
+  width: 56px !important;
+  height: 56px !important;
+  border-radius: var(--border-radius-sm) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 24px !important;
+  color: var(--bg-dark) !important;
+  background: var(--primary-gradient) !important;
+  transition: all 0.3s ease !important;
+  animation: dashboardFloat 3s ease-in-out infinite !important;
+  flex-shrink: 0 !important;
+}
+
+.dashboard-wrapper .info-box:hover .info-box-icon {
+  transform: rotate(360deg) scale(1.1) !important;
+}
+
+.dashboard-wrapper .info-box .info-box-content {
+  flex: 1 !important;
+}
+
+.dashboard-wrapper .info-box .info-box-text {
+  font-size: 13px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  font-weight: 600 !important;
+  color: var(--text-muted) !important;
+  margin-bottom: 4px !important;
+}
+
+.dashboard-wrapper .info-box .info-box-number {
+  font-size: 28px !important;
+  font-weight: 800 !important;
+  color: var(--primary-color) !important;
+  animation: dashboardPulse 2s ease-in-out infinite !important;
+}
+
+/* ========================================
+   TARJETAS DE GRÁFICOS
+   ======================================== */
+
+.dashboard-wrapper .card {
+  border: none !important;
+  border-radius: var(--border-radius) !important;
+  background: var(--bg-card) !important;
+  box-shadow: var(--shadow-card) !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  animation: dashboardFadeInUp 0.7s ease-out !important;
+  overflow: hidden !important;
+  margin-bottom: 20px !important;
+  border: 1px solid rgba(97, 218, 251, 0.06) !important;
+}
+
+.dashboard-wrapper .card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: var(--shadow-hover) !important;
+  border-color: rgba(97, 218, 251, 0.15) !important;
+}
+
+.dashboard-wrapper .card-header {
+  background: transparent !important;
+  border-bottom: 1px solid rgba(97, 218, 251, 0.08) !important;
+  padding: 18px 24px !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+.dashboard-wrapper .card-header::after {
+  display: none !important;
+}
+
+.dashboard-wrapper .card-title {
+  font-weight: 700 !important;
+  font-size: 17px !important;
+  color: var(--text-white) !important;
+  margin: 0 !important;
+}
+
+.dashboard-wrapper .card-title i {
+  margin-right: 10px !important;
+  color: var(--primary-color) !important;
+  animation: dashboardFloat 3s ease-in-out infinite !important;
+}
+
+.dashboard-wrapper .card-body {
+  padding: 20px 24px !important;
+}
+
+/* ========================================
+   BADGES
+   ======================================== */
+
+.dashboard-wrapper .badge {
+  padding: 6px 14px !important;
+  border-radius: 20px !important;
+  font-weight: 600 !important;
+  font-size: 11px !important;
+  letter-spacing: 0.5px !important;
+  transition: all 0.3s ease !important;
+}
+
+.dashboard-wrapper .badge:hover {
+  transform: scale(1.05) !important;
+}
+
+.dashboard-wrapper .badge-info {
+  background: var(--primary-gradient) !important;
+  color: var(--bg-dark) !important;
+}
+
+.dashboard-wrapper .badge-success {
+  background: linear-gradient(135deg, #51CF66 0%, #37B24D 100%) !important;
+  color: white !important;
+}
+
+.dashboard-wrapper .badge-warning {
+  background: linear-gradient(135deg, #FFA94D 0%, #F59F00 100%) !important;
+  color: white !important;
+}
+
+.dashboard-wrapper .badge-danger {
+  background: linear-gradient(135deg, #FF6B6B 0%, #E03131 100%) !important;
+  color: white !important;
+}
+
+/* ========================================
+   TABLA
+   ======================================== */
+
+.dashboard-wrapper .table {
+  width: 100% !important;
+  border-collapse: collapse !important;
+  color: var(--text-white) !important;
+}
+
+.dashboard-wrapper .table thead {
+  background: var(--primary-gradient) !important;
+}
+
+.dashboard-wrapper .table thead th {
+  padding: 14px 20px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.8px !important;
+  font-size: 11px !important;
+  color: var(--bg-dark) !important;
+  border: none !important;
+  text-align: left !important;
+}
+
+.dashboard-wrapper .table tbody tr {
+  transition: all 0.3s ease !important;
+  border-left: 3px solid transparent !important;
+  border-bottom: 1px solid rgba(97, 218, 251, 0.05) !important;
+}
+
+.dashboard-wrapper .table tbody tr:hover {
+  background: var(--bg-card-hover) !important;
+  border-left-color: var(--primary-color) !important;
+}
+
+.dashboard-wrapper .table tbody td {
+  padding: 12px 20px !important;
+  vertical-align: middle !important;
+  color: var(--text-muted) !important;
+}
+
+.dashboard-wrapper .table tbody td strong {
+  color: var(--text-white) !important;
+}
+
+/* ========================================
+   PROGRESS BARS
+   ======================================== */
+
+.dashboard-wrapper .progress {
+  height: 6px !important;
+  border-radius: 10px !important;
+  background: rgba(97, 218, 251, 0.08) !important;
+  overflow: hidden !important;
+  margin-bottom: 4px !important;
+}
+
+.dashboard-wrapper .progress-bar {
+  border-radius: 10px !important;
+  transition: width 1.5s ease-in-out !important;
+  position: relative !important;
+  height: 100% !important;
+}
+
+.dashboard-wrapper .progress-bar::after {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent) !important;
+  animation: dashboardShimmer 2s infinite !important;
+}
+
+.dashboard-wrapper .progress-bar.bg-success {
+  background: linear-gradient(90deg, #51CF66 0%, #37B24D 100%) !important;
+}
+
+.dashboard-wrapper .progress-bar.bg-info {
+  background: var(--primary-gradient) !important;
+}
+
+.dashboard-wrapper .progress-bar.bg-warning {
+  background: linear-gradient(90deg, #FFA94D 0%, #F59F00 100%) !important;
+}
+
+/* ========================================
+   BOTONES
+   ======================================== */
+
+.dashboard-wrapper .btn {
+  border-radius: var(--border-radius-sm) !important;
+  padding: 8px 20px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px !important;
+  transition: all 0.3s ease !important;
+  border: none !important;
+  cursor: pointer !important;
+}
+
+.dashboard-wrapper .btn-primary {
+  background: var(--primary-gradient) !important;
+  color: var(--bg-dark) !important;
+}
+
+.dashboard-wrapper .btn-primary:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px rgba(97, 218, 251, 0.3) !important;
+}
+
+.dashboard-wrapper .btn-sm {
+  padding: 5px 14px !important;
+  font-size: 12px !important;
+  border-radius: 8px !important;
+}
+
+.dashboard-wrapper .btn-outline-secondary {
+  background: transparent !important;
+  border: 1px solid rgba(97, 218, 251, 0.2) !important;
+  color: var(--text-muted) !important;
+}
+
+.dashboard-wrapper .btn-outline-secondary:hover {
+  background: rgba(97, 218, 251, 0.1) !important;
+  border-color: var(--primary-color) !important;
+  color: var(--primary-color) !important;
+}
+
+/* ========================================
+   LOADING
+   ======================================== */
+
+.dashboard-wrapper .loading-container {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 50px !important;
+  min-height: 400px !important;
+}
+
+.dashboard-wrapper .spinner {
+  font-size: 48px !important;
+  color: var(--primary-color) !important;
+}
+
+.dashboard-wrapper .loading-progress {
+  width: 300px !important;
+  height: 6px !important;
+  background: rgba(97, 218, 251, 0.1) !important;
+  border-radius: 10px !important;
+  margin-top: 20px !important;
+  overflow: hidden !important;
+}
+
+.dashboard-wrapper .loading-progress-bar {
+  width: 100% !important;
+  height: 100% !important;
+  background: var(--primary-gradient) !important;
+  animation: dashboardShimmer 1.5s ease-in-out infinite !important;
+}
+
+/* ========================================
+   ERROR
+   ======================================== */
+
+.dashboard-wrapper .alert-danger {
+  background: rgba(255, 107, 107, 0.1) !important;
+  border: 1px solid rgba(255, 107, 107, 0.2) !important;
+  border-radius: var(--border-radius) !important;
+  padding: 20px 24px !important;
+  color: #FF6B6B !important;
+  margin: 20px !important;
+}
+
+.dashboard-wrapper .alert-danger h4 {
+  color: #FF6B6B !important;
+  margin-bottom: 10px !important;
+}
+
+/* ========================================
+   DEBUG
+   ======================================== */
+
+.dashboard-wrapper .debug-card {
+  background: var(--bg-card) !important;
+  border-radius: var(--border-radius) !important;
+  padding: 20px !important;
+  margin-top: 20px !important;
+  border: 1px solid rgba(97, 218, 251, 0.06) !important;
+}
+
+.dashboard-wrapper .debug-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 15px !important;
+}
+
+.dashboard-wrapper .debug-grid small {
+  color: var(--text-muted) !important;
+}
+
+.dashboard-wrapper .debug-grid strong {
+  color: var(--primary-color) !important;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 992px) {
+  .dashboard-wrapper .info-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  
+  .dashboard-wrapper .chart-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .dashboard-wrapper .debug-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-wrapper {
+    padding: 12px !important;
+  }
+  
+  .dashboard-wrapper .info-box .info-box-number {
+    font-size: 22px !important;
+  }
+  
+  .dashboard-wrapper .info-box .info-box-icon {
+    width: 44px !important;
+    height: 44px !important;
+    font-size: 18px !important;
+  }
+  
+  .dashboard-wrapper .card-body {
+    padding: 15px !important;
+  }
+  
+  .dashboard-wrapper .info-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .dashboard-wrapper .info-box {
+    padding: 14px 18px !important;
+  }
+  
+  .dashboard-wrapper .info-box .info-box-number {
+    font-size: 18px !important;
+  }
+  
+  .dashboard-wrapper .card-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+  }
+}
+/* ========================================
+   FIX VISIBILIDAD DASHBOARD + MAPA
+   (SOLO COLORES / CONTRASTE)
+======================================== */
+
+/* =========================
+   TEXTOS MÁS VISIBLES (NEGRO SOLO EN ZONAS CLARAS)
+========================= */
+
+.dashboard-wrapper .card,
+.dashboard-wrapper .info-box,
+.dashboard-wrapper .table,
+.dashboard-wrapper .card-title,
+.dashboard-wrapper .info-box-text,
+.dashboard-wrapper .info-box-number,
+.dashboard-wrapper td,
+.dashboard-wrapper th,
+.dashboard-wrapper small,
+.dashboard-wrapper p,
+.dashboard-wrapper span {
+  color: #000000 !important;
+}
+
+/* Mantener fondo oscuro del dashboard pero con mejor contraste */
+.dashboard-wrapper .card {
+  background: #ffffff !important;
+  border: 2px solid #000000 !important;
+}
+
+.dashboard-wrapper .info-box {
+  background: #f3f3f3 !important;
+  border: 2px solid #000000 !important;
+}
+
+/* =========================
+   TÍTULOS MAPA (EL QUE MOSTRASTE EN IMAGEN)
+========================= */
+
+.titulo-mapa {
+  color: #000000 !important; /* antes era celeste */
+  font-weight: 800 !important;
+}
+
+/* =========================
+   MAPA CONTENEDOR
+========================= */
+
+.mapa-container {
+  background-color: #ffffff !important;
+  border: 2px solid #000000 !important;
+}
+
+/* =========================
+   GRÁFICOS (BORDES NEGROS VISIBLES)
+========================= */
+
+.dashboard-wrapper canvas {
+  background: #ffffff !important;
+  border: 2px solid #000000 !important;
+  border-radius: 12px !important;
+}
+
+/* =========================
+   LEYENDAS DE GRÁFICOS (Chart.js)
+========================= */
+
+.dashboard-wrapper .chartjs-render-monitor {
+  filter: contrast(1.2);
+}
+
+/* =========================
+   TABLAS MÁS LEÍBLES
+========================= */
+
+.dashboard-wrapper .table thead th {
+  color: #000000 !important;
+  background: #eaeaea !important;
+  border-bottom: 2px solid #000 !important;
+}
+
+.dashboard-wrapper .table tbody td {
+  color: #000000 !important;
+}
+
+/* =========================
+   BADGES MÁS VISIBLES
+========================= */
+
+.dashboard-wrapper .badge {
+  color: #000 !important;
+  border: 1px solid #000 !important;
+}
+
+/* =========================
+   ICONOS (MEJOR CONTRASTE)
+========================= */
+
+.dashboard-wrapper i {
+  color: #000000 !important;
+}
+
+
