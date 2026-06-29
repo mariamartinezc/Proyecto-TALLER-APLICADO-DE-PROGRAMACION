@@ -8,7 +8,8 @@ import {
   FaGraduationCap,
   FaEnvelope,
   FaHeart,
-  FaExchangeAlt
+  FaExchangeAlt,
+  FaGift
 } from "react-icons/fa";
 
 function Footer() {
@@ -76,6 +77,10 @@ function Footer() {
                 Mi Perfil
               </a>
 
+              <a href="#beneficios" className="text-decoration-none text-secondary">
+                <FaGift className="me-2" />
+                Beneficios
+              </a>
             </div>
 
           </div>

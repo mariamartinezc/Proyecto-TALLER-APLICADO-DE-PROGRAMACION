@@ -1,11 +1,10 @@
 import React from 'react';
 import { Navbar, Container, Nav, Button } from 'react-bootstrap';
-// NUEVO: Agregamos FaUserCircle a las importaciones de íconos
-import { FaHome, FaExchangeAlt, FaFileAlt, FaMapMarkedAlt, FaSignOutAlt, FaUserCircle } from 'react-icons/fa';
+// NUEVO: Agregamos FaGift a las importaciones para el botón de beneficios
+import { FaHome, FaExchangeAlt, FaFileAlt, FaMapMarkedAlt, FaSignOutAlt, FaUserCircle, FaChartBar, FaGift } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { supabase } from '../supabaseClient';
 import logo from '../assets/logo-s.png';
-import { FaChartBar } from 'react-icons/fa';
 
 function NavbarPrincipal() {
     const navigate = useNavigate();
@@ -54,12 +53,16 @@ function NavbarPrincipal() {
                         <Nav.Link href="#dashboard" className="d-flex align-items-center gap-2">
                             <FaChartBar /> Dashboard
                         </Nav.Link>
+                        
+                        {/* NUEVO: Enlace directo al catálogo de Beneficios */}
+                        <Nav.Link href="#beneficios" className="d-flex align-items-center gap-2">
+                            <FaGift /> Beneficios
+                        </Nav.Link>
                     </Nav>
 
                     {/* SECCIÓN DERECHA: PERFIL Y BOTÓN DE SALIR */}
                     <Nav className="ms-auto mt-3 mt-lg-0 d-flex align-items-center gap-3">
 
-                        {/* NUEVO: Ícono y texto de Perfil */}
                         <Nav.Link href="#perfil" className="d-flex align-items-center gap-2 text-light" style={{ transition: '0.3s' }}>
                             <FaUserCircle size={24} />
                             <span className="fw-semibold">Mi Perfil</span>

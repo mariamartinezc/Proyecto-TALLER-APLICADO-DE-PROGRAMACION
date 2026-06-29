@@ -12,7 +12,7 @@ import { supabase } from './supabaseClient';
 
 // 4. Componentes y Vistas
 import NavbarPrincipal from './componentes/NavbarPrincipal';
-import Footer from './componentes/Footer'; // <-- Agregado el Footer de la compañera
+import Footer from './componentes/Footer'; 
 
 import Home from './vistas/Home'; 
 import TestVocacional from './vistas/TestVocacional';
@@ -20,7 +20,8 @@ import Mapa from './vistas/Mapa';
 import ExplorarCarreras from './vistas/ExplorarCarreras';
 import Login from './vistas/Login'; 
 import Perfil from './vistas/Perfil'; 
-import Dashboard from './vistas/Dashboard'; // <-- Agregado el Dashboard de la compañera
+import Dashboard from './vistas/Dashboard'; 
+import Beneficios from './vistas/Beneficios'; // <-- NUEVO: Importamos la vista de becas
 
 function App() {
   const [sesion, setSesion] = useState(null);
@@ -72,9 +73,10 @@ function App() {
                 <Route path="/mapa" element={<Mapa />} />
                 <Route path="/comparador" element={<ExplorarCarreras />} />
                 <Route path="/perfil" element={<Perfil />} />
-                
-                {/* NUEVO: Desbloqueamos la ruta del Dashboard */}
                 <Route path="/dashboard" element={<Dashboard />} />
+                
+                {/* NUEVO: Agregamos la ruta protegida para el catálogo de becas */}
+                <Route path="/beneficios" element={<Beneficios />} />
                 
                 <Route path="/login" element={<Navigate to="/home" replace />} />
                 <Route path="*" element={<Navigate to="/home" replace />} />
