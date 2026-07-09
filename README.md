@@ -7,11 +7,11 @@ Bienvenido al repositorio oficial de **"Elige Tu Futuro"**, un portal web intera
 ---
 
 ## 👥 Integrantes
-* **[Nombre Integrante 1]**
-* **[Nombre Integrante 2]**
-* **[Nombre Integrante 3]**
+* **Nayadett Leyton**
+* **Lorena Figueroa**
+* **María Martínez**
 
-*Duoc UC - Proyecto de Título 2026*
+*Duoc UC - Proyecto de Portafoleo 2026*
 
 ---
 
@@ -21,7 +21,7 @@ Para facilitar la revisión por parte de la comisión evaluadora, el repositorio
 
 * **`📦 Documento/`**
     * Contiene la documentación oficial desarrollada a lo largo del semestre, abarcando el progreso de la **Experiencia 1 a la Experiencia 3**.
-    * **`📁 examen/`**: Subcarpeta crítica que contiene toda la **documentación corregida y actualizada** con las observaciones finales para el examen del día viernes.
+    * **`📁 examen/`**: Subcarpeta crítica que contiene toda la **documentación corregida y actualizada** con las observaciones finales para el examen del día viernes 10/07/2026.
 * **`📦 Proyecto/`**
     * Contiene el código fuente de la aplicación listo para producción.
     * **`📁 frontend/`**: Interfaz de usuario interactiva construida en **React (PWA)** y desplegada en Vercel.
