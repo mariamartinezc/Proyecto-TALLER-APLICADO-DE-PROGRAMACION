@@ -1,0 +1,65 @@
+name: Pipeline Automatizado de Web Scraping (Mantenimiento 2027)
+
+on:
+  schedule:
+    # Se ejecutará automáticamente el día 1 de cada mes a las 00:00 UTC
+    - cron: '0 0 1 * *'
+  workflow_dispatch: # Activa el botón manual en GitHub para la defensa de título
+
+jobs:
+  ejecutar-pipeline:
+    runs-on: ubuntu-latest # Servidor virtual Linux gratuito en la nube de GitHub
+
+    steps:
+    # A. Clonar tu repositorio dentro del servidor de GitHub
+    - name: Descargar codigo del repositorio
+      uses: actions/checkout@v4
+
+    # B. Inicializar el entorno de Python 3.11
+    - name: Inicializar Python 3.11
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+
+    # C. Candado de seguridad para congelar ejecuciones automáticas hasta el próximo año (2027)
+    - name: Validar Año de Ejecucion
+      run: |
+        ANIO_ACTUAL=$(date +'%Y')
+        IF_MANUAL="${{ github.event_name }}"
+        if [ "$ANIO_ACTUAL" -lt 2027 ] && [ "$IF_MANUAL" = "schedule" ]; then
+          echo "Ejecución automática omitida. El pipeline iniciará su ciclo programado en 2027."
+          exit 0
+        fi
+
+    # D. Instalar librerías leyendo tu requirements.txt dentro de Producto/scraping
+    - name: Instalar librerias necesarias
+      run: |
+        python -m pip install --upgrade pip
+        if [ -f Producto/scraping/requirements.txt ]; then pip install -r Producto/scraping/requirements.txt; fi
+
+    # E. Instalar Google Chrome invisible para que Selenium corra en la nube
+    - name: Configurar Chrome para Selenium Headless
+      uses: browser-actions/setup-chrome@v1
+      with:
+        chrome-version: stable
+
+    # F. Moverse a la carpeta y ejecutar secuencialmente los 4 scripts del ecosistema
+    - name: Ejecutar Flujo Completo de Ingesta
+      env:
+        # Vincula tus Secrets de GitHub con las variables que tu código de Python necesita
+        SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+        SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+      run: |
+        cd Producto/scraping
+        
+        echo "1. Iniciando Web Scraping de portales..."
+        python scraping.py
+        python scraping2.py
+        
+        echo "2. Ejecutando Algoritmo de Data Matching..."
+        python matchjson.py
+        
+        echo "3. Inyectando datos normalizados en Supabase Cloud..."
+        python cargar_Supabase.py
+        
+        echo "¡Pipeline finalizado con éxito!"
