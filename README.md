@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+# Elige Tu Futuro 🚀
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Bienvenido al repositorio oficial de **"Elige Tu Futuro"**, un portal web interactivo diseñado para centralizar la oferta académica, mallas curriculares, aranceles y beneficios socioeconómicos de la educación superior en Chile.
 
-## Available Scripts
+🌐 **Link del proyecto en producción:** [elige-tu-futuro-pied.vercel.app](https://elige-tu-futuro-pied.vercel.app)
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 👥 Integrantes
+* **[Nombre Integrante 1]**
+* **[Nombre Integrante 2]**
+* **[Nombre Integrante 3]**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+*Duoc UC - Proyecto de Título 2026*
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 📂 Estructura del Repositorio
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Para facilitar la revisión por parte de la comisión evaluadora, el repositorio está organizado de la siguiente manera:
 
-### `npm run build`
+* **`📦 Documento/`**
+    * Contiene la documentación oficial desarrollada a lo largo del semestre, abarcando el progreso de la **Experiencia 1 a la Experiencia 3**.
+    * **`📁 examen/`**: Subcarpeta crítica que contiene toda la **documentación corregida y actualizada** con las observaciones finales para el examen del día viernes.
+* **`📦 Proyecto/`**
+    * Contiene el código fuente de la aplicación listo para producción.
+    * **`📁 frontend/`**: Interfaz de usuario interactiva construida en **React (PWA)** y desplegada en Vercel.
+    * **`📁 backend/`**: Configuraciones, triggers y políticas RLS de la base de datos relacional en **Supabase (PostgreSQL)**.
+    * **`📁 scraping/`**: Scripts de automatización en **Python (Selenium / BeautifulSoup)** para la extracción de mallas, aranceles y empleabilidad.
+* **`📦 .github/workflows/`**
+    * **`📄 scraping-pipeline.yml`**: Configuración de **GitHub Actions** que automatiza el respaldo y ejecución mensual del motor de scraping.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🛠️ Tecnologías Utilizadas
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* **Frontend:** React, JavaScript, HTML5, CSS3 (Desplegado en **Vercel**).
+* **Backend & Base de Datos:** PostgreSQL (**Supabase**), Autenticación JWT, Row Level Security (RLS).
+* **Automatización & Scraping:** Python, Selenium, BeautifulSoup (Pipeline en **GitHub Actions**).
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
